@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{{asset('admin/css/bootstrap-css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/bootstrap-css/jqvmap.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/adminlte-css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{asset('admin/css/overlayScrollbars/overlayScrollbars.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/css/overlayscrollbars/overlayscrollbars.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/toastr/toastr.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/sweetalert2/bootstrap-4.min.css')}}">
