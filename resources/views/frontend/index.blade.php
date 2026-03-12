@@ -6,7 +6,7 @@
     <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__items videosection">
-                <video autoplay muted loop playsinline class="hero-video">
+                <video autoplay muted loop playsinline webkit-playsinline class="hero-video">
                     <source src="{{asset('image/thepromise.mp4')}}" type="video/mp4">
                 </video>
                 <!-- <div class="container">
