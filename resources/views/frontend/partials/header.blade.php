@@ -10,8 +10,8 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">Sign Up</a>
+                                <!-- <a href="#">Sign in</a>
+                                <a href="#">Sign Up</a> -->
                             </div>
                             <!-- <div class="header__top__hover">
                                 <span>Usd <i class="arrow_carrot-down"></i></span>
@@ -27,28 +27,38 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-md-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="{{asset('image/front-logo.jpg')}}" alt=""></a>
+                        <a href="./index.html">
+                            <img src="{{ asset('image/logo.jpg') }}" alt="logo">
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-10 col-md-10">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
+                            <li class="active"><a href="#">House of Bikaneri </a>
                                 <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                    <li><a href="">Our Legacy</a></li>
+                                    <li><a href="">Bikaner Heritage</a></li>
+                                    <li><a href="">Craftsmanship</a></li>
+                                    <li><a href="">Artisans of Bikaner</a></li>
+                                    <li><a href="">Bespoke Jewellery</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
+                            <li><a href="#">Collections</a>
+                                <ul class="dropdown">
+                                    <li><a href="">Polki & Kundan</a></li>
+                                    <li><a href="">Gold Jewellery</a></li>
+                                    <li><a href="">Diamond Jewellery</a></li>
+                                    <li><a href="">Bridal Jewellery</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Bespoke Jewellery</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="">Book an Appointment</a></li>
+                            <li><a href="">Log In</a></li>
                         </ul>
                     </nav>
                 </div>

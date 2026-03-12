@@ -404,23 +404,33 @@ ol {
 }
 
 .header__logo {
-	padding: 30px 0;
+	padding:10px 0;
 }
+
+/* .header__logo img{
+    height:80px;
+    width:auto;
+} */
 
 .header__logo a {
 	display: inline-block;
 }
 
 .header__menu {
-	text-align: center;
-	padding: 26px 0 25px;
+	text-align: right;
+    padding: 10px 0;
 }
 
 .header__menu ul li {
 	list-style: none;
 	display: inline-block;
-	margin-right: 45px;
+	margin-right: 25px;
 	position: relative;
+}
+
+.header__logo img{
+    height:100px;
+    width:auto;
 }
 
 .header__menu ul li.active a:after {
@@ -3563,6 +3573,18 @@ ol {
 	}
 	.slicknav_nav {
 		display: block !important;
+	}
+	.slicknav_nav .dropdown{
+		position: relative;
+		top: 0;
+		opacity: 1 !important;
+		visibility: visible !important;
+		background: transparent;
+		width: 100%;
+	}
+	.slicknav_nav .dropdown li a{
+		color:#111 !important;
+		padding-left:15px;
 	}
 	.offcanvas__option {
 		text-align: center;
