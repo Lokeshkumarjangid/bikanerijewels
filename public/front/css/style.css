@@ -588,6 +588,21 @@ ol {
 	padding-top: 230px;
 }
 
+.videosection{
+    position: relative;
+    height: 880px;
+    overflow: hidden;
+}
+
+.hero-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .hero__text h6 {
 	color: #e53637;
 	font-size: 14px;
@@ -908,7 +923,7 @@ ol {
 -----------------------*/
 
 .product {
-	padding-top: 0;
+	padding-top: 50px;
 	padding-bottom: 60px;
 }
 
@@ -3669,6 +3684,9 @@ ol {
 	.hero__slider.owl-carousel .owl-nav button.owl-next {
 		left: 75px;
 		right: 0;
+	}
+	.banner__section {
+	   padding-top: 20px;
 	}
 	.banner__item.banner__item--middle {
 		margin-top: 0;
