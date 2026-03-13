@@ -104,6 +104,53 @@
     </section>
     <!-- Banner Section End -->
 
+    <!-- Categroy Section End -->
+
+    <section class="product spad">
+        <div class="home-demo">
+            <div class="owl-carousel owl-theme">
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy1.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy2.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy3.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy4.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy5.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy6.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy7.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy8.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+                <div class="category-item">
+                    <div class="product__item__pic set-bg" data-setbg="image/categroy9.jpg"></div>
+                    <h6 class="category-title">Pendants</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categroy Section End -->
+
     <!-- Product Section Begin -->
     <section class="product spad">
         <div class="container">
@@ -255,7 +302,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                {{--<div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
                             <!-- <ul class="product__hover">
@@ -391,7 +438,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </section>

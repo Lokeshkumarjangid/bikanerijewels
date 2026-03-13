@@ -94,7 +94,32 @@
         animateIn: 'fadeIn',
         smartSpeed: 1200,
         autoHeight: false,
-        autoplay: false
+        autoplay: true
+    });
+
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        items: 8,
+        dots: true,
+        nav: true,
+        navText: ["<span class='arrow_lefts'><span/>", "<span class='arrow_rights'><span/>"],
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
+        smartSpeed: 1200,
+        autoHeight: false,
+        autoplay: true,
+        responsive:{
+            0:{
+                items:4
+            },
+            600:{
+                items:6
+            },
+            1000:{
+                items:8
+            }
+        }
     });
 
     /*--------------------------
