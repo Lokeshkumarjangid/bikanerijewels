@@ -166,14 +166,16 @@
             <div class="row product__filter">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="image/bestsale1.jpg">
-                            <!-- <span class="label">New</span> -->
-                            <!-- <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul> -->
-                        </div>
+                        <a href="{{route('product.index')}}">
+                            <div class="product__item__pic set-bg" data-setbg="image/bestsale1.jpg">
+                                <!-- <span class="label">New</span> -->
+                                <!-- <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul> -->
+                            </div>
+                        </a>
                         <div class="product__item__text">
                             <h6>Celestical Dot 9KT Gold Lab Grown Diamond Necklace</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
@@ -201,13 +203,15 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="image/bestsale2.jpg">
-                            <!-- <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul> -->
-                        </div>
+                        <a href="{{route('product.index')}}">
+                            <div class="product__item__pic set-bg" data-setbg="image/bestsale2.jpg">
+                                <!-- <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul> -->
+                            </div>
+                        </a>
                         <div class="product__item__text">
                             <h6>Axis Dot 9KT Gold Lab Grown Diamond Single Stud Earring</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
@@ -235,14 +239,16 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="image/bestsale3.jpg">
-                            <!-- <span class="label">Sale</span> -->
-                            <!-- <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul> -->
-                        </div>
+                        <a href="{{route('product.index')}}">
+                            <div class="product__item__pic set-bg" data-setbg="image/bestsale3.jpg">
+                                <!-- <span class="label">Sale</span> -->
+                                <!-- <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul> -->
+                            </div>
+                        </a>
                         <div class="product__item__text">
                             <h6>Hexa Star 9KT Gold Lab Grown Diamond Stud Earring</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
@@ -270,13 +276,15 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="image/bestsale4.jpg">
-                            <!-- <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul> -->
-                        </div>
+                        <a href="{{route('product.index')}}">
+                            <div class="product__item__pic set-bg" data-setbg="image/bestsale4.jpg">
+                                <!-- <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul> -->
+                            </div>
+                        </a>
                         <div class="product__item__text">
                             <h6>Square Cluster 9KT Gold Lab Grown Diamond Necklace</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
