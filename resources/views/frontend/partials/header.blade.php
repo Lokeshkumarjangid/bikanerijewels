@@ -31,7 +31,7 @@
                             <li><a href="">Bespoke Jewellery</a></li>
                             <li><a href="">Contact Us</a></li>
                             <li><a href="">Book an Appointment</a></li>
-                            <li><a href="">Log In</a></li>
+                            <li><a href="{{route('loginoption')}}">Log In</a></li>
                         </ul>
                     </nav>
                 </div>
