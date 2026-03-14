@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'product-details')
+@section('title', 'customize')
 @section('content') 
 <style>
    body{
@@ -301,11 +301,11 @@ UPLOAD IMAGE (MAX 5MB)
 
 <p class="help">IN CASE OF ANY QUERIES CALL US ON</p>
 
-<h4>+91 22 61066262</h4>
+<h4>+91 656555 556</h4>
 
 <p>OR Whatsapp Us!</p>
 
-<h4 class="whatsapp">+91 9920024599</h4>
+<h4 class="whatsapp">+91 8888888888</h4>
 
 </div>
 
