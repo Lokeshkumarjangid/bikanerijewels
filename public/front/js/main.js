@@ -238,4 +238,25 @@
         });
     });
 
+    //password hide and show
+    $(document).ready(function(){
+        $('.toggle-password').click(function(){
+
+        let input = $(this).siblings('input');
+
+        if(input.attr('type') == 'password'){
+            
+            input.attr('type','text');
+            $(this).html('<i class="fa fa-eye-slash"></i>');
+            
+        }else{
+
+            input.attr('type','password');
+            $(this).html('<i class="fa fa-eye"></i>');
+
+        }
+
+        });
+    });
+
 })(jQuery);
