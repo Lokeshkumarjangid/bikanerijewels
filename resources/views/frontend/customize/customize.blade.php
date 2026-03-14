@@ -3,174 +3,126 @@
 @section('title', 'customize')
 @section('content') 
 <style>
-   body{
-font-family:Arial;
-background:#f6f7f9;
-margin:0;
+.containers{
+max-width:1400px;
+padding:40px 20px;
 }
 
-.container{
-width:1200px;
-margin:auto;
-}
+/* GRID */
 
-.title{
-text-align:center;
-margin-top:40px;
-font-size:32px;
-}
-
-.subtitle{
-text-align:center;
-color:#777;
-margin-bottom:40px;
-}
-
-
-/* steps */
-
-.steps{
+.customize-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-bottom:40px;
-}
-
-.step{
-background:#fff;
-padding:20px;
-text-align:center;
-border-radius:8px;
-box-shadow:0 2px 5px rgba(0,0,0,0.08);
-}
-
-
-/* cards */
-
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
+grid-template-columns:1fr 2fr 1fr;
 gap:25px;
 }
+
+/* CARD */
 
 .card{
 background:#fff;
 padding:25px;
 border-radius:10px;
-box-shadow:0 3px 8px rgba(0,0,0,0.1);
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
 
-.card h3{
-margin-bottom:20px;
-}
-
-
-/* upload */
-
-.upload-box{
-height:180px;
-border:2px dashed #ddd;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:20px;
-}
-
-.upload-box img{
-width:70px;
-opacity:0.6;
-}
-
-.upload-btn{
-background:#3ca7b2;
-color:white;
-padding:10px;
-border:none;
-width:100%;
-cursor:pointer;
-border-radius:4px;
-}
-
-.file-type{
-text-align:center;
-color:#888;
-font-size:13px;
-margin-top:10px;
-}
-
-
-/* form */
-
-select,
-input,
-textarea{
-width:100%;
-padding:10px;
-margin-bottom:12px;
-border:1px solid #ddd;
-border-radius:4px;
-}
-
-textarea{
-height:90px;
-}
-
-.budget{
-display:flex;
-gap:10px;
-}
-
-.submit-btn{
-background:#3ca7b2;
-color:white;
-border:none;
-padding:12px;
-width:100%;
-font-size:16px;
-cursor:pointer;
-margin-top:10px;
-}
-
-
-/* contact */
-
-.contact .help{
-margin-top:10px;
-color:#666;
-font-size:13px;
-}
-
-.whatsapp{
-color:#25D366;
-}
-
-
-/* responsive */
-
-@media(max-width:992px){
-
-.container{
-width:90%;
-}
+/* FORM GRID */
 
 .form-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+margin-top:20px;
+}
+
+/* INPUT */
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-size:13px;
+margin-bottom:5px;
+color:#555;
+}
+
+input,
+select,
+textarea{
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+font-size:14px;
+width:100%;
+}
+
+/* TEXTAREA */
+
+.full{
+grid-column:1/4;
+}
+
+textarea{
+height:80px;
+}
+
+/* BUTTON */
+
+.submit-btn{
+margin-top:20px;
+width:100%;
+padding:12px;
+border:none;
+background:#3fa5ab;
+color:#fff;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+/* UPLOAD */
+
+.upload-area{
+border:2px dashed #ddd;
+padding:40px;
+text-align:center;
+border-radius:8px;
+}
+
+/* CONTACT */
+
+.contact-card input,
+.contact-card textarea{
+margin-bottom:12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.customize-grid{
 grid-template-columns:1fr;
 }
 
-.steps{
+.form-grid{
 grid-template-columns:1fr 1fr;
+}
+
+.full{
+grid-column:1/3;
 }
 
 }
 
 @media(max-width:600px){
 
-.steps{
+.form-grid{
 grid-template-columns:1fr;
 }
 
-.title{
-font-size:26px;
+.full{
+grid-column:auto;
 }
 
 }
@@ -191,121 +143,163 @@ font-size:26px;
     </div>
 </section>
 
-<section class="customize">
+<section class="customize-wrapper">
 
-<div class="container">
+<div class="containers">
 
-<h2 class="title">CUSTOMIZE YOUR JEWELLERY</h2>
-<p class="subtitle">Your Design ... Our Craftsmanship...!</p>
+<div class="customize-grid">
 
+<!-- LEFT : Upload -->
+<div class="card upload-card">
 
-<!-- STEPS -->
+<h3>Upload Your Design</h3>
 
-<div class="steps">
-
-<div class="step">
-<h4>STEP 1</h4>
-<p>Share your jewellery design idea.</p>
-</div>
-
-<div class="step">
-<h4>STEP 2</h4>
-<p>Cost estimation and analysis.</p>
-</div>
-
-<div class="step">
-<h4>STEP 3</h4>
-<p>We cast the perfect mould.</p>
-</div>
-
-<div class="step">
-<h4>STEP 4</h4>
-<p>Your jewellery is ready.</p>
+<div class="upload-area">
+<i class="fa fa-camera"></i>
+<p>Upload Image (Max 5MB)</p>
+<input type="file">
 </div>
 
 </div>
 
 
-<!-- MAIN FORM -->
+<!-- CENTER : Jewellery Specifications -->
 
-<div class="form-grid">
-
-
-<!-- Upload -->
-
-<div class="card upload">
-
-<h3>UPLOAD YOUR DESIGN</h3>
-
-<div class="upload-box">
-<img src="https://cdn-icons-png.flaticon.com/512/685/685655.png">
-</div>
-
-<button class="upload-btn">
-UPLOAD IMAGE (MAX 5MB)
-</button>
-
-<p class="file-type">JPG, PNG or PDF</p>
-
-</div>
-
-
-<!-- Specs -->
-
-<div class="card">
+<div class="card spec-card">
 
 <h3>Jewellery Specifications</h3>
 
+<form>
+
+<div class="form-grid">
+
+<!-- Diamond Section -->
+
+<div class="form-group">
 <label>Diamond Clarity</label>
 <select>
-<option>Please select</option>
+<option>Select</option>
 </select>
+</div>
 
+<div class="form-group">
+<label>Diamond Shape</label>
+<select>
+<option>Select</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Diamond Size</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Diamond Color</label>
+<select>
+<option>Select</option>
+</select>
+</div>
+
+<!-- Gold Section -->
+
+<div class="form-group">
 <label>Gold Colour</label>
 <select>
-<option>Please select</option>
+<option>Select</option>
 </select>
+</div>
 
+<div class="form-group">
 <label>Gold Purity</label>
 <select>
-<option>Please select</option>
+<option>Select</option>
 </select>
+</div>
 
-<label>Your Budget</label>
+<div class="form-group">
+<label>Metal Weight</label>
+<input type="text">
+</div>
 
-<div class="budget">
+<div class="form-group">
+<label>Jewellery Type</label>
 <select>
-<option>₹ INR</option>
+<option>Select</option>
 </select>
-
-<input type="text" placeholder="Your Budget">
 </div>
 
-<textarea placeholder="Describe your design idea"></textarea>
+<!-- Ring -->
 
-<button class="submit-btn">SUBMIT</button>
+<div class="form-group">
+<label>Ring Size</label>
+<input type="text">
+</div>
+
+<div class="form-group">
+<label>Setting Type</label>
+<select>
+<option>Select</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Stone Type</label>
+<select>
+<option>Select</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Stone Weight</label>
+<input type="text">
+</div>
+
+<!-- Delivery -->
+
+<div class="form-group">
+<label>Delivery Date</label>
+<input type="date">
+</div>
+
+<div class="form-group">
+<label>Occasion</label>
+<select>
+<option>Select</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Budget</label>
+<input type="text">
+</div>
+
+<!-- Description -->
+
+<div class="form-group full">
+<label>Describe your design</label>
+<textarea></textarea>
+</div>
+
+</div>
+
+<button class="submit-btn">Submit</button>
+
+</form>
 
 </div>
 
 
-<!-- Contact -->
+<!-- RIGHT : Contact -->
 
-<div class="card contact">
+<div class="card contact-card">
 
 <h3>Your Contact Details</h3>
 
 <input type="text" placeholder="Name">
-<input type="email" placeholder="Email Id">
-<input type="text" placeholder="Mobile Number">
+<input type="email" placeholder="Email">
+<input type="text" placeholder="Mobile">
 <textarea placeholder="Address"></textarea>
-
-<p class="help">IN CASE OF ANY QUERIES CALL US ON</p>
-
-<h4>+91 656555 556</h4>
-
-<p>OR Whatsapp Us!</p>
-
-<h4 class="whatsapp">+91 8888888888</h4>
 
 </div>
 
@@ -315,5 +309,4 @@ UPLOAD IMAGE (MAX 5MB)
 </div>
 
 </section>
-<br><br><br>
 @endsection
