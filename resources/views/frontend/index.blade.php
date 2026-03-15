@@ -3,99 +3,92 @@
 @section('title', 'home')
 @section('content') 
 <style>
-.story-section{
-padding:100px 0;
-background:url("image/hawamahal.jpg");
-background-size:cover;
-background-position:center;
+    .testimonial-section{
+padding:80px 0;
+background:#f6f3f2;
 text-align:center;
 }
 
-.story-title h2{
-font-size:40px;
-color:#6a4a2f;
-margin-bottom:10px;
-font-family:serif;
-}
-
-.story-title p{
-color:#8c7a65;
-margin-bottom:15px;
-}
-
-.divider{
-width:120px;
-height:2px;
-background:#b58b47;
-margin:15px auto 60px;
-position:relative;
-}
-
-.story-grid{
-display:flex;
-justify-content:center;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.story-card{
-text-align:center;
-width:260px;
-}
-
-.arch-frame{
-width:260px;
-height:420px;
-border:4px solid #b58b47;
-border-radius:140px 140px 20px 20px;
-overflow:hidden;
-position:relative;
-background:#fff;
-}
-
-.arch-frame img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.story-card h3{
-margin-top:18px;
-font-size:20px;
-color:#6a4a2f;
-}
-
-/* Coming Soon */
-.coming img{
-filter:blur(5px);
-}
-
-.coming-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-font-size:24px;
+.testimonial-title{
+font-size:28px;
+letter-spacing:3px;
+color:#3a2d2d;
+margin-bottom:60px;
 font-weight:500;
 }
 
-.heritage-section{
-    padding:80px 0;
-    background:#faf8f5;
+.testimonial-item{
+padding:30px;
+max-width:420px;
+margin:auto;
 }
 
-.heritage-title{
-    font-size:36px;
-    font-weight:500;
-    color:#7b5a3a;
-    margin-bottom:25px;
-    font-family: 'Playfair Display', serif;
+.quote{
+font-size:70px;
+color:#a7a7a7;
+line-height:0;
+margin-bottom:20px;
 }
 
-.heritage-text{
-    color:#555;
-    margin-bottom:15px;
+.testimonial-item p{
+font-size:16px;
+color:#5a5a5a;
+line-height:28px;
+margin-bottom:25px;
+}
+
+/* user */
+
+.testimonial-user{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.testimonial-user img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:10px;
+}
+
+.testimonial-user span{
+font-size:14px;
+color:#333;
+}
+
+/* owl dots */
+
+.owl-dots{
+margin-top:30px;
+}
+
+.owl-dot span{
+width:10px;
+height:10px;
+background:#cfcfcf;
+display:block;
+border-radius:50%;
+margin:5px;
+}
+
+.owl-dot.active span{
+background:#000;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.testimonial-title{
+font-size:24px;
+}
+
+.testimonial-item{
+padding:20px;
+}
+
 }
 </style>
     <!-- Hero Section Begin -->
@@ -226,6 +219,79 @@ font-weight:500;
     </div>
 </section>
   <br><br>
+
+  <section class="testimonial-section">
+
+<div class="container">
+
+<h2 class="testimonial-title">
+STORIES OF GRACE AND <br> GRANDEUR
+</h2>
+
+<div class="testimonial-slider owl-carousel">
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+Best experience for me as a bride. I did a lot of research pan India but
+there’s nothing compared to Raniwala in terms of both pricing and design.
+</p>
+
+<div class="testimonial-user">
+<img src="image/bestsale.jpg">
+<span>Kuvam</span>
+</div>
+</div>
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+My experience at Raniwala’s was super smooth and hassle free. I went
+with my parents for my bridal jewellery shopping and every single person
+was accommodating and sweet.
+</p>
+
+<div class="testimonial-user">
+<img src="image/user2.jpg">
+<span>Tanisha</span>
+</div>
+</div>
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+Had a wonderful experience at Raniwala’s. Your hospitality was top notch.
+Thank you for making me look stunning on my wedding day.
+</p>
+
+<div class="testimonial-user">
+<img src="image/user3.jpg">
+<span>Divya</span>
+</div>
+</div>
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+Very good collection and kind staff. Loved the bridal sets and designs.
+</p>
+
+<div class="testimonial-user">
+<img src="image/user4.jpg">
+<span>Alekha</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<br><br>
     <!-- Categroy Section End -->
 
     <section class="story-section">
@@ -579,6 +645,52 @@ font-weight:500;
     </section>
     <!-- Categories Section End -->
 
+    <section class="connect-section">
+
+<div class="container">
+
+<h2 class="connect-title">LET’S CONNECT</h2>
+
+<div class="connect-grid">
+
+<!-- LEFT IMAGE -->
+<div class="connect-image">
+<img src="{{asset('image/letconnect.jpg')}}" alt="">
+</div>
+
+<!-- FORM -->
+<div class="connect-form">
+
+<form>
+
+<input type="text" placeholder="Full name*" required>
+
+<input type="email" placeholder="Email address*" required>
+
+<input type="text" placeholder="Mobile number*" required>
+
+<div class="double-input">
+
+<input type="date" placeholder="Preferred date">
+
+<input type="time" placeholder="Preferred time">
+
+</div>
+
+<textarea placeholder="How did you hear about us?*"></textarea>
+
+<button type="submit">Send</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<br><br>
     <!-- Instagram Section Begin -->
     <!-- <section class="instagram spad">
         <div class="container">
