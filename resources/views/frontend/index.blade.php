@@ -2,6 +2,102 @@
 
 @section('title', 'home')
 @section('content') 
+<style>
+.story-section{
+padding:100px 0;
+background:url("image/hawamahal.jpg");
+background-size:cover;
+background-position:center;
+text-align:center;
+}
+
+.story-title h2{
+font-size:40px;
+color:#6a4a2f;
+margin-bottom:10px;
+font-family:serif;
+}
+
+.story-title p{
+color:#8c7a65;
+margin-bottom:15px;
+}
+
+.divider{
+width:120px;
+height:2px;
+background:#b58b47;
+margin:15px auto 60px;
+position:relative;
+}
+
+.story-grid{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.story-card{
+text-align:center;
+width:260px;
+}
+
+.arch-frame{
+width:260px;
+height:420px;
+border:4px solid #b58b47;
+border-radius:140px 140px 20px 20px;
+overflow:hidden;
+position:relative;
+background:#fff;
+}
+
+.arch-frame img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.story-card h3{
+margin-top:18px;
+font-size:20px;
+color:#6a4a2f;
+}
+
+/* Coming Soon */
+.coming img{
+filter:blur(5px);
+}
+
+.coming-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+font-size:24px;
+font-weight:500;
+}
+
+.heritage-section{
+    padding:80px 0;
+    background:#faf8f5;
+}
+
+.heritage-title{
+    font-size:36px;
+    font-weight:500;
+    color:#7b5a3a;
+    margin-bottom:25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.heritage-text{
+    color:#555;
+    margin-bottom:15px;
+}
+</style>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -52,7 +148,7 @@
             </div> -->
         </div>
     </section>
-    <br><br><br><br>
+    <br><br>
     <!-- Hero Section End -->
 
     <!-- Banner Section Begin -->
@@ -103,52 +199,74 @@
         </div>
     </section>
     <!-- Banner Section End -->
+       <br><br>
+     <section class="heritage-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
 
-    <!-- Categroy Section End -->
+                <h2 class="heritage-title">
+                    Where Bikaner's Heritage Becomes Heirlooms
+                </h2>
 
-    <section class="product spad">
-        <div class="home-demo">
-            <div class="owl-carousel owl-theme">
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy1.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy2.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy3.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy4.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy5.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy6.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy7.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy8.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
-                <div class="category-item">
-                    <div class="product__item__pic set-bg" data-setbg="image/categroy9.jpg"></div>
-                    <h6 class="category-title">Pendants</h6>
-                </div>
+                <p class="heritage-text">
+                    Born in the royal city of Bikaner and shaped by decades of expertise, 
+                    Bikaneri Jewels stands for timeless design and uncompromising craftsmanship. 
+                    Since 1942, our journey has been guided by a deep respect for tradition, 
+                    masterful artistry, and a commitment to excellence.
+                </p>
+
+                <p class="heritage-text">
+                    Every creation reflects our legacy — where heritage inspires elegance 
+                    and jewellery becomes an heirloom.
+                </p>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+  <br><br>
+    <!-- Categroy Section End -->
 
+    <section class="story-section">
+
+<div class="container">
+
+<div class="story-title">
+<h2>Where Stories Begins</h2>
+<p>Explore Collections that Capture Every Occasion</p>
+<div class="divider"></div>
+</div>
+
+<div class="story-grid">
+
+<div class="story-card">
+<div class="arch-frame">
+<img src="{{asset('image/bestsale8.jpg')}}">
+</div>
+<h3>Ek Jod</h3>
+</div>
+
+<div class="story-card">
+<div class="arch-frame">
+<img src="{{asset('image/bestsale7.jpg')}}">
+</div>
+<h3>Vanhi</h3>
+</div>
+
+<div class="story-card coming">
+<div class="arch-frame">
+<img src="{{asset('image/bestsale6.jpg')}}">
+<div class="coming-text">Coming Soon</div>
+</div>
+<h3>Noor-E-Azal</h3>
+</div>
+
+</div>
+
+</div>
+</section>
+  <br><br>
     <!-- Categroy Section End -->
 
     <!-- Product Section Begin -->

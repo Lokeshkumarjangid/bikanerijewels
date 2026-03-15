@@ -613,7 +613,7 @@ ol {
 }
 
 .hero__items {
-	height: 800px;
+	height: 550px;
 	padding-top: 230px;
 }
 
@@ -789,10 +789,9 @@ ol {
 -----------------------*/
 
 .categories {
-	background: #f3f2ee;
 	overflow: hidden;
 	padding-top: 1px;
-	padding-bottom: 125px;
+	padding-bottom: 60px;
 }
 
 .categories__text {
@@ -1980,9 +1979,31 @@ ol {
 -----------------------*/
 
 .footer {
-	background: #111111;
+	background: url("../../image/hawamahal2.jpg") no-repeat center bottom;
+	background-size: cover;
 	padding-top: 70px;
+	position: relative;
 }
+
+/* light overlay */
+
+.footer::before{
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(255,255,255,0.65);
+	z-index:1;
+}
+
+.footer .container{
+	position:relative;
+	z-index:2;
+}
+
+/* ABOUT */
 
 .footer__about {
 	margin-bottom: 30px;
@@ -1997,16 +2018,18 @@ ol {
 }
 
 .footer__about p {
-	color: #b7b7b7;
+	color: #5c4a45;
 	margin-bottom: 30px;
 }
+
+/* WIDGET */
 
 .footer__widget {
 	margin-bottom: 30px;
 }
 
 .footer__widget h6 {
-	color: #ffffff;
+	color: #b45555;
 	font-size: 15px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -2014,18 +2037,28 @@ ol {
 	margin-bottom: 20px;
 }
 
+/* LINKS */
+
 .footer__widget ul li {
 	line-height: 36px;
 	list-style: none;
 }
 
 .footer__widget ul li a {
-	color: #b7b7b7;
+	color: #5c4a45;
 	font-size: 15px;
+	transition: 0.3s;
 }
 
+.footer__widget ul li a:hover {
+	color: #b45555;
+	padding-left: 5px;
+}
+
+/* NEWSLETTER */
+
 .footer__widget .footer__newslatter p {
-	color: #b7b7b7;
+	color: #5c4a45;
 }
 
 .footer__widget .footer__newslatter form {
@@ -2035,35 +2068,19 @@ ol {
 .footer__widget .footer__newslatter form input {
 	width: 100%;
 	font-size: 15px;
-	color: #3d3d3d;
+	color: #5c4a45;
 	background: transparent;
 	border: none;
 	padding: 15px 0;
-	border-bottom: 2px solid #ffffff;
-}
-
-.footer__widget .footer__newslatter form input::-webkit-input-placeholder {
-	color: #3d3d3d;
-}
-
-.footer__widget .footer__newslatter form input::-moz-placeholder {
-	color: #3d3d3d;
-}
-
-.footer__widget .footer__newslatter form input:-ms-input-placeholder {
-	color: #3d3d3d;
-}
-
-.footer__widget .footer__newslatter form input::-ms-input-placeholder {
-	color: #3d3d3d;
+	border-bottom: 2px solid #b45555;
 }
 
 .footer__widget .footer__newslatter form input::placeholder {
-	color: #3d3d3d;
+	color: #5c4a45;
 }
 
 .footer__widget .footer__newslatter form button {
-	color: #b7b7b7;
+	color: #b45555;
 	font-size: 16px;
 	position: absolute;
 	right: 5px;
@@ -2073,24 +2090,49 @@ ol {
 	border: none;
 }
 
+/* SOCIAL ICONS */
+
+.social-icons{
+	display:flex;
+	gap:15px;
+	padding:0;
+	margin-top:10px;
+}
+
+.social-icons li{
+	list-style:none;
+}
+
+.social-icons a{
+	color:#8b3a3a;
+	font-size:20px;
+	transition:0.3s;
+}
+
+.social-icons a:hover{
+	color:#5a1f1f;
+	transform:scale(1.2);
+}
+
+/* COPYRIGHT */
+
 .footer__copyright__text {
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(0,0,0,0.15);
 	padding: 20px 0;
 	margin-top: 40px;
+	text-align:center;
 }
 
 .footer__copyright__text p {
-	color: #b7b7b7;
+	color: #5c4a45;
 	margin-bottom: 0;
-}
-
-.footer__copyright__text p i {
-	color: #e53637;
+	font-size:14px;
 }
 
 .footer__copyright__text p a {
-	color: #e53637;
+	color: #b45555;
 }
+
 
 /*---------------------
   Breadcrumb
@@ -3417,7 +3459,7 @@ ol {
 
 .social-icons li a i{
     font-size:24px;   /* icon size bada */
-    color:#fff;
+    color:#d97676;
 }
 
 .social-icons li a i:hover{
