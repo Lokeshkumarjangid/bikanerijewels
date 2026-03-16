@@ -11,7 +11,7 @@
         <form>
             <div class="form-group">
                 <label>Enter Email No</label>
-                <input type="text" placeholder="Enter Email Number">
+                <input type="text" placeholder="Enter Email Email">
             </div>
 
             <button type="submit" class="submit-btn">

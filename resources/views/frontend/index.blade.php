@@ -363,14 +363,14 @@ Very good collection and kind staff. Loved the bridal sets and designs.
                         <div class="product__item__text">
                             <h6>Celestical Dot 9KT Gold Lab Grown Diamond Necklace</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
-                            <div class="rating">
+                            <!-- <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>67.24</h5>
+                            </div> -->
+                            <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                             <div class="product__color__select">
                                 <label for="pc-1">
                                     <input type="radio" id="pc-1">
@@ -399,14 +399,14 @@ Very good collection and kind staff. Loved the bridal sets and designs.
                         <div class="product__item__text">
                             <h6>Axis Dot 9KT Gold Lab Grown Diamond Single Stud Earring</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
-                            <div class="rating">
+                            <!-- <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>67.24</h5>
+                            </div> -->
+                            <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                             <div class="product__color__select">
                                 <label for="pc-4">
                                     <input type="radio" id="pc-4">
@@ -436,14 +436,14 @@ Very good collection and kind staff. Loved the bridal sets and designs.
                         <div class="product__item__text">
                             <h6>Hexa Star 9KT Gold Lab Grown Diamond Stud Earring</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
-                            <div class="rating">
+                            <!-- <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>43.48</h5>
+                            </div> -->
+                            <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                             <div class="product__color__select">
                                 <label for="pc-7">
                                     <input type="radio" id="pc-7">
@@ -472,14 +472,14 @@ Very good collection and kind staff. Loved the bridal sets and designs.
                         <div class="product__item__text">
                             <h6>Square Cluster 9KT Gold Lab Grown Diamond Necklace</h6>
                             <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
-                            <div class="rating">
+                            <!-- <div class="rating">
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
-                            </div>
-                            <h5>60.9</h5>
+                            </div> -->
+                            <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                             <div class="product__color__select">
                                 <label for="pc-10">
                                     <input type="radio" id="pc-10">

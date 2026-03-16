@@ -215,7 +215,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -240,7 +240,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -263,7 +263,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -286,7 +286,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -309,7 +309,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -332,7 +332,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -355,7 +355,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -378,7 +378,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -401,7 +401,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -424,7 +424,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -447,7 +447,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
@@ -470,7 +470,7 @@
                                 <h6>Product 1</h6>
                                 <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
                                 
-                                <h5>67.24</h5>
+                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                 <div class="product__color__select">
                                     <label for="pc-4">
                                         <input type="radio" id="pc-4">
