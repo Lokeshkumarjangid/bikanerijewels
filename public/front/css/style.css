@@ -4396,3 +4396,10 @@ color:white;
 		height: 250px;
 	}
 }
+
+@media screen and (max-width: 480px) {
+	.videosection {
+      width: 100%;
+	  height: 100vh;
+	}
+}
