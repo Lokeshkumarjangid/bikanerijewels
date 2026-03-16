@@ -220,78 +220,6 @@ padding:20px;
 </section>
   <br><br>
 
-  <section class="testimonial-section">
-
-<div class="container">
-
-<h2 class="testimonial-title">
-STORIES OF GRACE AND <br> GRANDEUR
-</h2>
-
-<div class="testimonial-slider owl-carousel">
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-Best experience for me as a bride. I did a lot of research pan India but
-there’s nothing compared to Raniwala in terms of both pricing and design.
-</p>
-
-<div class="testimonial-user">
-<img src="image/bestsale.jpg">
-<span>Kuvam</span>
-</div>
-</div>
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-My experience at Raniwala’s was super smooth and hassle free. I went
-with my parents for my bridal jewellery shopping and every single person
-was accommodating and sweet.
-</p>
-
-<div class="testimonial-user">
-<img src="image/user2.jpg">
-<span>Tanisha</span>
-</div>
-</div>
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-Had a wonderful experience at Raniwala’s. Your hospitality was top notch.
-Thank you for making me look stunning on my wedding day.
-</p>
-
-<div class="testimonial-user">
-<img src="image/user3.jpg">
-<span>Divya</span>
-</div>
-</div>
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-Very good collection and kind staff. Loved the bridal sets and designs.
-</p>
-
-<div class="testimonial-user">
-<img src="image/user4.jpg">
-<span>Alekha</span>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-<br><br>
     <!-- Categroy Section End -->
 
     <section class="story-section">
@@ -643,6 +571,79 @@ Very good collection and kind staff. Loved the bridal sets and designs.
             </div>
         </div>
     </section>
+
+    <section class="testimonial-section">
+
+<div class="container">
+
+<h2 class="testimonial-title">
+STORIES OF GRACE AND <br> GRANDEUR
+</h2>
+
+<div class="testimonial-slider owl-carousel">
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+Best experience for me as a bride. I did a lot of research pan India but
+there’s nothing compared to Raniwala in terms of both pricing and design.
+</p>
+
+<div class="testimonial-user">
+<img src="image/bestsale.jpg">
+<span>Kuvam</span>
+</div>
+</div>
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+My experience at Raniwala’s was super smooth and hassle free. I went
+with my parents for my bridal jewellery shopping and every single person
+was accommodating and sweet.
+</p>
+
+<div class="testimonial-user">
+<img src="image/user2.jpg">
+<span>Tanisha</span>
+</div>
+</div>
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+Had a wonderful experience at Raniwala’s. Your hospitality was top notch.
+Thank you for making me look stunning on my wedding day.
+</p>
+
+<div class="testimonial-user">
+<img src="image/user3.jpg">
+<span>Divya</span>
+</div>
+</div>
+
+<div class="testimonial-item">
+<div class="quote">“</div>
+
+<p>
+Very good collection and kind staff. Loved the bridal sets and designs.
+</p>
+
+<div class="testimonial-user">
+<img src="image/user4.jpg">
+<span>Alekha</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<br><br>
     <!-- Categories Section End -->
 
     <section class="connect-section">
