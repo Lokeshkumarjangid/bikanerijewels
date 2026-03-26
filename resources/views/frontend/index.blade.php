@@ -2,95 +2,6 @@
 
 @section('title', 'home')
 @section('content') 
-<style>
-    .testimonial-section{
-padding:80px 0;
-background:#f6f3f2;
-text-align:center;
-}
-
-.testimonial-title{
-font-size:28px;
-letter-spacing:3px;
-color:#3a2d2d;
-margin-bottom:60px;
-font-weight:500;
-}
-
-.testimonial-item{
-padding:30px;
-max-width:420px;
-margin:auto;
-}
-
-.quote{
-font-size:70px;
-color:#a7a7a7;
-line-height:0;
-margin-bottom:20px;
-}
-
-.testimonial-item p{
-font-size:16px;
-color:#5a5a5a;
-line-height:28px;
-margin-bottom:25px;
-}
-
-/* user */
-
-.testimonial-user{
-display:flex;
-flex-direction:column;
-align-items:center;
-}
-
-.testimonial-user img{
-width:60px;
-height:60px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:10px;
-}
-
-.testimonial-user span{
-font-size:14px;
-color:#333;
-}
-
-/* owl dots */
-
-.owl-dots{
-margin-top:30px;
-}
-
-.owl-dot span{
-width:10px;
-height:10px;
-background:#cfcfcf;
-display:block;
-border-radius:50%;
-margin:5px;
-}
-
-.owl-dot.active span{
-background:#000;
-}
-
-/* mobile */
-
-@media(max-width:768px){
-
-.testimonial-title{
-font-size:24px;
-}
-
-.testimonial-item{
-padding:20px;
-}
-
-}
-</style>
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -223,43 +134,36 @@ padding:20px;
     <!-- Categroy Section End -->
 
     <section class="story-section">
+        <div class="container">
+            <div class="story-title">
+                <h2>Where Stories Begins</h2>
+                <p>Explore Collections that Capture Every Occasion</p>
+                <div class="divider"></div>
+                <div class="story-grid">
+                    <div class="story-card">
+                        <div class="arch-frame">
+                            <img src="{{asset('image/bestsale8.jpg')}}">
+                        </div>
+                        <h3>Ek Jod</h3>
+                    </div>
 
-<div class="container">
+                    <div class="story-card">
+                        <div class="arch-frame">
+                            <img src="{{asset('image/bestsale7.jpg')}}">
+                        </div>
+                        <h3>Vanhi</h3>
+                    </div>
 
-<div class="story-title">
-<h2>Where Stories Begins</h2>
-<p>Explore Collections that Capture Every Occasion</p>
-<div class="divider"></div>
-</div>
-
-<div class="story-grid">
-
-<div class="story-card">
-<div class="arch-frame">
-<img src="{{asset('image/bestsale8.jpg')}}">
-</div>
-<h3>Ek Jod</h3>
-</div>
-
-<div class="story-card">
-<div class="arch-frame">
-<img src="{{asset('image/bestsale7.jpg')}}">
-</div>
-<h3>Vanhi</h3>
-</div>
-
-<div class="story-card coming">
-<div class="arch-frame">
-<img src="{{asset('image/bestsale6.jpg')}}">
-<div class="coming-text">Coming Soon</div>
-</div>
-<h3>Noor-E-Azal</h3>
-</div>
-
-</div>
-
-</div>
-</section>
+                    <div class="story-card">
+                        <div class="arch-frame">
+                            <img src="{{asset('image/bestsale6.jpg')}}">
+                        </div>
+                        <h3>Noor</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
   <br><br>
     <!-- Categroy Section End -->
 
@@ -573,125 +477,91 @@ padding:20px;
     </section>
 
     <section class="testimonial-section">
-
-<div class="container">
-
-<h2 class="testimonial-title">
-STORIES OF GRACE AND <br> GRANDEUR
-</h2>
-
-<div class="testimonial-slider owl-carousel">
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-Best experience for me as a bride. I did a lot of research pan India but
-there’s nothing compared to Raniwala in terms of both pricing and design.
-</p>
-
-<div class="testimonial-user">
-<img src="image/bestsale.jpg">
-<span>Kuvam</span>
-</div>
-</div>
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-My experience at Raniwala’s was super smooth and hassle free. I went
-with my parents for my bridal jewellery shopping and every single person
-was accommodating and sweet.
-</p>
-
-<div class="testimonial-user">
-<img src="image/user2.jpg">
-<span>Tanisha</span>
-</div>
-</div>
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-Had a wonderful experience at Raniwala’s. Your hospitality was top notch.
-Thank you for making me look stunning on my wedding day.
-</p>
-
-<div class="testimonial-user">
-<img src="image/user3.jpg">
-<span>Divya</span>
-</div>
-</div>
-
-<div class="testimonial-item">
-<div class="quote">“</div>
-
-<p>
-Very good collection and kind staff. Loved the bridal sets and designs.
-</p>
-
-<div class="testimonial-user">
-<img src="image/user4.jpg">
-<span>Alekha</span>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-<br><br>
+        <div class="container">
+            <h2 class="testimonial-title">
+                STORIES OF GRACE AND <br> GRANDEUR
+            </h2>
+            <div class="testimonial-slider owl-carousel">
+                <div class="testimonial-item">
+                    <div class="quote">“
+                    </div>
+                    <p>
+                    Best experience for me as a bride. I did a lot of research pan India but
+                    there’s nothing compared to Raniwala in terms of both pricing and design.
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="image/bestsale.jpg">
+                        <span>Kuvam</span>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="quote">“
+                    </div>
+                    <p>
+                    Best experience for me as a bride. I did a lot of research pan India but
+                    there’s nothing compared to Raniwala in terms of both pricing and design.
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="image/bestsale.jpg">
+                        <span>Ravi</span>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="quote">“
+                    </div>
+                    <p>
+                    Best experience for me as a bride. I did a lot of research pan India but
+                    there’s nothing compared to Raniwala in terms of both pricing and design.
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="image/bestsale.jpg">
+                        <span>Ravi</span>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="quote">“
+                    </div>
+                    <p>
+                    Best experience for me as a bride. I did a lot of research pan India but
+                    there’s nothing compared to Raniwala in terms of both pricing and design.
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="image/bestsale.jpg">
+                        <span>Ravi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
     <!-- Categories Section End -->
 
     <section class="connect-section">
+        <div class="container">
+            <h2 class="connect-title">LET’S CONNECT</h2>
+                <div class="connect-grid">
+                    <div class="connect-image">
+                        <img src="{{asset('image/letconnect.jpg')}}" alt="">
+                    </div>
+                    <div class="connect-form">
+                        <form>
+                            <input type="text" placeholder="Full name*" required>
+                            <input type="email" placeholder="Email address*" required>
+                            <input type="text" placeholder="Mobile number*" required>
+                            <div class="double-input">
+                                <input type="date" placeholder="Preferred date">
+                                <input type="time" placeholder="Preferred time">
+                            </div>
+                            <textarea placeholder="How did you hear about us?*"></textarea>
+                            <button type="submit">Send</button>
 
-<div class="container">
+                        </form>
+                    </div>
 
-<h2 class="connect-title">LET’S CONNECT</h2>
-
-<div class="connect-grid">
-
-<!-- LEFT IMAGE -->
-<div class="connect-image">
-<img src="{{asset('image/letconnect.jpg')}}" alt="">
-</div>
-
-<!-- FORM -->
-<div class="connect-form">
-
-<form>
-
-<input type="text" placeholder="Full name*" required>
-
-<input type="email" placeholder="Email address*" required>
-
-<input type="text" placeholder="Mobile number*" required>
-
-<div class="double-input">
-
-<input type="date" placeholder="Preferred date">
-
-<input type="time" placeholder="Preferred time">
-
-</div>
-
-<textarea placeholder="How did you hear about us?*"></textarea>
-
-<button type="submit">Send</button>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<br><br>
+                </div>
+        </div>
+    </section>
+    <br><br>
     <!-- Instagram Section Begin -->
     <!-- <section class="instagram spad">
         <div class="container">

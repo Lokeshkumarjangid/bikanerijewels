@@ -3860,6 +3860,80 @@ color:white;
     color:#fff;
 }
 
+.testimonial-section{
+padding:80px 0;
+background:#f6f3f2;
+text-align:center;
+}
+
+.testimonial-title{
+font-size:28px;
+letter-spacing:3px;
+color:#3a2d2d;
+margin-bottom:60px;
+font-weight:500;
+}
+
+.testimonial-item{
+padding:30px;
+max-width:420px;
+margin:auto;
+}
+
+.quote{
+font-size:70px;
+color:#a7a7a7;
+line-height:0;
+margin-bottom:20px;
+}
+
+.testimonial-item p{
+font-size:16px;
+color:#5a5a5a;
+line-height:28px;
+margin-bottom:25px;
+}
+
+/* user */
+
+.testimonial-user{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.testimonial-user img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:10px;
+}
+
+.testimonial-user span{
+font-size:14px;
+color:#333;
+}
+
+/* owl dots */
+
+.owl-dots{
+margin-top:30px;
+}
+
+.owl-dot span{
+width:10px;
+height:10px;
+background:#cfcfcf;
+display:block;
+border-radius:50%;
+margin:5px;
+}
+
+.owl-dot.active span{
+background:#000;
+}
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
@@ -3979,6 +4053,14 @@ color:white;
 
 	.connect-section{
 	padding:50px 20px;
+	}
+
+	.testimonial-title{
+	font-size:24px;
+	}
+
+	.testimonial-item{
+	padding:20px;
 	}
 }
 
