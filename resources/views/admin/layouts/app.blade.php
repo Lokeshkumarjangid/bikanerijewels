@@ -44,6 +44,7 @@
     <script src="{{asset('admin/js/overlayscrollbars/overlayscrollbars.min.js')}}"></script>
     <script src="{{asset('admin/js/adminlte/adminlte.min.js')}}"></script>
     <script src="{{asset('admin/js/validate/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('admin/js/validate/additional-methods.min.js')}}"></script>
     <script src="{{asset('admin/js/toastr/toastr.min.js')}}"></script>
     <script src="{{asset('admin/js/sweetalert2/sweetalert2.min.js')}}"></script>
     <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>

@@ -29,27 +29,30 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{ route('categories.store') }}" method="POST">
+              <form id="quickForm" action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="categoryName">Categroy Name</label>
-                                <select class="form-control">
-                                <option>Please select</option>
+                                <select class="form-control" name='categroy_id'>
+                                <option value=''>Please select</option>
                                 @if(!empty($categroy))
                                     @foreach($categroy as $value)
                                         <option value='{{$value->id}}'>{{$value->name}}</option>
                                     @endforeach
                                 @endif
                                 </select>
+                                @error('categroy_id')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="categoryName">Product Name</label>
-                                <input type="text" name="name" class="form-control" id="categoryName" placeholder="Category Name">
+                                <label for="productname">Product Name</label>
+                                <input type="text" name="product_name" class="form-control" id="productname" placeholder="Product Name">
                                 @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -58,8 +61,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="skuName">Sku</label>
-                                <input type="text" name="name" class="form-control" id="skuName" placeholder="Sku">
-                                @error('name')
+                                <input type="text" name="sku" class="form-control" id="skuName" placeholder="Sku">
+                                @error('sku')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -67,8 +70,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="colourName">Colour</label>
-                                <input type="text" name="name" class="form-control" id="colourName" placeholder="Colour">
-                                @error('name')
+                                <input type="text" name="colour" class="form-control" id="colourName" placeholder="Colour">
+                                @error('colour')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -76,8 +79,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="metalName">Metal Type</label>
-                                <input type="text" name="name" class="form-control" id="metalName" placeholder="Metal Type">
-                                @error('name')
+                                <input type="text" name="metal_type" class="form-control" id="metalName" placeholder="Metal Type">
+                                @error('metal_type')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -85,8 +88,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="metalfinishName">Metal Finish</label>
-                                <input type="text" name="name" class="form-control" id="metalfinishName" placeholder="Metal Finish">
-                                @error('name')
+                                <input type="text" name="metal_finish" class="form-control" id="metalfinishName" placeholder="Metal Finish">
+                                @error('metal_finish')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -94,8 +97,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="weightName">Gross Weight</label>
-                                <input type="text" name="name" class="form-control" id="weightName" placeholder="Gross Weight">
-                                @error('name')
+                                <input type="text" name="gross_weight" class="form-control" id="weightName" placeholder="Gross Weight">
+                                @error('gross_weight')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -105,9 +108,12 @@
                                 <label for="productimage">Product Image</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="productimage">
+                                        <input type="file" class="custom-file-input" id="productimage" name="product_img[]" multiple>
                                         <label class="custom-file-label" for="productimage">Choose file</label>
                                     </div>
+                                    @error('product_img')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -116,7 +122,7 @@
                                 <label for="productvideo">Product Video</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="productvideo">
+                                        <input type="file" class="custom-file-input" id="productvideo" name='product_video'>
                                         <label class="custom-file-label" for="productvideo">Choose file</label>
                                     </div>
                                 </div>
@@ -126,7 +132,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
                 </div>
               </form>
             </div>
@@ -145,33 +151,90 @@
 @endsection
 @section('scripts')
 <script>
-    $(function () {
+$(function () {
+
     $('#quickForm').validate({
+
+        ignore: [],
+
         rules: {
-        name: {
-            required: true,
+            categroy_id: { required: true },
+            product_name: { required: true },
+            sku: { required: true },
+            colour: { required: true },
+            metal_type: { required: true },
+            metal_finish: { required: true },
+            gross_weight: { required: true, number: true },
+
+            "product_img[]": {
+                required: true,
+                extension: "jpg|jpeg|png|webp"
+            },
+
+            product_video: {
+                extension: "mp4|avi|mov"
+            }
         },
-        },
+
         messages: {
-        name: {
-            required: "Please enter a category name",
+            categroy_id: "Please select category name",
+            product_name: "Enter product name",
+            sku: "Enter SKU",
+            colour: "Enter colour",
+            metal_type: "Enter metal type",
+            metal_finish: "Enter metal finish",
+            gross_weight: {
+                required: "Enter weight",
+                number: "Only numbers allowed"
+            },
+            "product_img[]": {
+                required: "Upload at least one image",
+                extension: "Only JPG, PNG allowed"
+            },
+            product_video: {
+                extension: "Only MP4, AVI, MOV allowed"
+            }
         },
-        },
+
         errorElement: 'span',
+
         errorPlacement: function (error, element) {
             error.addClass('invalid-feedback');
-            element.closest('.form-group').append(error);
+
+            if (element.attr("type") === "file") {
+                element.closest('.form-group').append(error);
+            } else {
+                element.closest('.form-group').append(error);
+            }
         },
-        highlight: function (element, errorClass, validClass) {
+
+        highlight: function (element) {
             $(element).addClass('is-invalid');
         },
-        unhighlight: function (element, errorClass, validClass) {
-           $(element).removeClass('is-invalid');
+
+        unhighlight: function (element) {
+            $(element).removeClass('is-invalid');
         },
+
         submitHandler: function(form) {
+            let btn = $('#submitBtn');
+
+            btn.prop('disabled', true);
+
+            btn.html(`
+                <span class="spinner-border spinner-border-sm"></span> 
+                Processing...
+            `);
+
             form.submit();
         }
     });
+
+    $('#productimage').on('change', function () {
+        $(this).valid();
     });
+
+});
 </script>
+
 @endsection

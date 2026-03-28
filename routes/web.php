@@ -15,7 +15,7 @@ Route::get('/continuewithmobile',[LoginController::class,'continuewithmobile'])-
 Route::get('/continuewithemail',[LoginController::class,'continuewithemail'])->name('continuewithemail');
 Route::get('/otp',[LoginController::class,'otp'])->name('otp');
 
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-Route::get('/product-detail', [ProductController::class, 'product_details'])->name('product.product_details');
+// Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+// Route::get('/product-detail', [ProductController::class, 'product_details'])->name('product.product_details');
 
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
