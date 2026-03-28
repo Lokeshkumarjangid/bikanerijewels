@@ -136,7 +136,7 @@ class ProductController extends Controller
 
             DB::commit();
 
-            return redirect()->back()->with('success', 'Product added successfully');
+            return redirect()->route('product.index')->with('success', 'Product added successfully');
 
         } catch (\Exception $e) {
 
@@ -159,7 +159,10 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data['product'] = Product::with(['images','video'])->findOrFail($id);
+        $data['categroy'] = Category::all();
+
+        return view('admin.product.update',$data);
     }
 
     /**

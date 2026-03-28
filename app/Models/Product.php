@@ -27,4 +27,16 @@ class Product extends Model
     {
         return $this->hasMany(ProductFile::class, 'product_id');
     }
+
+    public function images()
+    {
+        return $this->hasMany(ProductFile::class, 'product_id')
+            ->where('file_type', 'image');
+    }
+
+    public function video()
+    {
+        return $this->hasOne(ProductFile::class, 'product_id')
+            ->where('file_type', 'video');
+    }
 }
