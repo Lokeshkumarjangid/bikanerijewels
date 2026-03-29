@@ -13,20 +13,24 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique()->nullable();
-            $table->string('mobile')->unique()->nullable();
+            $table->string('first_name');
+            $table->string('last_name')->nullable();
+            $table->string('business_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('pancard')->nullable();
+            $table->string('mobile')->nullable();
             $table->timestamp('mobile_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->enum('role', ['admin', 'user'])->default('user');
-            $table->boolean('status')->default(1)->comment('1 = active, 0 = inactive');
+            $table->boolean('status')->default(0)->comment('1 = active, 0 = inactive');
             $table->string('otp')->nullable();
             $table->timestamp('otp_expires_at')->nullable();
             $table->integer('login_attempts')->default(0);
             $table->timestamp('last_login_at')->nullable();
             $table->string('last_login_ip')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

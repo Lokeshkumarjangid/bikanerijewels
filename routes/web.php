@@ -10,9 +10,16 @@ Route::get('/', function () {
 });
 
 Route::get('/loginoption',[LoginController::class,'loginoption'])->name('loginoption');
+
 Route::get('/register',[LoginController::class,'register'])->name('register');
+Route::post('/registerstore',[LoginController::class,'registerstore'])->name('registerstore');
+
 Route::get('/continuewithmobile',[LoginController::class,'continuewithmobile'])->name('continuewithmobile');
+Route::post('/loginwithmobile',[LoginController::class,'loginwithmobile'])->name('loginwithmobile');
+
 Route::get('/continuewithemail',[LoginController::class,'continuewithemail'])->name('continuewithemail');
+Route::post('/loginwithemail',[LoginController::class,'loginwithemail'])->name('loginwithemail');
+
 Route::get('/otp',[LoginController::class,'otp'])->name('otp');
 
 // Route::get('/product', [ProductController::class, 'index'])->name('product.index');
