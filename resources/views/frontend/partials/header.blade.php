@@ -31,7 +31,18 @@
                             <li><a href="">Bespoke Jewellery</a></li>
                             <li><a href="">Contact Us</a></li>
                             <li><a href="">Book an Appointment</a></li>
-                            <li><a href="{{route('loginoption')}}">Log In</a></li>
+                            @if(Auth::check())
+                            <li class="profile-menu"><a href="#"><div class="profile-circle"><i class="fa fa-user"></i></div></a>
+
+                                <ul class="dropdown">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Orders</a></li>
+                                    <li><a href="{{route('logout')}}">Logout</a></li>
+                                </ul>
+                            </li>
+                            @else
+                                <li><a href="{{route('loginoption')}}">Log In</a></li>
+                            @endif
                         </ul>
                     </nav>
                 </div>

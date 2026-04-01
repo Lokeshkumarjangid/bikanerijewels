@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -111,7 +112,7 @@ class LoginController extends Controller
                     'login_value' => $request->email,
                     'login_type' => 'email'
                 ]);
-                //return redirect()->route('otp')->with('success', 'OTP sent to your mobile number');
+                return redirect()->route('loginwithpassword')->with('success', 'Please enter your password first after login.');
             }
         } else {
             session([
@@ -122,7 +123,37 @@ class LoginController extends Controller
         }
     }
 
+    function loginwithpassword(Request $request){
+        return view('frontend.auth.loginwithpassword');
+    }
+
+    public function loginemail(Request $request)
+    {
+        $email = session('login_value');
+
+        $credentials = [
+            'email' => $email,
+            'password' => $request->password
+        ];
+
+        if (Auth::attempt($credentials)) {
+            return redirect('/');
+        }
+
+        return back()->with('error', 'Invalid credentials');
+    }
+
     function otp(){
         return view('frontend.auth.otp');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout(); // user logout
+
+        $request->session()->invalidate(); // session destroy
+        $request->session()->regenerateToken(); // CSRF token reset
+
+        return redirect('/'); // homepage pe wapas
     }
 }

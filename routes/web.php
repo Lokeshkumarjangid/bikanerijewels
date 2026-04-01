@@ -19,10 +19,14 @@ Route::post('/loginwithmobile',[LoginController::class,'loginwithmobile'])->name
 
 Route::get('/continuewithemail',[LoginController::class,'continuewithemail'])->name('continuewithemail');
 Route::post('/loginwithemail',[LoginController::class,'loginwithemail'])->name('loginwithemail');
+Route::get('/loginwithpassword',[LoginController::class,'loginwithpassword'])->name('loginwithpassword');
+Route::post('/loginemail',[LoginController::class,'loginemail'])->name('loginemail');
 
 Route::get('/otp',[LoginController::class,'otp'])->name('otp');
 
-// Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-// Route::get('/product-detail', [ProductController::class, 'product_details'])->name('product.product_details');
-
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+});
