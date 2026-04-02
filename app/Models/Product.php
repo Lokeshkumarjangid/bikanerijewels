@@ -39,4 +39,16 @@ class Product extends Model
         return $this->hasOne(ProductFile::class, 'product_id')
             ->where('file_type', 'video');
     }
+
+    public function firstImage()
+    {
+        return $this->hasOne(ProductFile::class, 'product_id')
+            ->where('file_type', 'image')
+            ->latest();
+    }
+
+    public function categroy()
+    {
+        return $this->hasOne(Category::class, 'id');
+    }
 }

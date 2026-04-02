@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\CustomizeController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\Frontend\HomeController;
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+
+Route::get('/', [HomeController::class, 'index']);
+
+/**************************Login and register page api *************************************/
 
 Route::get('/loginoption',[LoginController::class,'loginoption'])->name('loginoption');
 
@@ -23,6 +25,14 @@ Route::get('/loginwithpassword',[LoginController::class,'loginwithpassword'])->n
 Route::post('/loginemail',[LoginController::class,'loginemail'])->name('loginemail');
 
 Route::get('/otp',[LoginController::class,'otp'])->name('otp');
+
+/**************************Login and register page api end *************************************/
+
+/**************************Product list and Product detatils page api*************************************/
+
+Route::get('/product-details/{id}',[ProductController::class,'product_details'])->name('productdetails');
+
+/**************************Product list and Product detatils page api end *************************************/
 
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
 

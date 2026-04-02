@@ -17,54 +17,53 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="image/bestsale5.jpg">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="image/bestsale6.jpg">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="image/bestsale7.jpg">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                <div class="product__thumb__pic set-bg" data-setbg="image/bestsale8.jpg">
-                                </div>
-                            </a>
-                        </li>
+                        @foreach($product_details->images as $key => $image)
+                            <li class="nav-item">
+                                <a class="nav-link {{ $key == 0 ? 'active' : '' }}" 
+                                data-toggle="tab" 
+                                href="#tabs-{{ $key }}" 
+                                role="tab">
+                                    <div class="product__thumb__pic set-bg" 
+                                        data-setbg="{{ asset('storage/'.$image->file_path) }}">
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+
+                        {{-- Video Thumbnail --}}
+                        @if(!empty($product_details->video))
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-video" role="tab">
+                                    <div class="product__thumb__pic">
+                                        ▶️
+                                    </div>
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
                 <div class="col-lg-6 col-md-9">
                     <div class="tab-content">
-                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{asset('image/bestsale5.jpg')}}" alt="">
+                        @foreach($product_details->images as $key => $image)
+                            <div class="tab-pane {{ $key == 0 ? 'active' : '' }}" 
+                                id="tabs-{{ $key }}" 
+                                role="tabpanel">
+
+                                <div class="product__details__pic__item">
+                                    <img src="{{ asset('storage/'.$image->file_path) }}" alt="">
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-2" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{asset('image/bestsale6.jpg')}}" alt="">
+                        @endforeach
+                        @if(!empty($product_details->video))
+                            <div class="tab-pane" id="tabs-video" role="tabpanel">
+                                <div class="product__details__pic__item">
+                                    <video controls width="100%">
+                                        <source src="{{ asset('storage/'.$product_details->video->file_path) }}" type="video/mp4">
+                                    </video>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-3" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{asset('image/bestsale7.jpg')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tabs-4" role="tabpanel">
-                            <div class="product__details__pic__item">
-                                <img src="{{asset('image/bestsale8.jpg')}}" alt="">
-                            </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -75,13 +74,13 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <div class="product__details__text">
-                        <h4>Product</h4>
-                        <h3>270.00 <span>70.00</span></h3>
+                        <h4>{{$product_details->product_name}}</h4>
+                        <!-- <h3>270.00 <span>70.00</span></h3> -->
                         <!-- <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
                             cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
                         with placket.</p> -->
                         <div class="product__details__option">
-                            <div class="product__details__option__size">
+                            <!-- <div class="product__details__option__size">
                                 <span>Size:</span>
                                 <label for="xxl">xxl
                                     <input type="radio" id="xxl">
@@ -95,24 +94,9 @@
                                 <label for="sm">s
                                     <input type="radio" id="sm">
                                 </label>
-                            </div>
+                            </div> -->
                             <div class="product__details__option__color">
-                                <span>Color:</span>
-                                <label class="c-1" for="sp-1">
-                                    <input type="radio" id="sp-1">
-                                </label>
-                                <label class="c-2" for="sp-2">
-                                    <input type="radio" id="sp-2">
-                                </label>
-                                <label class="c-3" for="sp-3">
-                                    <input type="radio" id="sp-3">
-                                </label>
-                                <label class="c-4" for="sp-4">
-                                    <input type="radio" id="sp-4">
-                                </label>
-                                <label class="c-9" for="sp-9">
-                                    <input type="radio" id="sp-9">
-                                </label>
+                                <span>Color: {{ $product_details->colour }}</span>
                             </div>
                         </div>
                         <!-- <div class="product__details__cart__option">
@@ -123,16 +107,12 @@
                             </div>
                             <a href="#" class="primary-btn">add to cart</a>
                         </div> -->
-                        <div class="product__details__btns__option">
-                            <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
-                            <!-- <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a> -->
-                        </div>
                         <div class="product__details__last__option">
-                            <h5><span>Guaranteed Safe Checkout</span></h5>
+                            <h5><span>Product Overview</span></h5>
                             <img src="img/shop-details/details-payment.png" alt="">
                             <ul>
-                                <li><span>SKU:</span> 3812912</li>
-                                <li><span>Categories:</span> Danglers</li>
+                                <li><span>SKU:</span> {{$product_details->sku}}</li>
+                                <li><span>Categories:</span> {{$product_details->categroy->name}}</li>
                             </ul>
                         </div>
                     </div>
