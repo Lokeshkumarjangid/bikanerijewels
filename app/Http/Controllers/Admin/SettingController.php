@@ -4,62 +4,29 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Settings;
 
 class SettingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    function updatesetting(){
+        return view('admin.settings.create');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'home_video' => 'nullable|mimes:mp4|max:4096',
+        ]);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+       if ($request->hasFile('home_video')) {
+            $video = $request->file('home_video')->store('settings', 'public');
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+            Setting::updateOrCreate(
+                ['key' => 'home_video'],
+                ['value' => $video]
+            );
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return back()->with('success', 'Settings Updated');
     }
 }
