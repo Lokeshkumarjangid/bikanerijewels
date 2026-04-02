@@ -109,6 +109,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('product.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>General Settings</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('banner.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Banner</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

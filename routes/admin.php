@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\BannerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -18,4 +19,6 @@ Route::middleware(['auth','admin'])->group(function () {
     
     Route::post('/user/status-change', [UserController::class, 'changeStatus'])->name('user.status.change');
     Route::resource('user', UserController::class);
+
+    Route::resource('banner', BannerController::class);
 });
