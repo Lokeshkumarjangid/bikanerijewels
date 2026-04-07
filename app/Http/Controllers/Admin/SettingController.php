@@ -12,18 +12,28 @@ class SettingController extends Controller
         return view('admin.settings.create');
     }
 
-    public function update(Request $request)
+    public function settingsupdate(Request $request)
     {
         $request->validate([
-            'home_video' => 'nullable|mimes:mp4|max:4096',
+            'web_home_video' => 'nullable|mimes:mp4|max:5120',
+            'mob_home_video' => 'nullable|mimes:mp4|max:1024',
         ]);
 
-       if ($request->hasFile('home_video')) {
-            $video = $request->file('home_video')->store('settings', 'public');
+        if ($request->hasFile('web_home_video')) {
+            $video = $request->file('web_home_video')->store('settings', 'public');
 
             Setting::updateOrCreate(
-                ['key' => 'home_video'],
+                ['key' => 'web_home_video'],
                 ['value' => $video]
+            );
+        }
+
+        if ($request->hasFile('mob_home_video')) {
+            $mobVideo = $request->file('mob_home_video')->store('settings', 'public');
+
+            Settings::updateOrCreate(
+                ['key' => 'mob_home_video'],
+                ['value' => $mobVideo]
             );
         }
 

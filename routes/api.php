@@ -8,3 +8,4 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
 Route::get('/category', [ApiController::class, 'category']);
+Route::get('/home-banner', [ApiController::class, 'home_banner']);
