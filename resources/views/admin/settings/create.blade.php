@@ -27,11 +27,14 @@
                     <div class="form-group">
                         <label>Desktop Home Page Video (Max 5MB)</label>
                         <input type="file" name="web_home_video" class="form-control" accept="video/mp4" onchange="previewVideo(event)">
+                        @error('web_home_video')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
 
-                        @if(!empty($settings->web_home_video))
+                        @if(!empty($setting[0]['value']) && $setting[0]['key'] == 'web_home_video')
                             <div class="mt-2">
                                 <video id="videoPreview" width="300" controls>
-                                    <source src="{{ asset('storage/'.$settings->web_home_video) }}" type="video/mp4">
+                                    <source src="{{ asset('storage/'.$setting[0]['value']) }}" type="video/mp4">
                                 </video>
                             </div>
                         @else
@@ -42,11 +45,13 @@
                     <div class="form-group">
                         <label>Mobile Home Page Video (Max 1MB)</label>
                         <input type="file" name="mob_home_video" class="form-control" accept="video/mp4" onchange="previewVideo(event)">
-
-                        @if(!empty($settings->mob_home_video))
+                        @error('mob_home_video')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                        @if(!empty($setting[1]['value']) && $setting[1]['key'] == 'mob_home_video')
                             <div class="mt-2">
                                 <video id="videoPreview" width="300" controls>
-                                    <source src="{{ asset('storage/'.$settings->mob_home_video) }}" type="video/mp4">
+                                    <source src="{{ asset('storage/'.$setting[1]['value']) }}" type="video/mp4">
                                 </video>
                             </div>
                         @else
