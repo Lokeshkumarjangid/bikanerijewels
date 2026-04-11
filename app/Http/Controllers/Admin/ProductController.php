@@ -93,9 +93,15 @@ class ProductController extends Controller
                 'metal_type' => 'required',
                 'metal_finish' => 'required',
                 'gross_weight' => 'required|numeric',
-                'product_img' => 'required|array',
+                'net_weight' => 'required|numeric',
+                'price' => 'required|numeric',
+                'sale_price' => 'nullable|numeric',
+                'qty' => 'required|numeric',
+                'product_img' => 'required|array|max:4',
                 'product_img.*' => 'image|mimes:jpg,jpeg,png,webp|max:2048', // 2MB
                 'product_video' => 'nullable|mimes:mp4,avi,mov|max:5120', // 5MB
+                'diamond_details' => 'required',
+                'stone_details' => 'required',
             ]);
             $product = Product::create([
                 'categroy_id' => $request->categroy_id,
@@ -106,6 +112,12 @@ class ProductController extends Controller
                 'metal_finish' => $request->metal_finish,
                 'gross_weight' => $request->gross_weight,
                 'status' => 1,
+                'qty' => $request->qty,
+                'price' => $request->price,
+                'sale_price' => $request->sale_price,
+                'diamond_details' => $request->diamond_details,
+                'stone_details' => $request->stone_details,
+                'net_weight' => $request->net_weight,   
             ]);
 
             $imagePaths = $fileService->uploadMultiple(

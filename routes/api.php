@@ -9,3 +9,4 @@ Route::post('/login', [UserController::class, 'login']);
 
 Route::get('/category', [ApiController::class, 'category']);
 Route::get('/home-banner', [ApiController::class, 'home_banner']);
+Route::get('/products-list/{id}', [ApiController::class, 'products_list']);

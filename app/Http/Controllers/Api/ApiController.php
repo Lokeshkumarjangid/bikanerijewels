@@ -38,7 +38,7 @@ class ApiController extends Controller
                     ->orderBy('sort_order', 'asc')
                     ->get(); 
             
-            $product = Product::select('id','product_name')->with('firstImage')->limit('5')->get();
+            $product = Product::select('id','product_name','price', 'sale_price')->with('firstImage')->limit('5')->get();
 
             return response()->json([
                 'status' => true,
@@ -48,6 +48,26 @@ class ApiController extends Controller
                     'banners' => $banners,
                     'products' => $product
                 ]
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function products_list(Request $request, $id){
+        try {
+            $products = Product::where('categroy_id', $id)->with(['firstImage' => function ($query) {
+                $query->select('id', 'product_id', 'file_path');
+            }])->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Products list',
+                'data' => $products
             ], 200);
 
         } catch (\Exception $e) {

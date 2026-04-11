@@ -69,6 +69,30 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="priceName">Price</label>
+                                <input type="number" name="price" class="form-control" id="priceName" placeholder="Price">
+                                @error('price')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="salepriceName">Sale Price</label>
+                                <input type="number" name="sale_price" class="form-control" id="salepriceName" placeholder="Sale Price">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="qtyName">Qty</label>
+                                <input type="number" name="qty" class="form-control" id="qtyName" placeholder="Qty">
+                                @error('qty')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="colourName">Colour</label>
                                 <input type="text" name="colour" class="form-control" id="colourName" placeholder="Colour">
                                 @error('colour')
@@ -99,6 +123,33 @@
                                 <label for="weightName">Gross Weight</label>
                                 <input type="text" name="gross_weight" class="form-control" id="weightName" placeholder="Gross Weight">
                                 @error('gross_weight')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="netweightName">Net Weight</label>
+                                <input type="number" name="net_weight" class="form-control" id="netweightName" placeholder="Net Weight">
+                                @error('net_weight')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="detailsName">Stone Details</label>
+                                <textarea type="text" name="stone_details" class="form-control" id="detailsName" placeholder="Stone Details"></textarea>
+                                @error('stone_details')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="diamondDetailsName">Diamond Details</label>
+                                <textarea type="text" name="diamond_details" class="form-control" id="diamondDetailsName" placeholder="Diamond Details"></textarea>
+                                @error('diamond_details')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -161,6 +212,11 @@ $(function () {
             categroy_id: { required: true },
             product_name: { required: true },
             sku: { required: true },
+            price: { required: true, number: true },
+            qty: { required: true, number: true },
+            diamond_details: { required: true },
+            stone_details: { required: true },
+            net_weight: { required: true, number: true },
             colour: { required: true },
             metal_type: { required: true },
             metal_finish: { required: true },

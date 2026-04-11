@@ -20,6 +20,12 @@ class Product extends Model
         'metal_finish',
         'gross_weight',
         'status',
+        'qty',
+        'price',
+        'sale_price',
+        'diamond_details',
+        'stone_details',    
+        'net_weight',
     ];
 
 
