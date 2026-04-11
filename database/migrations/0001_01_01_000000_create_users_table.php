@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->enum('role', ['admin', 'user'])->default('user');
+            $table->string('profile_image')->nullable();
             $table->boolean('status')->default(0)->comment('1 = active, 0 = inactive');
             $table->string('otp')->nullable();
             $table->timestamp('otp_expires_at')->nullable();

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\services\FileUploadService;
+use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Settings;
@@ -71,6 +73,53 @@ class ApiController extends Controller
             ], 200);
 
         } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function products_detail(Request $request, $id){
+        try {
+            $product = Product::where('id', $id)->with('images','video')->first();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Products detail',
+                'data' => $product
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function update_profile(ProfileRequest $request,FileUploadService $fileService){
+        try {
+            $user = auth()->user();
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->business_name = $request->business_name;
+            $user->pancard = $request->pancard;
+            
+            if($request->hasFile('profile_image')){
+                $path =$fileService->uploadSingle($request->file('profile_image'), 'profile_images');
+                $user->profile_image = $path;
+            }
+            $user->save();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Profile updated successfully',
+                'data' => $user
+            ], 200);
+
+        } catch (\Exception $e) {
+            dd($e);
             return response()->json([
                 'status' => false,
                 'message' => 'Something went wrong',

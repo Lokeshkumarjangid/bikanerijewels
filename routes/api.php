@@ -8,5 +8,10 @@ Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
 Route::get('/category', [ApiController::class, 'category']);
-Route::get('/home-banner', [ApiController::class, 'home_banner']);
-Route::get('/products-list/{id}', [ApiController::class, 'products_list']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/home-banner', [ApiController::class, 'home_banner']);
+    Route::get('/products-list/{id}', [ApiController::class, 'products_list']);
+    Route::get('/products-detail/{id}', [ApiController::class, 'products_detail']);
+    Route::post('/update-profile', [ApiController::class, 'update_profile']);
+});
