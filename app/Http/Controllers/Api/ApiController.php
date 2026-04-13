@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\services\FileUploadService;
 use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\CustomRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Settings;
 use App\Models\Banners;
 use App\Models\Product;
+use App\Models\Custom;
 
 class ApiController extends Controller
 {
@@ -120,6 +122,27 @@ class ApiController extends Controller
 
         } catch (\Exception $e) {
             dd($e);
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function custom_jewellery(CustomRequest $request){
+        try {
+            $user = auth()->user();
+            $data = $request->validated();
+            $data['user_id'] = $user->id;
+            $custom = Custom::create($data);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Custom jewellery request submitted successfully',
+                'data' => $custom
+            ], 200);
+
+        } catch (\Exception $e) {
             return response()->json([
                 'status' => false,
                 'message' => 'Something went wrong',
