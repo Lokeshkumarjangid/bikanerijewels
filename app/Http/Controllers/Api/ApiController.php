@@ -100,7 +100,7 @@ class ApiController extends Controller
         }
     }
 
-    function update_profile(ProfileRequest $request){
+    function update_profile(ProfileRequest $request, FileUploadService $fileService){
         try {
                dd('asdfasdfasdf');
             $user = auth()->user();
