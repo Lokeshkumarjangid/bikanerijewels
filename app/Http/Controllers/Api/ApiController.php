@@ -102,6 +102,7 @@ class ApiController extends Controller
 
     function update_profile(ProfileRequest $request,FileUploadService $fileService){
         try {
+               dd('asdfasdfasdf');
             $user = auth()->user();
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
