@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\services\FileUploadService;
+use App\Services\FileUploadService;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\CustomRequest;
 use Illuminate\Http\Request;
@@ -100,7 +100,7 @@ class ApiController extends Controller
         }
     }
 
-    function update_profile(ProfileRequest $request,FileUploadService $fileService){
+    function update_profile(ProfileRequest $request){
         try {
                dd('asdfasdfasdf');
             $user = auth()->user();
