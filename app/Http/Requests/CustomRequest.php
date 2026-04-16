@@ -26,6 +26,7 @@ class CustomRequest extends FormRequest
             'email' => 'required|email|max:255',
             'mobile' => 'required|integer',
             'address' => 'required|string|max:500',
+            'custom_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'item_name' => 'nullable|string|max:255',
             'size' => 'nullable|string|max:50',
             'delivery_date' => 'nullable|date',
@@ -52,6 +53,7 @@ class CustomRequest extends FormRequest
             'melon' => 'nullable|string|max:255',
             'badam' => 'nullable|string|max:255',
             'goshware' => 'nullable|string|max:255',
+            'description' => 'nullable|string',
         ];
     }
 

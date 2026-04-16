@@ -17,6 +17,7 @@ class Custom extends Model
         'email',
         'mobile',
         'address',
+        'custom_image',
         'item_name',
         'size',
         'delivery_date',
@@ -42,6 +43,7 @@ class Custom extends Model
         'beads',
         'melon',
         'badam',
-        'goshware'
+        'goshware',
+        'description',
     ];
 }

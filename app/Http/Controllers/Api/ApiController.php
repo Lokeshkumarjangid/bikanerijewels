@@ -134,6 +134,14 @@ class ApiController extends Controller
             $user = auth()->user();
             $data = $request->validated();
             $data['user_id'] = $user->id;
+            
+            // Handle custom image upload
+            if ($request->hasFile('custom_image')) {
+                $fileUploadService = new FileUploadService();
+                $imagePath = $fileUploadService->uploadSingle($request->file('custom_image'), 'custom_jewellery');
+                $data['custom_image'] = $imagePath;
+            }
+            
             $custom = Custom::create($data);
 
             return response()->json([

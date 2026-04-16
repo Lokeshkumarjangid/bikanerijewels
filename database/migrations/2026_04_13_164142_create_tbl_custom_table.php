@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('mobile')->nullable();
+            $table->string('custom_image')->nullable();
+            $table->text('description')->nullable();
             $table->text('address')->nullable();
             $table->string('item_name')->nullable();
             $table->string('size')->nullable();
