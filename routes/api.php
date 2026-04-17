@@ -15,4 +15,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/products-detail/{id}', [ApiController::class, 'products_detail']);
     Route::post('/update-profile', [ApiController::class, 'update_profile']);
     Route::post('/custom-jewellery', [ApiController::class, 'custom_jewellery']);
+    Route::post('/products-list', [ApiController::class, 'products_list_all']);
 });

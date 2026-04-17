@@ -157,4 +157,40 @@ class ApiController extends Controller
             ], 500);
         }
     }
+
+    function products_list_all(Request $request){
+        try {
+            $limit = 10;
+            $page = max((int)$request->get('page', 1), 1);
+            $skip = ($page - 1) * $limit;
+            $total = Product::where('status', 1)->count();
+
+            $products = Product::select('id', 'product_name', 'price')
+                ->with(['firstImage:id,product_id,file_path'])
+                ->where('status', 1)
+                ->orderBy('id', 'desc')
+                ->skip($skip)
+                ->take($limit)
+                ->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Products list',
+                'data' => $products,
+                'pagination' => [
+                    'total' => $total,
+                    'limit' => $limit,
+                    'page' => $page,
+                    'pages' => $total > 0 ? ceil($total / $limit) : 0
+                ]
+            ], 200);
+
+        } catch (\Exception $e) {
+            dd($e);
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
 }
