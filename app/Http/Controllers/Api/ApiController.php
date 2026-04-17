@@ -7,6 +7,7 @@ use App\Services\FileUploadService;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\CustomRequest;
 use App\Http\Requests\WishlistRequest;
+use App\Http\Requests\RatingRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Settings;
@@ -14,6 +15,7 @@ use App\Models\Banners;
 use App\Models\Product;
 use App\Models\Custom;
 use App\Models\Wishlist;
+use App\Models\Rating;
 
 class ApiController extends Controller
 {
@@ -330,6 +332,80 @@ class ApiController extends Controller
                 ]
             ], 200);
 
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function submit_review(Request $request, RatingRequest $ratingRequest){
+        try {
+            $user = auth()->user();
+            $data = $request->validate($ratingRequest->rules());
+
+            $alreadyrating = Rating::where('user_id', $user->id)
+                ->where('product_id', $data['product_id'])
+                ->first();
+            if (!empty($alreadyrating)) {
+                return response()->json([
+                    'status' => true,
+                    'message' => 'You have already submitted a review for this product.',
+                ], 422);
+            }
+            
+            Rating::create([
+                'user_id' => $user->id,
+                'product_id' => $data['product_id'],
+                'rating' => $data['rating'],
+                'review' => $data['review']
+            ]);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Review submitted successfully',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function get_review(Request $request, $product_id){
+        try {
+            $user = auth()->user();
+            $reviews = Rating::where('product_id', $product_id)->where('user_id',$user->id)
+            ->with('user:id,first_name,last_name')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+            $average_rating = round(Rating::where('product_id', $product_id)->avg('rating'), 1);
+            $overall_review = Rating::where('product_id', $product_id)->count();
+
+            $rating_counts = Rating::where('product_id', $product_id)
+                ->selectRaw('rating, COUNT(*) as total')
+                ->groupBy('rating')
+                ->pluck('total','rating');
+
+            $stars = [
+                5 => $rating_counts[5] ?? 0,
+                4 => $rating_counts[4] ?? 0,
+                3 => $rating_counts[3] ?? 0,
+                2 => $rating_counts[2] ?? 0,
+                1 => $rating_counts[1] ?? 0,
+            ];
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Product reviews',
+                'data' => $reviews,
+                'average_rating' => $average_rating,
+                'rating_counts' => $stars,
+                'overall_review' => $overall_review
+            ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status' => false,

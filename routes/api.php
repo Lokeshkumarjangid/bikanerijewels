@@ -21,4 +21,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/wishlist-add-update', [ApiController::class, 'add_to_wishlist']);
     Route::post('/wishlist-remove', [ApiController::class, 'remove_from_wishlist']);
     Route::get('/wishlist-list', [ApiController::class, 'get_wishlist']);
+
+    //rating and review
+    Route::post('/submit-review', [ApiController::class, 'submit_review']);
+    Route::get('/get-review/{product_id}', [ApiController::class, 'get_review']);
 });
