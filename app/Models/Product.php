@@ -57,4 +57,9 @@ class Product extends Model
     {
         return $this->hasOne(Category::class, 'id');
     }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class, 'product_id');
+    }
 }

@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Services\FileUploadService;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\CustomRequest;
+use App\Http\Requests\WishlistRequest;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Settings;
 use App\Models\Banners;
 use App\Models\Product;
 use App\Models\Custom;
+use App\Models\Wishlist;
 
 class ApiController extends Controller
 {
@@ -64,9 +66,18 @@ class ApiController extends Controller
 
     function products_list(Request $request, $id){
         try {
-            $products = Product::where('categroy_id', $id)->with(['firstImage' => function ($query) {
-                $query->select('id', 'product_id', 'file_path');
-            }])->get();
+            $user = auth()->user();
+
+            $products = Product::where('categroy_id', $id)
+            ->with([
+                'firstImage:id,product_id,file_path'
+            ])
+            ->withExists([
+                'wishlists as is_wishlist' => function ($query) use ($user) {
+                    $query->where('user_id', $user->id);
+                }
+            ])
+            ->get();
 
             return response()->json([
                 'status' => true,
@@ -84,7 +95,12 @@ class ApiController extends Controller
 
     function products_detail(Request $request, $id){
         try {
-            $product = Product::where('id', $id)->with('images','video')->first();
+            $user = auth()->user();
+            $product = Product::where('id', $id)->with('images','video')->withExists([
+                    'wishlists as is_wishlist' => function ($query) use ($user) {
+                        $query->where('user_id', $user->id);
+                    }
+                ])->first();
 
             return response()->json([
                 'status' => true,
@@ -160,6 +176,7 @@ class ApiController extends Controller
 
     function products_list_all(Request $request){
         try {
+            $user = auth()->user();
             $limit = 10;
             $page = max((int)$request->get('page', 1), 1);
             $skip = ($page - 1) * $limit;
@@ -167,6 +184,11 @@ class ApiController extends Controller
 
             $products = Product::select('id', 'product_name', 'price')
                 ->with(['firstImage:id,product_id,file_path'])
+                 ->withExists([
+                    'wishlists as is_wishlist' => function ($query) use ($user) {
+                        $query->where('user_id', $user->id);
+                    }
+                ])
                 ->where('status', 1)
                 ->orderBy('id', 'desc')
                 ->skip($skip)
@@ -187,6 +209,128 @@ class ApiController extends Controller
 
         } catch (\Exception $e) {
             dd($e);
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function add_to_wishlist(Request $request, WishlistRequest $wishlistRequest){
+        try {
+            $user = auth()->user();
+            $product_id = $request->get('product_id');
+
+            $product = Product::find($product_id);
+            if (!$product) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Product not found',
+                ], 404);
+            }
+
+            // Check if already exists
+            $wishlist = Wishlist::where('user_id', $user->id)
+                ->where('product_id', $product_id)
+                ->first();
+
+            if ($wishlist) {
+                $wishlist->status = $wishlist->status == 1 ? 0 : 1;
+                $wishlist->save();
+
+                $message = $wishlist->status == 1 
+                    ? 'Product added to wishlist' 
+                    : 'Product removed from wishlist';
+
+            } else {
+                // Create new entry
+                $wishlist = Wishlist::create([
+                    'user_id' => $user->id,
+                    'product_id' => $product_id,
+                    'status' => 1
+                ]);
+
+                $message = 'Product added to wishlist';
+            }
+
+            return response()->json([
+                'status' => true,
+                'message' => $message,
+                'data' => $wishlist
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+    // Remove from Wishlist
+    function remove_from_wishlist(Request $request, WishlistRequest $wishlistRequest){
+        try {
+            $user = auth()->user();
+            $product_id = $request->get('product_id');
+
+            $wishlist = Wishlist::where('user_id', $user->id)
+                ->where('product_id', $product_id)
+                ->first();
+
+            if (!$wishlist) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Wishlist item not found',
+                ], 404);
+            }
+
+            $wishlist->delete();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Product removed from wishlist',
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    // Get User Wishlist
+    function get_wishlist(Request $request){
+        try {
+            $limit = 10;
+            $page = max((int)$request->get('page', 1), 1);
+            $skip = ($page - 1) * $limit;
+            $user = auth()->user();
+
+            $total = Wishlist::where('user_id', $user->id)->count();
+
+            $wishlists = Wishlist::where('user_id', $user->id)
+                ->with(['product' => function ($query) {
+                    $query->select('id', 'product_name', 'price', 'sale_price');
+                    $query->with('firstImage:id,product_id,file_path');
+                }])
+                ->orderBy('created_at', 'desc')
+                ->skip($skip)
+                ->take($limit)
+                ->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Wishlist items',
+                'data' => $wishlists,
+                'pagination' => [
+                    'total' => $total,
+                    'limit' => $limit,
+                    'page' => $page,
+                    'pages' => $total > 0 ? ceil($total / $limit) : 0
+                ]
+            ], 200);
+
+        } catch (\Exception $e) {
             return response()->json([
                 'status' => false,
                 'message' => 'Something went wrong',

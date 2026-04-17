@@ -16,4 +16,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/update-profile', [ApiController::class, 'update_profile']);
     Route::post('/custom-jewellery', [ApiController::class, 'custom_jewellery']);
     Route::post('/products-list', [ApiController::class, 'products_list_all']);
+    
+    // Wishlist Routes
+    Route::post('/wishlist-add-update', [ApiController::class, 'add_to_wishlist']);
+    Route::post('/wishlist-remove', [ApiController::class, 'remove_from_wishlist']);
+    Route::get('/wishlist-list', [ApiController::class, 'get_wishlist']);
 });
