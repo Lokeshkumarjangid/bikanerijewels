@@ -6,8 +6,12 @@ use App\Http\Controllers\Api\UserController;
 
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
+Route::post('/forgot-password', [UserController::class, 'forgot_password']);
+Route::post('/otp-verify', [UserController::class, 'otp_verify']);
+Route::post('/password-change', [UserController::class, 'password_change']);
 
 Route::get('/category', [ApiController::class, 'category']);
+Route::post('/product-search', [ApiController::class, 'product_search']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/home-banner', [ApiController::class, 'home_banner']);
@@ -25,4 +29,9 @@ Route::middleware('auth:sanctum')->group(function () {
     //rating and review
     Route::post('/submit-review', [ApiController::class, 'submit_review']);
     Route::get('/get-review/{product_id}', [ApiController::class, 'get_review']);
+
+    //Order
+    Route::get('/order-create/{id}', [ApiController::class, 'create_order']);
+    Route::post('/get-orders', [ApiController::class, 'get_orders']);
+    Route::get('/order-details/{id}', [ApiController::class, 'get_order_details']);
 });

@@ -13,6 +13,7 @@ use App\Models\Category;
 use App\Models\Settings;
 use App\Models\Banners;
 use App\Models\Product;
+use App\Models\Order;
 use App\Models\Custom;
 use App\Models\Wishlist;
 use App\Models\Rating;
@@ -27,6 +28,29 @@ class ApiController extends Controller
                 'status' => true,
                 'message' => 'Category list',
                 'data' => $category
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function product_search(Request $request){
+        try {
+            $searchTerm = $request->get('search');
+            $products = Product::where('product_name', 'like', '%' . $searchTerm . '%')
+                ->select('id', 'product_name')
+                ->with('firstImage:id,product_id,file_path')
+                ->limit(10)
+                ->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Product search results',
+                'data' => $products
             ], 200);
 
         } catch (\Exception $e) {
@@ -405,6 +429,105 @@ class ApiController extends Controller
                 'average_rating' => $average_rating,
                 'rating_counts' => $stars,
                 'overall_review' => $overall_review
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    //Order
+
+    function create_order(Request $request, $id){
+        try {
+            $user = auth()->user();
+            $product = Product::find($id);
+
+            if (!$product) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Product not found',
+                ], 404);
+            }
+
+            $order = Order::create([
+                'user_id' => $user->id,
+                'product_id' => $product->id,
+            ]);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Order created successfully',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function get_orders(Request $request){
+        try {
+            $user = auth()->user();
+            $limit = 10;
+            $page = max((int)$request->get('page', 1), 1);
+            $skip = ($page - 1) * $limit;
+            $total = Order::where('user_id', $user->id)->count();
+
+            $orders = Order::where('user_id', $user->id)
+                ->with(['product' => function ($query) {
+                    $query->select('id', 'product_name', 'price','colour','metal_type');
+                    $query->with('firstImage:id,product_id,file_path');
+                }])
+                ->orderBy('created_at', 'desc')
+                ->skip($skip)
+                ->take($limit)
+                ->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'User orders',
+                'data' => $orders,
+                'pagination' => [
+                    'total' => $total,
+                    'limit' => $limit,
+                    'page' => $page,
+                    'pages' => $total > 0 ? ceil($total / $limit) : 0
+                ]
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function get_order_details(Request $request, $id){
+        try {
+            $user = auth()->user();
+            $order = Order::where('id', $id)
+                ->where('user_id', $user->id)
+                ->with(['product' => function ($query) {
+                    $query->select('id', 'product_name', 'price','colour','metal_type');
+                    $query->with('firstImage:id,product_id,file_path');
+                }])
+                ->first();
+
+            if (!$order) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Order not found',
+                ], 404);
+            }
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Order details',
+                'data' => $order
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
