@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\CustomizeController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\CmsController;
 
 
 Route::get('/', [HomeController::class, 'index']);
@@ -35,6 +36,7 @@ Route::get('/product-details/{id}',[ProductController::class,'product_details'])
 /**************************Product list and Product detatils page api end *************************************/
 
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
+Route::post('/cms/{slug}', [CmsController::class, 'index'])->name('cms.index');
 
 
 Route::middleware(['auth'])->group(function () {
