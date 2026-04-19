@@ -16,6 +16,9 @@ Route::post('/product-search', [ApiController::class, 'product_search']);
 //cms   
 Route::get('/cms/{slug}', [ApiController::class, 'get_cms']);
 
+//Mobile first page
+Route::get('/mobile-first-page', [ApiController::class, 'mobile_first_page']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/home-banner', [ApiController::class, 'home_banner']);
     Route::get('/products-list/{id}', [ApiController::class, 'products_list']);

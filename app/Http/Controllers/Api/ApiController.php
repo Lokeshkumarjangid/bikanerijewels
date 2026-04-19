@@ -9,6 +9,7 @@ use App\Http\Requests\CustomRequest;
 use App\Http\Requests\WishlistRequest;
 use App\Http\Requests\RatingRequest;
 use Illuminate\Http\Request;
+use App\Models\MobilePage;
 use App\Models\Category;
 use App\Models\Settings;
 use App\Models\Banners;
@@ -553,6 +554,30 @@ class ApiController extends Controller
                 'status' => true,
                 'message' => 'Content details',
                 'data' => $cms
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+    
+    function mobile_first_page(Request $request){
+        try {
+            $page = MobilePage::first();
+
+            if (!$page) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Page not found',
+                ], 404);
+            }
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Content details',
+                'data' => $page
             ], 200);
         } catch (\Exception $e) {
             return response()->json([

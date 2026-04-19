@@ -130,6 +130,12 @@
                   <p>Banner</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('mobilefirstpage')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mobile First Page</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">

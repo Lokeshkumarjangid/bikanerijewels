@@ -24,8 +24,11 @@ Route::middleware(['auth','admin'])->group(function () {
 
     Route::resource('banner', BannerController::class);
     Route::get('settings', [SettingController::class, 'updatesetting'])->name('updatesetting');
+    Route::get('mobile-first-page', [SettingController::class, 'mobilefirstpage'])->name('mobilefirstpage');
+    Route::post('mobile-update', [SettingController::class, 'mobileupdate'])->name('mobileupdate');
     Route::post('settings-update', [SettingController::class, 'settingsupdate'])->name('settingsupdate');
 
     Route::post('/cms/status-change', [CmsController::class, 'changeStatus'])->name('cms.status.change');
     Route::resource('cms', CmsController::class);
+    
 });
