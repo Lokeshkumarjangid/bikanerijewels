@@ -25,7 +25,7 @@
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
                         <form action="#">
-                            <input type="text" placeholder="Search...">
+                            <input type="text" placeholder="Search..." id="search">
                             <button type="submit"><span class="icon_search"></span></button>
                         </form>
                     </div>
@@ -39,15 +39,11 @@
                                     <div class="card-body">
                                         <div class="shop__sidebar__categories">
                                             <ul class="nice-scroll">
-                                                <li><a href="#">Men (20)</a></li>
-                                                <li><a href="#">Women (20)</a></li>
-                                                <li><a href="#">Bags (20)</a></li>
-                                                <li><a href="#">Clothing (20)</a></li>
-                                                <li><a href="#">Shoes (20)</a></li>
-                                                <li><a href="#">Accessories (20)</a></li>
-                                                <li><a href="#">Kids (20)</a></li>
-                                                <li><a href="#">Kids (20)</a></li>
-                                                <li><a href="#">Kids (20)</a></li>
+                                                @if(!empty($category) && $category->count() > 0)
+                                                    @foreach($category as $cat)
+                                                        <li><a href="javascript:void(0)" class="category-filter" data-id="{{ encrypt($cat->id) }}">{{ $cat->name }} ({{ $cat->products_count }})</a></li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
@@ -78,108 +74,16 @@
                                     <div class="card-body">
                                         <div class="shop__sidebar__price">
                                             <ul>
-                                                <li><a href="#">0.00 - 50.00</a></li>
-                                                <li><a href="#">50.00 - 100.00</a></li>
-                                                <li><a href="#">100.00 - 150.00</a></li>
-                                                <li><a href="#">150.00 - 200.00</a></li>
-                                                <li><a href="#">200.00 - 250.00</a></li>
-                                                <li><a href="#">250.00+</a></li>
+                                                @if(!empty($priceRanges) && count($priceRanges) > 0)
+                                                    @foreach($priceRanges as $range)
+                                                        <li><a href="javascript:void(0)" class="price-filter" data-min="{{ $range['min'] }}" data-max="{{ $range['max'] }}">{{ $range['min'] }} - {{ $range['max'] }}</a></li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFour">Size</a>
-                                </div>
-                                <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="shop__sidebar__size">
-                                            <label for="xs">xs
-                                                <input type="radio" id="xs">
-                                            </label>
-                                            <label for="sm">s
-                                                <input type="radio" id="sm">
-                                            </label>
-                                            <label for="md">m
-                                                <input type="radio" id="md">
-                                            </label>
-                                            <label for="xl">xl
-                                                <input type="radio" id="xl">
-                                            </label>
-                                            <label for="2xl">2xl
-                                                <input type="radio" id="2xl">
-                                            </label>
-                                            <label for="xxl">xxl
-                                                <input type="radio" id="xxl">
-                                            </label>
-                                            <label for="3xl">3xl
-                                                <input type="radio" id="3xl">
-                                            </label>
-                                            <label for="4xl">4xl
-                                                <input type="radio" id="4xl">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="card">
-                                <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
-                                </div>
-                                <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="shop__sidebar__color">
-                                            <label class="c-1" for="sp-1">
-                                                <input type="radio" id="sp-1">
-                                            </label>
-                                            <label class="c-2" for="sp-2">
-                                                <input type="radio" id="sp-2">
-                                            </label>
-                                            <label class="c-3" for="sp-3">
-                                                <input type="radio" id="sp-3">
-                                            </label>
-                                            <label class="c-4" for="sp-4">
-                                                <input type="radio" id="sp-4">
-                                            </label>
-                                            <label class="c-5" for="sp-5">
-                                                <input type="radio" id="sp-5">
-                                            </label>
-                                            <label class="c-6" for="sp-6">
-                                                <input type="radio" id="sp-6">
-                                            </label>
-                                            <label class="c-7" for="sp-7">
-                                                <input type="radio" id="sp-7">
-                                            </label>
-                                            <label class="c-8" for="sp-8">
-                                                <input type="radio" id="sp-8">
-                                            </label>
-                                            <label class="c-9" for="sp-9">
-                                                <input type="radio" id="sp-9">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-heading">
-                                    <a data-toggle="collapse" data-target="#collapseSix">Tags</a>
-                                </div>
-                                <div id="collapseSix" class="collapse show" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <div class="shop__sidebar__tags">
-                                            <a href="#">Product</a>
-                                            <a href="#">Bags</a>
-                                            <a href="#">Shoes</a>
-                                            <a href="#">Fashio</a>
-                                            <a href="#">Clothing</a>
-                                            <a href="#">Hats</a>
-                                            <a href="#">Accessories</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -189,10 +93,10 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
+                                <p id="showing-text">Showing {{ $product_details->firstItem() }}–{{ $product_details->lastItem() }} of {{ $product_details->total() }} results</p>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <!-- <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__right">
                                 <p>Sort by Price:</p>
                                 <select>
@@ -201,299 +105,16 @@
                                     <option value="">55 - 100</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <a href="{{route('product.product_details')}}">
-                                <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                                </div>
-                            </a>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <a href="{{route('product.product_details')}}">
-                                <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                                </div>
-                            </a>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="image/bestsale5.jpg">
-                            </div>
-                            <div class="product__item__text">
-                                <h6>Product 1</h6>
-                                <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                                
-                                <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
-                                <div class="product__color__select">
-                                    <label for="pc-4">
-                                        <input type="radio" id="pc-4">
-                                    </label>
-                                    <label class="active black" for="pc-5">
-                                        <input type="radio" id="pc-5">
-                                    </label>
-                                    <label class="grey" for="pc-6">
-                                        <input type="radio" id="pc-6">
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="product-area">
+                    @include('frontend.product.products_show')
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__pagination">
-                            <a class="active" href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <span>...</span>
-                            <a href="#">21</a>
+                            {{ $product_details->links() }}
                         </div>
                     </div>
                 </div>
@@ -501,4 +122,66 @@
         </div>
     </div>
 </section>
+@endsection
+@section('scripts')
+<script>
+let category = '';
+let min = '';
+let max = '';
+let search = '';
+
+function fetchProducts(page = 1) {
+
+    $.ajax({
+        url: "{{ url('/product-list/'.$id) }}?page=" + page,
+        type: "GET",
+        data: {
+            min: min,
+            max: max,
+            search: search,
+            category:category
+        },
+        success: function(res) {
+
+            // 🔥 products
+            $('#product-area').html(res.html);
+
+            // 🔥 showing text
+            $('#showing-text').text(
+                'Showing ' + res.from + ' – ' + res.to + ' of ' + res.total + ' results'
+            );
+
+            // 🔥 pagination update
+            $('.product__pagination').html(res.pagination);
+        }
+    });
+}
+
+/* 🔍 SEARCH */
+$('#search').on('keyup', function(){
+    search = $(this).val();
+    fetchProducts();
+});
+
+/* 🏷 CATEGORY */
+$(document).on('click', '.category-filter', function(){
+    category = $(this).data('id');
+    fetchProducts();
+});
+
+/* 💰 PRICE */
+$(document).on('click', '.price-filter', function(){
+    min = $(this).data('min');
+    max = $(this).data('max');
+    fetchProducts();
+});
+
+/* 📄 PAGINATION */
+$(document).on('click', '.pagination a', function(e){
+    e.preventDefault();
+
+    let page = $(this).attr('href').split('page=')[1];
+    fetchProducts(page);
+});
+</script>
 @endsection

@@ -19,8 +19,8 @@
                         <h6>Services</h6>
                         <ul>
                             <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">FAQS</a></li>
-                            <li><a href="#">Care Advices</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'faq']) }}">FAQS</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'care-advice']) }}">Care Advices</a></li>
                             <li><a href="#">Book an appointment</a></li>
                         </ul>
                     </div>
@@ -29,10 +29,10 @@
                     <div class="footer__widget">
                         <h6>About Us</h6>
                         <ul>
-                            <li><a href="#">A Guide to jaipur</a></li>
-                            <li><a href="#">Timeline of the brand</a></li>
-                            <li><a href="#">As seen on</a></li>
-                            <li><a href="#">Brand Responsibilities</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'a-guide-to-jaipur']) }}">A Guide to jaipur</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'timeline-of-the-brand']) }}">Timeline of the brand</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'about-us']) }}">About Us</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'brand-responsibilities']) }}">Brand Responsibilities</a></li>
                         </ul>
                     </div>
                 </div>
@@ -40,10 +40,10 @@
                     <div class="footer__widget">
                         <h6>Legal</h6>
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Condition</a></li>
-                            <li><a href="#">Shipping Policy</a></li>
-                            <li><a href="#">Return Policy</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'privacy-policy']) }}">Privacy Policy</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'terms-and-condition']) }}">Terms and Condition</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'shipping-policy']) }}">Shipping Policy</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'return-policy']) }}">Return Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -51,8 +51,8 @@
                     <div class="footer__widget">
                         <h6>Media</h6>
                         <ul>
-                            <li><a href="#">Blogs</a></li>
-                            <li><a href="#">Press & Awards</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'blogs']) }}">Blogs</a></li>
+                            <li><a href="{{ route('cms', ['slug' => 'press-and-awards']) }}">Press & Awards</a></li>
                         </ul>
                     </div>
                 </div>

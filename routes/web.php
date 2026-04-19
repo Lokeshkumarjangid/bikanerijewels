@@ -32,11 +32,12 @@ Route::get('/otp',[LoginController::class,'otp'])->name('otp');
 /**************************Product list and Product detatils page api*************************************/
 
 Route::get('/product-details/{id}',[ProductController::class,'product_details'])->name('productdetails');
+Route::get('/product-list/{id}',[ProductController::class,'product_list'])->name('productlist');
 
 /**************************Product list and Product detatils page api end *************************************/
 
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
-Route::get('/cms/{slug}', [CmsController::class, 'index']);
+Route::get('/cms/{slug}', [CmsController::class, 'index'])->name('cms');
 
 
 Route::middleware(['auth'])->group(function () {
