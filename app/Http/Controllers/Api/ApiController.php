@@ -551,7 +551,10 @@ class ApiController extends Controller
 
     function get_cms(Request $request){
         try {
-            $cms = Cms::where('status', 1)->get();
+            $cms = Cms::select('id','title','slug')->where('status', 1)->get()->map(function($item){
+                $item->url = url('/cms/' . $item->slug);
+                return $item;
+            });
 
             if (!$cms) {
                 return response()->json([
