@@ -515,10 +515,14 @@ class ApiController extends Controller
             $user = auth()->user();
             $order = Order::where('id', $id)
                 ->where('user_id', $user->id)
-                ->with(['product' => function ($query) {
-                    $query->select('id', 'product_name', 'price','colour','metal_type');
-                    $query->with('firstImage:id,product_id,file_path');
-                }])
+                ->with([
+                    'product' => function ($query) {
+                        $query->select('id', 'product_name', 'price','colour','metal_type');
+                        $query->with('firstImage:id,product_id,file_path');
+                    },
+                    'user:id,first_name,last_name,email',
+                    'user.defaultAddress:id,user_id,address_line1,address_line2,city,state,postal_code,is_default'
+                ])
                 ->first();
 
             if (!$order) {
@@ -534,6 +538,7 @@ class ApiController extends Controller
                 'data' => $order
             ], 200);
         } catch (\Exception $e) {
+            dd($e);
             return response()->json([
                 'status' => false,
                 'message' => 'Something went wrong',

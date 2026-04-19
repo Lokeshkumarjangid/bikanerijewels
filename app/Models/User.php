@@ -51,4 +51,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function defaultAddress()
+    {
+        return $this->hasOne(UserAddress::class)
+                    ->where('is_default', 1)
+                    ->where('status', 1);
+    }
 }
