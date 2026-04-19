@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'customize')
+@section('title', {{ $data->title }})
 @section('content') 
 <section class="breadcrumb-option">
     <div class="container">
