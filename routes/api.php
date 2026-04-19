@@ -13,6 +13,9 @@ Route::post('/password-change', [UserController::class, 'password_change']);
 Route::get('/category', [ApiController::class, 'category']);
 Route::post('/product-search', [ApiController::class, 'product_search']);
 
+//cms   
+Route::get('/cms/{slug}', [ApiController::class, 'get_cms']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/home-banner', [ApiController::class, 'home_banner']);
     Route::get('/products-list/{id}', [ApiController::class, 'products_list']);
@@ -34,4 +37,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/order-create/{id}', [ApiController::class, 'create_order']);
     Route::post('/get-orders', [ApiController::class, 'get_orders']);
     Route::get('/order-details/{id}', [ApiController::class, 'get_order_details']);
+
 });

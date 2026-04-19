@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{asset('admin/css/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/toastr/toastr.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/css/sweetalert2/bootstrap-4.min.css')}}">
+  <link rel="stylesheet" href="{{asset('admin/summernote/summernote-bs4.min.css')}}">
   <link rel="stylesheet" href="https://cdn.datatables.net/2.3.2/css/dataTables.dataTables.css" />
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -47,6 +48,7 @@
     <script src="{{asset('admin/js/validate/additional-methods.min.js')}}"></script>
     <script src="{{asset('admin/js/toastr/toastr.min.js')}}"></script>
     <script src="{{asset('admin/js/sweetalert2/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('admin/summernote/summernote-bs4.min.js')}}"></script>
     <script src="https://cdn.datatables.net/2.3.2/js/dataTables.js"></script>
     @include('admin.partials.toast')
     @yield('scripts')

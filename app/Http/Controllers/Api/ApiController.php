@@ -17,6 +17,7 @@ use App\Models\Order;
 use App\Models\Custom;
 use App\Models\Wishlist;
 use App\Models\Rating;
+use App\Models\Cms;
 
 class ApiController extends Controller
 {
@@ -528,6 +529,30 @@ class ApiController extends Controller
                 'status' => true,
                 'message' => 'Order details',
                 'data' => $order
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function get_cms(Request $request, $slug){
+        try {
+            $cms = Cms::where('slug', $slug)->where('status', 1)->first();
+
+            if (!$cms) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Content not found',
+                ], 404);
+            }
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Content details',
+                'data' => $cms
             ], 200);
         } catch (\Exception $e) {
             return response()->json([

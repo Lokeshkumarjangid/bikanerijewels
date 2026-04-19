@@ -120,7 +120,6 @@ class UserController extends Controller
             ]);
         }
 
-        // 🔥 toggle status
         $user->status = $user->status ? 0 : 1;
         $user->save();
 
