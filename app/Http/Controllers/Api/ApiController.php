@@ -67,14 +67,17 @@ class ApiController extends Controller
 
     function home_banner(Request $request){
         try {
-
+            $user = auth()->user();
             $video = Settings::where('key','mob_home_video')->first();
             $banners = Banners::select('banner_img_mob', 'sort_order', 'status')
                     ->where('status', 1)
                     ->orderBy('sort_order', 'asc')
                     ->get(); 
             
-            $product = Product::select('id','product_name','price', 'sale_price')->with('firstImage')->limit('5')->get();
+            $product = Product::select('id','product_name','price', 'sale_price')->with('firstImage')->withExists([
+                    'wishlists as is_wishlist' => function ($query) use ($user) {
+                        $query->where('user_id', $user->id);
+                    }])->limit('5')->get();
 
             return response()->json([
                 'status' => true,
