@@ -11,6 +11,12 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'navigation_id',
         'status'
     ];
+
+    public function navigation()
+    {
+        return $this->belongsTo(Navigation::class);
+    }
 }

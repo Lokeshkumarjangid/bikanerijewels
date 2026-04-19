@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Category List</h1>
+            <h1 class="m-0">Navigation List</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Category</li>
+              <li class="breadcrumb-item active">Navigation</li>
             </ol>
           </div>
         </div>
@@ -25,9 +25,7 @@
                   <thead>
                   <tr>
                     <th>S.No</th>
-                    <th>Navigation Name</th>
-                    <th>Category Name</th>
-                    <th>Status</th>
+                    <th>Name</th>
                     <th>Created At</th>
                     <th>Action</th>
                   </tr>
@@ -47,13 +45,11 @@
     $('#table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('categories.index') }}",
+        ajax: "{{ route('navigation.index') }}",
         order: [[3, "desc"]],
         columns: [
             { data: 'DT_RowIndex',  name: 'DT_RowIndex', orderable:false, searchable:false },
-            { data: 'navigation_id', name: 'navigation_id' },
             { data: 'name',         name: 'name' },
-            { data: 'status',       name: 'status' },
             { data: 'created_at',   name: 'created_at' },
             { data: 'action',       name: 'action', orderable: false, searchable: false },
         ]

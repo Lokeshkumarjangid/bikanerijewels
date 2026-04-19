@@ -11,26 +11,19 @@
                 <div class="col-lg-10 col-md-10">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li class="active"><a href="#">House of Bikaneri </a>
-                                <ul class="dropdown">
-                                    <li><a href="">Our Legacy</a></li>
-                                    <li><a href="">Bikaner Heritage</a></li>
-                                    <li><a href="">Craftsmanship</a></li>
-                                    <li><a href="">Artisans of Bikaner</a></li>
-                                    <li><a href="">Bespoke Jewellery</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Collections</a>
-                                <ul class="dropdown">
-                                    <li><a href="">Polki & Kundan</a></li>
-                                    <li><a href="">Gold Jewellery</a></li>
-                                    <li><a href="">Diamond Jewellery</a></li>
-                                    <li><a href="">Bridal Jewellery</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="">Bespoke Jewellery</a></li>
+                            @foreach($menuItems as $nav)
+                                <li><a href="">{{ $nav->name }}</a>
+                                @if($nav->categories->count() > 0)
+                                    <ul class="dropdown">
+                                        @foreach($nav->categories as $subNav)
+                                            <li><a href="">{{ $subNav->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                                </li>
+                            @endforeach
+
                             <li><a href="">Contact Us</a></li>
-                            <li><a href="">Book an Appointment</a></li>
                             @if(Auth::check())
                             <li class="profile-menu"><a href="#"><div class="profile-circle"><i class="fa fa-user"></i></div></a>
 

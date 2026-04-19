@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Category Add')
+@section('title', 'Category Update')
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Category Add</h1>
+                <h1 class="m-0">Category Update</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -29,8 +29,9 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{ route('categories.store') }}" method="POST">
+              <form id="quickForm" action="{{ route('categories.update', $category->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
                       <label for="categoryName">Navigation Name</label>
@@ -38,7 +39,7 @@
                       <option value=''>Please select</option>
                       @if(!empty($navigation))
                           @foreach($navigation as $value)
-                              <option value='{{$value->id}}'>{{$value->name}}</option>
+                              <option value='{{$value->id}}' {{ $category->navigation_id == $value->id ? 'selected' : '' }}>{{$value->name}}</option>
                           @endforeach
                       @endif
                       </select>
@@ -50,7 +51,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="categoryName">Category Name</label>
-                    <input type="text" name="name" class="form-control" id="categoryName" placeholder="Category Name">
+                    <input type="text" name="name" class="form-control" id="categoryName" placeholder="Category Name" value="{{ $category->name }}">
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

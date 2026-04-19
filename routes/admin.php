@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\NavigationController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\SettingController;
@@ -17,8 +18,11 @@ Route::post('/logout', [AdminAuthController::class, 'logout'])->middleware(['aut
 Route::middleware(['auth','admin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('categories', CategoryController::class);
-    Route::resource('product', ProductController::class);
     
+    Route::resource('product', ProductController::class);
+
+    Route::resource('navigation', NavigationController::class);
+
     Route::post('/user/status-change', [UserController::class, 'changeStatus'])->name('user.status.change');
     Route::resource('user', UserController::class);
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Navigation;
 
 class CategoryController extends Controller
 {
@@ -16,11 +17,14 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $query = Category::select('id','name','status','created_at')->orderBy('created_at','desc');
+            $query = Category::select('id','name','navigation_id','status','created_at')->with('navigation')->orderBy('created_at','desc');
             return DataTables::of($query)
                 ->addIndexColumn()
                 ->editColumn('created_at', function ($row) {
                     return $row->created_at->format('d-m-Y h:i A');
+                })
+                ->editColumn('navigation_id', function ($row) {
+                    return $row->navigation ? $row->navigation->name : 'N/A';
                 })
                 ->editColumn('status', function ($row) {
                     return $row->status
@@ -28,7 +32,7 @@ class CategoryController extends Controller
                         : '<span class="badge bg-danger">Inactive</span>';
                 })
                 ->addColumn('action', function($row){
-                    return '<a href="#" class="btn btn-sm btn-primary" title="Edit"><i class="fas fa-edit"></i></a>';
+                    return '<a href="'.route('categories.edit', $row->id).'" class="btn btn-sm btn-primary" title="Edit"><i class="fas fa-edit"></i></a>';
                 })
                 ->rawColumns(['status','action'])
                 ->make(true);
@@ -42,7 +46,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $navigation = Navigation::get();
+        return view('admin.category.create', compact('navigation'));
     }
 
     /**
@@ -51,10 +56,12 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'navigation_id' => ['required',Rule::exists('tbl_navigation','id')],
             'name' => ['required',Rule::unique('categories')->whereNull('deleted_at')]
         ]);
 
         Category::create([
+            'navigation_id' => $request->navigation_id,
             'name' => $request->name,
         ]);
 
@@ -74,7 +81,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $navigation = Navigation::get();
+        $category = Category::findOrFail($id);
+        return view('admin.category.update', compact('category','navigation'));
     }
 
     /**
@@ -82,7 +91,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $request->validate([
+            'navigation_id' => ['required',Rule::exists('tbl_navigation','id')],
+            'name' => ['required',Rule::unique('categories')->whereNull('deleted_at')->ignore($id)]
+        ]);
+
+        $category = Category::findOrFail($id);
+
+        $category->update([
+            'navigation_id' => $request->navigation_id,
+            'name' => $request->name,
+        ]);
+
+        return redirect()->route('categories.index')->with('success','Category Updated Successfully');
     }
 
     /**

@@ -1,17 +1,17 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Category Add')
+@section('title', 'Navigation Update')
 @section('content')
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Category Add</h1>
+                <h1 class="m-0">Navigation Update</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Category</li>
+                <li class="breadcrumb-item active">Navigation</li>
                 </ol>
             </div>
             </div>
@@ -25,32 +25,17 @@
             <!-- jquery validation -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Category</h3>
+                <h3 class="card-title">Navigation</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form id="quickForm" action="{{ route('categories.store') }}" method="POST">
+              <form id="quickForm" action="{{ route('navigation.update', $navigation->id) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="card-body">
                   <div class="form-group">
-                      <label for="categoryName">Navigation Name</label>
-                      <select class="form-control" name='navigation_id'>
-                      <option value=''>Please select</option>
-                      @if(!empty($navigation))
-                          @foreach($navigation as $value)
-                              <option value='{{$value->id}}'>{{$value->name}}</option>
-                          @endforeach
-                      @endif
-                      </select>
-                      @error('navigation_id')
-                          <span class="text-danger">{{ $message }}</span>
-                      @enderror
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="categoryName">Category Name</label>
-                    <input type="text" name="name" class="form-control" id="categoryName" placeholder="Category Name">
+                    <label for="navigationName">Navigation Name</label>
+                    <input type="text" name="name" class="form-control" id="navigationName" placeholder="Navigation Name" value="{{ old('name', $navigation->name) }}">
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
@@ -83,17 +68,11 @@
         name: {
             required: true,
         },
-        navigation_id: {
-            required: true,
-        }
         },
         messages: {
         name: {
-            required: "Please enter a category name",
+            required: "Please enter a navigation name",
         },
-        navigation_id: {
-            required: "Please select a navigation name",
-        }
         },
         errorElement: 'span',
         errorPlacement: function (error, element) {
