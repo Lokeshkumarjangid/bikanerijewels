@@ -36,7 +36,7 @@ Route::get('/product-details/{id}',[ProductController::class,'product_details'])
 /**************************Product list and Product detatils page api end *************************************/
 
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
-Route::get('/cms/{slug}', [CmsController::class, 'index'])->name('cms.index');
+Route::get('/cms/{slug}', [CmsController::class, 'index']);
 
 
 Route::middleware(['auth'])->group(function () {
