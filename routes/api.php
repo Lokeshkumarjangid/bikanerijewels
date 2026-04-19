@@ -40,5 +40,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/order-create/{id}', [ApiController::class, 'create_order']);
     Route::post('/get-orders', [ApiController::class, 'get_orders']);
     Route::get('/order-details/{id}', [ApiController::class, 'get_order_details']);
+    
+    //Address
+    Route::post('/add-address', [ApiController::class, 'add_address']);
+    Route::get('/get-address', [ApiController::class, 'get_address']);
+    Route::post('/update-address/{id}', [ApiController::class, 'update_address']);
+    Route::delete('/delete-address/{id}', [ApiController::class, 'delete_address']);
 
 });

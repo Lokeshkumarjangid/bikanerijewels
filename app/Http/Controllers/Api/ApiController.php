@@ -8,7 +8,9 @@ use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\CustomRequest;
 use App\Http\Requests\WishlistRequest;
 use App\Http\Requests\RatingRequest;
+use App\Http\Requests\UserAddressRequest;
 use Illuminate\Http\Request;
+use App\Models\UserAddress;
 use App\Models\MobilePage;
 use App\Models\Category;
 use App\Models\Settings;
@@ -586,4 +588,107 @@ class ApiController extends Controller
             ], 500);
         }
     }
+
+    function add_address(Request $request, UserAddressRequest $UserAddressRequest){
+        try {
+            $user = auth()->user();
+            $data = $request->validate($UserAddressRequest->rules());
+            $data['user_id'] = $user->id;  
+            if(isset($data['is_default']) && $data['is_default'] == 1){
+                UserAddress::where('user_id', $user->id)
+                    ->update(['is_default' => 0]);
+            }
+
+            UserAddress::create($data);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Address added successfully',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function get_address(Request $request){
+        try {
+            $user = auth()->user();
+            $addresses = UserAddress::where('user_id', $user->id)->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'User addresses',
+                'data' => $addresses
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function update_address(Request $request, UserAddressRequest $UserAddressRequest, $id){
+        try {
+            $user = auth()->user();
+            $address = UserAddress::where('id', $id)->where('user_id', $user->id)->first();
+
+            if (!$address) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Address not found',
+                ], 404);
+            }
+
+            $data = $request->validate($UserAddressRequest->rules());
+            
+            if(isset($data['is_default']) && $data['is_default'] == 1){
+                UserAddress::where('user_id', $user->id)
+                    ->update(['is_default' => 0]);
+            }
+
+            $address->update($data);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Address updated successfully',
+                'data' => $address
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    function delete_address(Request $request, $id){
+        try {
+            $user = auth()->user();
+            $address = UserAddress::where('id', $id)->where('user_id', $user->id)->first();
+
+            if (!$address) {
+                return response()->json([
+                    'status' => false,
+                    'message' => 'Address not found',
+                ], 404);
+            }
+
+            $address->delete();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Address deleted successfully',
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+    
 }
