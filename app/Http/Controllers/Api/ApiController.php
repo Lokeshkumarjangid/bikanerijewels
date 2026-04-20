@@ -21,6 +21,7 @@ use App\Models\Custom;
 use App\Models\Wishlist;
 use App\Models\Rating;
 use App\Models\Cms;
+use Carbon\Carbon;
 
 class ApiController extends Controller
 {
@@ -183,6 +184,7 @@ class ApiController extends Controller
             $user = auth()->user();
             $data = $request->validated();
             $data['user_id'] = $user->id;
+            $data['delivery_date'] = Carbon::parse($request->delivery_date)->format('Y-m-d');
             
             // Handle custom image upload
             if ($request->hasFile('custom_image')) {
