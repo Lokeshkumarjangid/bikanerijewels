@@ -30,7 +30,7 @@ class CustomRequest extends FormRequest
             'item_name' => 'nullable|string|max:255',
             'size' => 'nullable|string|max:50',
             'delivery_date' => 'nullable',
-            'estimate' => 'nullable|numeric',
+            'estimate' => 'nullable|string',
             'metal_purity' => 'nullable|string|max:50',
             'breadth' => 'nullable|string|max:50',
             'meena_front_side' => 'nullable|string|max:255',
