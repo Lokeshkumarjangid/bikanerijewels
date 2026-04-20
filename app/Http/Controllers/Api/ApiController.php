@@ -184,6 +184,7 @@ class ApiController extends Controller
             $user = auth()->user();
             $data = $request->validated();
             $data['user_id'] = $user->id;
+            \Log::Info($request->delivery_date);
             $data['delivery_date'] = Carbon::parse($request->delivery_date)->format('Y-m-d');
             
             // Handle custom image upload
