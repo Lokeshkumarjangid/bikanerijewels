@@ -9,6 +9,7 @@ use App\Http\Requests\CustomRequest;
 use App\Http\Requests\WishlistRequest;
 use App\Http\Requests\RatingRequest;
 use App\Http\Requests\UserAddressRequest;
+use App\Http\Requests\ProductSearchRequest;
 use Illuminate\Http\Request;
 use App\Models\UserAddress;
 use App\Models\MobilePage;
@@ -43,7 +44,7 @@ class ApiController extends Controller
         }
     }
 
-    function product_search(Request $request){
+    function product_search(Request $request, ProductSearchRequest $ProductSearchRequest){
         try {
             $searchTerm = $request->get('search');
             $products = Product::where('product_name', 'like', '%' . $searchTerm . '%')
