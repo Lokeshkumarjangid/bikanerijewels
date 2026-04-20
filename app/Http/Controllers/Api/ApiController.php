@@ -184,7 +184,7 @@ class ApiController extends Controller
             $user = auth()->user();
             $data = $request->validated();
             $data['user_id'] = $user->id;
-            if($request->$request->delivery_date){
+            if($request->delivery_date){
                 $deliverydate=DateTime::createFromFormat('d/m/Y', $request->delivery_date);
                 $data['delivery_date'] = $deliverydate->format('Y-m-d');
             }
