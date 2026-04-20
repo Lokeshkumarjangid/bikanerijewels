@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('state');
             $table->string('postal_code');  
-            $table->boolean('status')->default(1)->comment('1 Home, 2 office');
+            $table->boolean('status')->default(0)->comment('0 Home, 1 office');
             $table->boolean('is_default')->default(0)->comment('1 for default address, 0 for non-default');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();   
