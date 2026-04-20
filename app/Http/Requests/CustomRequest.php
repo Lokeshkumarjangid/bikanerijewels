@@ -29,7 +29,7 @@ class CustomRequest extends FormRequest
             'custom_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'item_name' => 'nullable|string|max:255',
             'size' => 'nullable|string|max:50',
-            'delivery_date' => 'nullable|date',
+            'delivery_date' => 'nullable',
             'estimate' => 'nullable|numeric',
             'metal_purity' => 'nullable|string|max:50',
             'breadth' => 'nullable|string|max:50',
