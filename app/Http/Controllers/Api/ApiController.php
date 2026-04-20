@@ -202,6 +202,7 @@ class ApiController extends Controller
             ], 200);
 
         } catch (\Exception $e) {
+            \Log::Info($e);
             return response()->json([
                 'status' => false,
                 'message' => 'Something went wrong',
