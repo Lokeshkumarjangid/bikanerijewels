@@ -20,6 +20,7 @@ class SettingController extends Controller
         $request->validate([
             'web_home_video' => 'nullable|mimes:mp4|max:5120',
             'mob_home_video' => 'nullable|mimes:mp4|max:1024',
+            "home_third_section" => 'nullable',
         ]);
 
         if ($request->hasFile('web_home_video')) {
@@ -37,6 +38,13 @@ class SettingController extends Controller
             Settings::updateOrCreate(
                 ['key' => 'mob_home_video'],
                 ['value' => $mobVideo]
+            );
+        }
+
+        if($request->home_third_section){
+            Settings::updateOrCreate(
+                ['key' => 'home_third_section'],
+                ['value' => $request->home_third_section]
             );
         }
 

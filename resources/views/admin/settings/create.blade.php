@@ -59,6 +59,15 @@
                         @endif
                     </div>
 
+
+                    <div class="form-group">
+                        <label>Home Third section</label>
+                        <textarea name="home_third_section" class="form-control" rows="6" id="summernote">{{$setting[2]['value']}}</textarea>
+                        @error('mob_home_video')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                 </div>
 
                 <div class="card-footer">
@@ -72,4 +81,12 @@
     </div>
 </section>
 
+@endsection
+@section('scripts')
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote').summernote();
+})
+</script>
 @endsection

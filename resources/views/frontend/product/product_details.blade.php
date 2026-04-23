@@ -303,10 +303,10 @@
                             <a class="nav-link active" data-toggle="tab" href="#tabs-5"
                             role="tab">Description</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-6" role="tab">Customer
                             Previews(5)</a>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-5" role="tabpanel">

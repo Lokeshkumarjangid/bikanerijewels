@@ -105,30 +105,12 @@
     <!-- Banner Section End -->
        <br><br>
      <section class="heritage-section">
-    <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center">
-
-                <h2 class="heritage-title">
-                    Where Bikaner's Heritage Becomes Heirlooms
-                </h2>
-
-                <p class="heritage-text">
-                    Born in the royal city of Bikaner and shaped by decades of expertise, 
-                    Bikaneri Jewels stands for timeless design and uncompromising craftsmanship. 
-                    Since 1942, our journey has been guided by a deep respect for tradition, 
-                    masterful artistry, and a commitment to excellence.
-                </p>
-
-                <p class="heritage-text">
-                    Every creation reflects our legacy — where heritage inspires elegance 
-                    and jewellery becomes an heirloom.
-                </p>
-
+                {!! $thirdsection->value !!}
             </div>
         </div>
-    </div>
-</section>
+    </section>
   <br><br>
 
     <!-- Categroy Section End -->
