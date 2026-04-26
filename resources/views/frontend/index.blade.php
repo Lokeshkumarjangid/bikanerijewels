@@ -173,6 +173,7 @@
                                 <div class="product__item__text">
                                     <h6>{{$value->product_name}}</h6>
                                     <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a>
+                                    <h5>{{$value->price}}</h5>
                                     <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
                                     <!-- <div class="product__color__select">
                                         <label for="pc-1">

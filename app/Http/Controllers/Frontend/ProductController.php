@@ -18,6 +18,15 @@ class ProductController extends Controller
         $productId = decrypt($id);
         $data['product_details'] = Product::with(['images:id,product_id,file_path,file_type','video:id,product_id,file_path,file_type','categroy:id,name'])->findOrFail($productId);
 
+        $categoryId = $data['product_details']->categroy_id ?? null;
+
+        $data['related_product'] = Product::where('categroy_id', $categoryId)
+            ->where('id', '!=', $productId)
+            ->with(['firstImage:id,product_id,file_path,file_type'])
+            ->limit(5)
+            ->get();
+
+
         return view('frontend.product.product_details',$data);
     }
 
@@ -40,7 +49,7 @@ class ProductController extends Controller
             $query->whereBetween('price', [$request->min, $request->max]);
         }
 
-        $data['product_details'] = $query->paginate(1);
+        $data['product_details'] = $query->paginate(12);
 
         // AJAX RESPONSE
         if ($request->ajax()) {

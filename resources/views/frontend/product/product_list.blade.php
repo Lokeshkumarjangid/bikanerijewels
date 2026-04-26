@@ -142,16 +142,12 @@ function fetchProducts(page = 1) {
             category:category
         },
         success: function(res) {
-
-            // 🔥 products
             $('#product-area').html(res.html);
 
-            // 🔥 showing text
             $('#showing-text').text(
                 'Showing ' + res.from + ' – ' + res.to + ' of ' + res.total + ' results'
             );
 
-            // 🔥 pagination update
             $('.product__pagination').html(res.pagination);
         }
     });
