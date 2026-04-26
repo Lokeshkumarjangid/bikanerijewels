@@ -18,7 +18,7 @@
                     <div class="footer__widget">
                         <h6>Services</h6>
                         <ul>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="{{route('contactus')}}">Contact Us</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'faq']) }}">FAQS</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'care-advice']) }}">Care Advices</a></li>
                             <li><a href="#">Book an appointment</a></li>

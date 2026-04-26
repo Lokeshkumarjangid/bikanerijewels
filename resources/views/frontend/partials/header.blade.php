@@ -23,7 +23,7 @@
                                 </li>
                             @endforeach
 
-                            <li><a href="">Contact Us</a></li>
+                            <li><a href="{{route('contactus')}}">Contact Us</a></li>
                             @if(Auth::check())
                             <li class="profile-menu"><a href="#"><div class="profile-circle"><i class="fa fa-user"></i></div></a>
 

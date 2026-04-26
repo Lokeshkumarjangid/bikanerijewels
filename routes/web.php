@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\CustomizeController;
+use App\Http\Controllers\Frontend\ContactusController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\LoginController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -39,6 +40,9 @@ Route::get('/product-list/{id}',[ProductController::class,'product_list'])->name
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
 Route::get('/cms/{slug}', [CmsController::class, 'index'])->name('cms');
 
+/**************************Contact us page *************************************/
+Route::get('/contact-us', [ContactusController::class, 'create'])->name('contactus');
+Route::post('/store-contactus', [ContactusController::class, 'store'])->name('storecontactus');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
