@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CmsController;
+use App\Http\Controllers\Admin\ContactusController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('admin.login');
@@ -37,5 +38,7 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::resource('cms', CmsController::class);
 
     Route::resource('home-rating', HomeRatingController::class);
+
+    Route::get('contact-us', [ContactusController::class, 'index'])->name('contactusindex');
     
 });
