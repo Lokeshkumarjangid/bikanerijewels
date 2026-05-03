@@ -242,15 +242,20 @@
                         <img src="{{asset('image/letconnect.jpg')}}" alt="">
                     </div>
                     <div class="connect-form">
-                        <form>
-                            <input type="text" placeholder="Full name*" required>
-                            <input type="email" placeholder="Email address*" required>
-                            <input type="text" placeholder="Mobile number*" required>
+                        <form id="quickForm" method='post' action="{{route('storecontactus')}}">
+                            @csrf
+                            <input type="hidden" name='type' value='1'>
+                            <input type="text" placeholder="Full name*" name='name'>
+                             @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                            <input type="email" placeholder="Email address*" name='email'>
+                            <input type="text" placeholder="Mobile number*" name='mobile'>
                             <div class="double-input">
-                                <input type="date" placeholder="Preferred date">
-                                <input type="time" placeholder="Preferred time">
+                                <input type="date" placeholder="Preferred date" name='contact_date'>
+                                <input type="time" placeholder="Preferred time" name='contact_time'>
                             </div>
-                            <textarea placeholder="How did you hear about us?*"></textarea>
+                            <textarea name='message' placeholder="How did you hear about us?*"></textarea>
                             <button type="submit">Send</button>
 
                         </form>
@@ -333,4 +338,40 @@
         </div>
     </section> -->
     <!-- Latest Blog Section End -->
+@endsection
+@section('scripts')
+<script>
+    $(function () {
+    $('#quickForm').validate({
+        rules: {
+            name: {
+                required: true,
+            },
+            email: {
+                required: true,
+            },
+            mobile: {
+                required: true,
+            },
+            message: {
+                required: true,
+            },
+        },
+        errorElement: 'span',
+        errorPlacement: function (error, element) {
+            error.addClass('invalid-feedback');
+            element.closest('.form-group').append(error);
+        },
+        highlight: function (element, errorClass, validClass) {
+            $(element).addClass('is-invalid');
+        },
+        unhighlight: function (element, errorClass, validClass) {
+           $(element).removeClass('is-invalid');
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+    });
+</script>
 @endsection

@@ -124,7 +124,7 @@
 
           <form id="quickForm" method="POST" action="{{route('storecontactus')}}">
             @csrf
-
+            <input type="hidden" name="type" value="2">
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" placeholder="Enter Name" name='name'>
