@@ -4361,6 +4361,9 @@ margin-bottom:12px;
 		height:108px;
 		border-radius:1px;
 		width: 85px;
+		background-size: cover;      /* 🔥 main fix */
+		background-position: center; /* center crop */
+		background-repeat: no-repeat;
 	}
 
 	.category-title{
