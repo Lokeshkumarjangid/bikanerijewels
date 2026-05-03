@@ -437,9 +437,12 @@ ol {
     height:216px;
     width:202px;
     border-radius:20px;
-    background-size: cover;      /* 🔥 main fix */
-	background-position: center; /* center crop */
-	background-repeat: no-repeat;
+	overflow:hidden;
+
+    background-size: contain !important;   /* 🔥 override */
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-color:#f5f5f5;
 }
 
 .category-item{
