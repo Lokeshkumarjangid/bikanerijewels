@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{asset('front/css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/bootstrap-4.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/css/style.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('front/css/select2.min.css')}}" type="text/css">
 </head>
 
 <body>
@@ -49,6 +50,7 @@
     <script src="{{asset('front/js/jquery.validate.min.js')}}"></script>
     <script src="{{asset('front/js/toastr.min.js')}}"></script>
     <script src="{{asset('front/js/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('front/js/select2.min.js')}}"></script>
     @include('frontend.partials.toast')
     @yield('scripts')
 </body>

@@ -38,6 +38,7 @@ Route::get('/product-list/{id}',[ProductController::class,'product_list'])->name
 /**************************Product list and Product detatils page api end *************************************/
 
 Route::get('/customize', [CustomizeController::class, 'index'])->name('customize.index');
+Route::post('/customize-store', [CustomizeController::class, 'store'])->name('customize.store');
 Route::get('/cms/{slug}', [CmsController::class, 'index'])->name('cms');
 
 /**************************Contact us page *************************************/
