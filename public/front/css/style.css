@@ -434,12 +434,10 @@ ol {
 }
 
 .product__item__pic{
-    height:216px;
+    height:279px;
     width:202px;
     border-radius:20px;
-	background-size: cover;         /* 🔥 full fill */
-    background-position: center;    /* 🔥 center crop */
-    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .category-item{
