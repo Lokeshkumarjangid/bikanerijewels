@@ -68,6 +68,22 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label>Home fourth section</label>
+                        <textarea name="home_fourth_section" class="form-control" rows="6" id="summernotefourth">{{$setting[3]['value']}}</textarea>
+                        @error('home_fourth_section')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label>Home Six section</label>
+                        <textarea name="home_six_section" class="form-control" rows="6" id="summernotesix">{{$setting[4]['value']}}</textarea>
+                        @error('home_six_section')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                 </div>
 
                 <div class="card-footer">
@@ -87,6 +103,8 @@
   $(function () {
     // Summernote
     $('#summernote').summernote();
+    $('#summernotefourth').summernote();
+    $('#summernotesix').summernote();
 })
 </script>
 @endsection

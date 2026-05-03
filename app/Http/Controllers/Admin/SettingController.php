@@ -21,6 +21,8 @@ class SettingController extends Controller
             'web_home_video' => 'nullable|mimes:mp4|max:5120',
             'mob_home_video' => 'nullable|mimes:mp4|max:1024',
             "home_third_section" => 'nullable',
+            "home_fourth_section" => 'nullable',
+            "home_six_section" => 'nullable',
         ]);
 
         if ($request->hasFile('web_home_video')) {
@@ -45,6 +47,20 @@ class SettingController extends Controller
             Settings::updateOrCreate(
                 ['key' => 'home_third_section'],
                 ['value' => $request->home_third_section]
+            );
+        }
+
+        if($request->home_fourth_section){
+            Settings::updateOrCreate(
+                ['key' => 'home_fourth_section'],
+                ['value' => $request->home_fourth_section]
+            );
+        }
+
+        if($request->home_six_section){
+            Settings::updateOrCreate(
+                ['key' => 'home_six_section'],
+                ['value' => $request->home_six_section]
             );
         }
 

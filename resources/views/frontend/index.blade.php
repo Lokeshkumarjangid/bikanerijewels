@@ -117,7 +117,7 @@
 
     <section class="story-section">
         <div class="container">
-            <div class="story-title">
+            <!-- <div class="story-title">
                 <h2>Where Stories Begins</h2>
                 <p>Explore Collections that Capture Every Occasion</p>
                 <div class="divider"></div>
@@ -143,7 +143,8 @@
                         <h3>Noor</h3>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            {!! $fourthsection->value !!}
         </div>
     </section>
   <br><br>
@@ -198,9 +199,11 @@
 
     <!-- Categories Section Begin -->
     <section class="categories spad">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="image/forbestbanner1.jpg">
-            </div>
+        <div class="hero-oneimage">
+            <!-- <div class="hero__items">
+                <img src="{{asset('image/forbestbanner1.jpg')}}" alt="">
+            </div> -->
+            {!! $sixsection->value !!}
         </div>
     </section>
 
@@ -209,56 +212,23 @@
             <h2 class="testimonial-title">
                 STORIES OF GRACE AND <br> GRANDEUR
             </h2>
-            <div class="testimonial-slider owl-carousel">
-                <div class="testimonial-item">
-                    <div class="quote">“
-                    </div>
-                    <p>
-                    Best experience for me as a bride. I did a lot of research pan India but
-                    there’s nothing compared to Raniwala in terms of both pricing and design.
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="image/bestsale.jpg">
-                        <span>Kuvam</span>
-                    </div>
+                <div class="testimonial-slider owl-carousel">
+                    @if(!empty($Homerating))
+                        @foreach($Homerating as $value)
+                        <div class="testimonial-item">
+                            <div class="quote">“
+                            </div>
+                            <p>
+                                {{$value->description}}
+                            </p>
+                            <div class="testimonial-user">
+                                <img src="image/bestsale.jpg">
+                                <span>{{$value->user_name}}</span>
+                            </div>
+                        </div>
+                        @endforeach
+                    @endif
                 </div>
-                <div class="testimonial-item">
-                    <div class="quote">“
-                    </div>
-                    <p>
-                    Best experience for me as a bride. I did a lot of research pan India but
-                    there’s nothing compared to Raniwala in terms of both pricing and design.
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="image/bestsale.jpg">
-                        <span>Ravi</span>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="quote">“
-                    </div>
-                    <p>
-                    Best experience for me as a bride. I did a lot of research pan India but
-                    there’s nothing compared to Raniwala in terms of both pricing and design.
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="image/bestsale.jpg">
-                        <span>Ravi</span>
-                    </div>
-                </div>
-                <div class="testimonial-item">
-                    <div class="quote">“
-                    </div>
-                    <p>
-                    Best experience for me as a bride. I did a lot of research pan India but
-                    there’s nothing compared to Raniwala in terms of both pricing and design.
-                    </p>
-                    <div class="testimonial-user">
-                        <img src="image/bestsale.jpg">
-                        <span>Ravi</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <br><br>

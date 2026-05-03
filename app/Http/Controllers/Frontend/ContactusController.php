@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ContactusController extends Controller
 {
@@ -24,5 +25,10 @@ class ContactusController extends Controller
         }catch(\Exception $e){
             return redirect()->back()->with('error', 'Someting went working');
         }
+    }
+
+    function landingpage(Request $request){
+        $data['bestProducts']=Product::with('firstImage')->latest()->take(4)->get();
+        return view('frontend.landingpage.index',$data);
     }
 }

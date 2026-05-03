@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\HomeRatingController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -34,5 +35,7 @@ Route::middleware(['auth','admin'])->group(function () {
 
     Route::post('/cms/status-change', [CmsController::class, 'changeStatus'])->name('cms.status.change');
     Route::resource('cms', CmsController::class);
+
+    Route::resource('home-rating', HomeRatingController::class);
     
 });

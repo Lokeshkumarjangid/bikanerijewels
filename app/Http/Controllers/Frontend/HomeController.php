@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Services\ProductService;
 use App\Models\Settings;
+use App\Models\HomeRating;
 
 class HomeController extends Controller
 {
@@ -21,7 +22,10 @@ class HomeController extends Controller
     {
         $bestProducts = $this->productService->getBestSaleProducts();
         $thirdsection=Settings::find('3');
+        $fourthsection=Settings::find('4');
+        $sixsection=Settings::find('5');
+        $Homerating=HomeRating::select('id','user_name','description')->orderBy('id','desc')->get('10');
 
-        return view('frontend.index', compact('bestProducts','thirdsection'));
+        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating'));
     }
 }

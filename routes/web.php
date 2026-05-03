@@ -45,6 +45,10 @@ Route::get('/cms/{slug}', [CmsController::class, 'index'])->name('cms');
 Route::get('/contact-us', [ContactusController::class, 'create'])->name('contactus');
 Route::post('/store-contactus', [ContactusController::class, 'store'])->name('storecontactus');
 
+/**************************Landing Page *************************************/
+Route::get('/landing-page', [ContactusController::class, 'landingpage'])->name('landingpage');
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
