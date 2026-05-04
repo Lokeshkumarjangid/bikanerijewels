@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\CustomizeController;
 use App\Http\Controllers\Frontend\ContactusController;
 use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\Frontend\StoreController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\CmsController;
 
@@ -48,6 +49,8 @@ Route::post('/store-contactus', [ContactusController::class, 'store'])->name('st
 /**************************Landing Page *************************************/
 Route::get('/landing-page', [ContactusController::class, 'landingpage'])->name('landingpage');
 
+/**************************Store Page *************************************/
+Route::get('/store', [StoreController::class, 'index'])->name('storeindex');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');

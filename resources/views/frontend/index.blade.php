@@ -222,7 +222,7 @@
                                 {{$value->description}}
                             </p>
                             <div class="testimonial-user">
-                                <img src="image/bestsale.jpg">
+                                <img src=''>
                                 <span>{{$value->user_name}}</span>
                             </div>
                         </div>

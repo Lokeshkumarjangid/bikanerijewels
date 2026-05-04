@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Http\Controllers\Frontend;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class StoreController extends Controller
+{
+    function index(Request $request){
+        return view('frontend.store.index');
+    }
+}
