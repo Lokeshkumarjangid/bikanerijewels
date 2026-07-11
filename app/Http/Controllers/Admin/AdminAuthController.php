@@ -11,6 +11,7 @@ class AdminAuthController extends Controller
 {
     public function showLogin()
     {
+        //test
         return view('admin.login');
     }
 
