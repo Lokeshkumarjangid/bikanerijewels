@@ -35,6 +35,7 @@ body {
 	height: 100%;
 	font-family: "Nunito Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
 }
 
 h1,
@@ -615,6 +616,13 @@ ol {
 	height: 550px;
 	padding-top: 230px;
 } */
+
+.hero__itemss{
+    min-height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .videosection{
     position: relative;
@@ -4248,6 +4256,35 @@ margin-bottom:12px;
     font-size:13px;
     color:#666;
 }
+
+.desktop-banner{
+    display:block;
+}
+
+.mobile-banner{
+    display:none;
+}
+
+.whatsapp-float{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 62px;
+    height: 62px;
+    z-index: 99999;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.whatsapp-float img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+}
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
@@ -4383,6 +4420,13 @@ margin-bottom:12px;
 
 	.testimonial-item{
 	padding:20px;
+	}
+
+	.whatsapp-float{
+		width:55px;
+		height:55px;
+		right:15px;
+		bottom:15px;
 	}
 }
 
@@ -4755,6 +4799,20 @@ margin-bottom:12px;
 	.connect-section{
 	padding:50px 20px;
 	}
+
+	.hero__itemss{
+        height: 500px;
+        background-size: cover;
+        background-position: top center;
+    }
+
+	.desktop-banner{
+        display:none;
+    }
+
+    .mobile-banner{
+        display:block;
+    }
 }
 
 /* Small Device = 320px */

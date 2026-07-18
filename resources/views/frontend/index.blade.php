@@ -58,8 +58,19 @@
     <!-- Banner Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="image/banner1.jpg">
-                <!-- <div class="container">
+            @if(!empty($banner))
+                @foreach($banner as $value)
+                <div class="hero__itemss set-bg desktop-banner"
+                    data-setbg="{{ asset('storage/'.$value->banner_img_web) }}">
+                </div>
+
+                <div class="hero__itemss set-bg mobile-banner"
+                    data-setbg="{{ asset('storage/'.$value->banner_img_mob) }}">
+                </div>
+                @endforeach
+            @endif
+            <!-- <div class="hero__items set-bg" data-setbg="image/banner2.jpg">
+                <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-7 col-md-8">
                             <div class="hero__text">
@@ -77,29 +88,8 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
-            </div>
-            <div class="hero__items set-bg" data-setbg="image/banner2.jpg">
-                <!-- <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
         </div>
     </section>
     <!-- Banner Section End -->

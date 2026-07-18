@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Services\ProductService;
 use App\Models\Settings;
 use App\Models\HomeRating;
+use App\Models\Banners;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
         $fourthsection=Settings::find('4');
         $sixsection=Settings::find('5');
         $Homerating=HomeRating::select('id','user_name','description')->orderBy('id','desc')->get('10');
+        $banner=Banners::select('id','sort_order','banner_img_web','banner_img_mob','status')->where('status','1')->orderBy('sort_order','ASC')->get();
 
-        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating'));
+        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating','banner'));
     }
 }

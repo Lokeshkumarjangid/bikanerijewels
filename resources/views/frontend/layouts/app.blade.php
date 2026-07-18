@@ -53,6 +53,12 @@
     <script src="{{asset('front/js/select2.min.js')}}"></script>
     @include('frontend.partials.toast')
     @yield('scripts')
+    <a href="https://wa.me/917400187216?text={{ urlencode('Hello! I would like to know more about Bikaneri Jewels and its handcrafted jewellery collections. Can you assist me?') }}"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="WhatsApp">
+            <img src="{{ asset('image/whatsapp-app.svg') }}" alt="WhatsApp">
+    </a>
 </body>
 
 </html>
