@@ -4813,6 +4813,33 @@ margin-bottom:12px;
     .mobile-banner{
         display:block;
     }
+
+	.hero-oneimage{
+		width:100%;
+	}
+
+	.hero-oneimage .hero__items{
+		display:flex !important;
+		align-items:center;
+		gap:15px;
+	}
+
+	.hero-oneimage .hero__items img{
+		width:100%;
+		height:778px;
+		flex-shrink:0;
+	}
+
+	.hero-oneimage .hero__items p,
+	.hero-oneimage .hero__items h1,
+	.hero-oneimage .hero__items h2,
+	.hero-oneimage .hero__items h3,
+	.hero-oneimage .hero__items h4,
+	.hero-oneimage .hero__items h5,
+	.hero-oneimage .hero__items div{
+		width:55%;
+		margin:0;
+	}
 }
 
 /* Small Device = 320px */

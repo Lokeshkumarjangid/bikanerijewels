@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('navigation_id')->index();
             $table->text('description')->nullable();
             $table->boolean('status')->default(1)->comment('1 = active, 0 = inactive');
+            $table->enum('type', ['non_collection', 'collection']);
             $table->timestamps();
             $table->softDeletes();
         });
