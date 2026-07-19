@@ -35,6 +35,7 @@ Route::get('/otp',[LoginController::class,'otp'])->name('otp');
 
 Route::get('/product-details/{id}',[ProductController::class,'product_details'])->name('productdetails');
 Route::get('/product-list/{id}',[ProductController::class,'product_list'])->name('productlist');
+Route::get('/collection-list/{id}',[ProductController::class,'collection_list'])->name('collection');
 
 /**************************Product list and Product detatils page api end *************************************/
 

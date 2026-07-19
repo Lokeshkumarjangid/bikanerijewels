@@ -12,7 +12,8 @@ class Category extends Model
     protected $fillable = [
         'name',
         'navigation_id',
-        'status'
+        'status',
+        'type'
     ];
 
     public function navigation()

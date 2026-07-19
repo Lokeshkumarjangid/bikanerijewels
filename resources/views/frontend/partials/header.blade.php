@@ -16,7 +16,11 @@
                                 @if($nav->categories->count() > 0)
                                     <ul class="dropdown">
                                         @foreach($nav->categories as $subNav)
-                                            <li><a href="{{ route('productlist', ['id' => encrypt($subNav->id)]) }}">{{ $subNav->name }}</a></li>
+                                            @if($subNav->type == 'collection')
+                                                <li><a href="{{ route('collection', ['id' => encrypt($subNav->id)]) }}">{{ $subNav->name }}</a></li>
+                                            @else
+                                                <li><a href="{{ route('productlist', ['id' => encrypt($subNav->id)]) }}">{{ $subNav->name }}</a></li>
+                                            @endif
                                         @endforeach
                                     </ul>
                                 @endif

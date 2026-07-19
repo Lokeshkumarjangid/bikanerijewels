@@ -4285,6 +4285,254 @@ margin-bottom:12px;
 .whatsapp-float:hover{
     transform: scale(1.1);
 }
+
+.collection-banner{
+    width:100%;
+}
+
+.collection-banner-web{
+    width:100%;
+    height:550px;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:block;
+}
+
+.collection-banner-mobile{
+    display:none;
+    width:100%;
+    height:600px;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.nature-section{
+    margin-top: 50px !important;
+    padding-top: 60px;   /* jitni space chahiye */
+    background: #f8f8f3;
+}
+
+.nature-content{
+
+    max-width:520px;
+
+    margin:auto;
+
+    text-align:left;
+
+}
+
+.nature-content h2{
+
+    font-size:58px;
+
+    font-weight:300;
+
+    color:#555;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.nature-content p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#555;
+
+    margin-bottom:45px;
+
+}
+
+/* IMAGE */
+
+.nature-image{
+
+    width:430px;
+
+    height:520px;
+
+    overflow:hidden;
+
+    margin:auto;
+
+    border-radius:220px 220px 0 0;
+
+}
+
+.nature-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.collection-video-section{
+    width:100%;
+    padding:60px 0;
+}
+
+.collection-video-desktop{
+    display:block;
+}
+
+.collection-video-mobile{
+    display:none;
+}
+
+.collection-video-desktop video,
+.collection-video-mobile video{
+    width:100%;
+    display:block;
+    object-fit:cover;
+}
+
+.collection-fourth-section{
+    background:#f8f7f3;
+    padding:90px 0;
+    text-align:center;
+}
+
+.fourth-title{
+    font-size:48px;
+    font-weight:300;
+    color:#444;
+    margin-bottom:70px;
+}
+
+.fourth-images{
+    width:700px;
+    height:480px;
+    margin:auto;
+    position:relative;
+}
+
+.fourth-images img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/*==============================
+CENTER IMAGE
+===============================*/
+
+.center-shape{
+
+    position:absolute;
+
+    left:185px;
+    top:0;
+
+    width:280px;
+    height:380px;
+
+    overflow:hidden;
+
+    z-index:2;
+
+    /* same as screenshot */
+    border-top-right-radius:110px;
+
+}
+
+.center-shape img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+/*==============================
+LEFT IMAGE
+===============================*/
+
+.left-shape{
+
+    position:absolute;
+
+    left:70px;
+
+    bottom:18px;
+
+    width:170px;
+
+    height:210px;
+
+    overflow:hidden;
+
+    z-index:5;
+
+    border-top-right-radius:70px;
+
+}
+
+.left-shape img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+/*==============================
+RIGHT IMAGE
+===============================*/
+
+.right-shape{
+
+    position:absolute;
+
+    right:85px;
+
+    top:60px;
+
+    width:170px;
+
+    height:170px;
+
+    overflow:hidden;
+
+    border-radius:50%;
+
+    z-index:6;
+
+    border:10px solid #dff3fb;
+
+}
+
+.right-shape img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+/*==============================
+DESCRIPTION
+===============================*/
+
+.fourth-description{
+    width:70%;
+    margin:60px auto 0;
+    font-size:22px;
+    line-height:42px;
+    color:#555;
+}
+
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
@@ -4428,6 +4676,44 @@ margin-bottom:12px;
 		right:15px;
 		bottom:15px;
 	}
+
+	.collection-banner-web{
+        display:none;
+    }
+
+    .collection-banner-mobile{
+        display:block;
+    }
+
+	.nature-content{
+		max-width:320px;
+	}
+
+	.nature-content h2{
+		font-size:39px;
+	}
+
+	.nature-content p{
+		font-size:18px;
+	}
+
+	.nature-image{
+		width:300px;
+		height:390px;
+		border-radius:170px 170px 0 0;
+	}
+
+	.collection-video-desktop{
+        display:none;
+    }
+
+    .collection-video-mobile{
+        display:block;
+    }
+
+    .collection-video-section{
+        padding:40px 15px;
+    }
 }
 
 /* Wide Mobile = 480px */
@@ -4840,6 +5126,212 @@ margin-bottom:12px;
 		width:55%;
 		margin:0;
 	}
+	.collection-banner-web{
+        display:none;
+    }
+
+    .collection-banner-mobile{
+        display:block;
+    }
+
+	.nature-content{
+		max-width:320px;
+	}
+
+	.nature-content h2{
+		font-size:35px;
+	}
+
+	.nature-content p{
+		font-size:18px;
+	}
+
+	.nature-image{
+		width:300px;
+		height:390px;
+		border-radius:170px 170px 0 0;
+	}
+
+	.collection-video-desktop{
+        display:none;
+    }
+
+    .collection-video-mobile{
+        display:block;
+        width:100%;
+    }
+
+    .collection-video-mobile video{
+        width:100%;
+        height:auto;
+    }
+
+	.collection-video-desktop{
+        display:none;
+    }
+
+    .collection-video-mobile{
+        display:block;
+    }
+
+    .collection-video-section{
+        padding:40px 15px;
+    }
+
+	.collection-fourth-section{
+
+		padding:60px 20px;
+
+	}
+
+	.fourth-title{
+
+		font-size:32px;
+
+		margin-bottom:40px;
+
+	}
+
+	.fourth-images{
+
+		width:320px;
+
+		height:330px;
+
+	}
+
+	/* Center */
+
+	.center-shape{
+
+		width:150px;
+
+		height:220px;
+
+		left:88px;
+
+		border-top-right-radius:70px;
+
+	}
+
+	/* Left */
+
+	.left-shape{
+
+		width:95px;
+
+		height:125px;
+
+		left:5px;
+
+		bottom:28px;
+
+		border-top-right-radius:40px;
+
+	}
+
+	/* Right */
+
+	.right-shape{
+
+		width:95px;
+
+		height:95px;
+
+		right:5px;
+
+		top:55px;
+
+		border-width:6px;
+
+	}
+
+	.fourth-description{
+
+		width:100%;
+
+		margin-top:35px;
+
+		font-size:16px;
+
+		line-height:30px;
+
+	}
+
+	.collection-fourth-section{
+
+		padding:60px 20px;
+
+	}
+
+	.fourth-title{
+
+		font-size:32px;
+
+		margin-bottom:40px;
+
+	}
+
+	.fourth-images{
+
+		width:320px;
+
+		height:330px;
+
+	}
+
+	/* Center */
+
+	.center-shape{
+
+		width:150px;
+
+		height:220px;
+
+		left:88px;
+
+		border-top-right-radius:70px;
+
+	}
+
+	/* Left */
+
+	.left-shape{
+
+		width:95px;
+
+		height:125px;
+
+		left:5px;
+
+		bottom:28px;
+
+		border-top-right-radius:40px;
+
+	}
+
+	/* Right */
+
+	.right-shape{
+
+		width:95px;
+
+		height:95px;
+
+		right:5px;
+
+		top:55px;
+
+		border-width:6px;
+
+	}
+
+	.fourth-description{
+		width:100%;
+		margin-top:35px;
+		font-size:16px;
+		line-height:30px;
+	}
 }
 
 /* Small Device = 320px */
@@ -4896,6 +5388,13 @@ margin-bottom:12px;
 	.categories__text:before {
 		height: 250px;
 	}
+	.collection-banner-web{
+        display:none;
+    }
+
+    .collection-banner-mobile{
+        display:block;
+    }
 }
 
 @media screen and (max-width: 480px) {

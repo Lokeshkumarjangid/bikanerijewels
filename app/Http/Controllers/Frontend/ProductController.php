@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Collections;
 
 class ProductController extends Controller
 {
@@ -82,5 +83,11 @@ class ProductController extends Controller
         $data['id']=$id;
 
         return view('frontend.product.product_list', $data);
+    }
+    
+    function collection_list($id){
+       $categoryId = decrypt($id);
+       $data['collection']=Collections::where('category_id',$categoryId)->first();
+       return view('frontend.product.collection_list', $data);
     }
 }
