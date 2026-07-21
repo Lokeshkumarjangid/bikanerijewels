@@ -7,7 +7,7 @@ class NavigationService
     public function getMenuWithCategories()
     {
         return Navigation::select('id','name')
-            ->with(['categories'])
+            ->with(['categories:id,name,navigation_id'])
             ->get();
     }
 
