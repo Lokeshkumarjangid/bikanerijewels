@@ -13,24 +13,43 @@ class ContactusController extends Controller
     }
 
     function store(Request $request){
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
+         $rules = [
+            'name'   => 'required',
+            'email'  => 'required|email',
             'mobile' => 'required|digits:10',
-            'message' => 'required',
-            'contact_date' => 'nullable',
-            'contact_time' => 'nullable',
-        ]);
+            'type'   => 'required',
+        ];
+
+        // Type 1 (Contact Form)
+        if ($request->type == 1) {
+            $rules['message'] = 'required';
+            $rules['contact_date'] = 'nullable';
+            $rules['contact_time'] = 'nullable';
+        }
+
+        // Type 4 (Book Appointment)
+        if ($request->type == 4) {
+            $rules['address'] = 'required';
+            $rules['city'] = 'required';
+            $rules['state'] = 'required';
+            $rules['store'] = 'nullable'; // ya required karna ho to required kar do
+        }
+
+        $request->validate($rules);
         try{
 
             Contactus::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'mobile' => $request->mobile,
-                'message' => $request->message,
-                'type'    => $request->type,
+                'name'         => $request->name,
+                'email'        => $request->email,
+                'mobile'       => $request->mobile,
+                'message'      => $request->message,
+                'address'      => $request->address,
+                'city'         => $request->city,
+                'state'        => $request->state,
+                'store'        => $request->store,
+                'type'         => $request->type,
                 'contact_date' => $request->contact_date,
-                'contact_time' => $request->contact_time
+                'contact_time' => $request->contact_time,
             ]);
 
             return redirect()->back()->with('success', 'Your details send to admin');

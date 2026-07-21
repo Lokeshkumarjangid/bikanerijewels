@@ -18,9 +18,13 @@ return new class extends Migration
             $table->string('email');
             $table->string('mobile')->nullable();
             $table->text('message')->nullable();
+            $table->text('address')->nullable();
+            $table->string('store')->nullable();
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
             $table->date('contact_date')->nullable();
             $table->time('contact_time')->nullable();
-            $table->tinyInteger('type')->comment('1=>home,2=>contactus,3=>app');
+            $table->tinyInteger('type')->comment('1=>home,2=>contactus,3=>app,4=>Booking Appointment');
             $table->timestamps();
         });
     }

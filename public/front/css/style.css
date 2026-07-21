@@ -4532,7 +4532,172 @@ DESCRIPTION
     color:#555;
 }
 
+.difference-section{
+    background:#f9f6ef;
+    padding:90px 0;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
 
+.difference-section .container{
+    max-width:1300px;
+    width:92%;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-heading h2{
+    font-size:42px;
+    font-family:"Playfair Display",serif;
+    color:#222;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.section-heading span{
+    display:block;
+    font-size:22px;
+    color:#b89a57;
+    font-family:"Playfair Display",serif;
+    margin-bottom:25px;
+}
+
+.section-heading p{
+    max-width:900px;
+    margin:auto;
+    color:#555;
+    font-size:17px;
+    line-height:32px;
+}
+
+.difference-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:50px 35px;
+}
+
+.difference-item{
+    text-align:center;
+    padding:10px 20px;
+}
+
+.icon{
+    width:95px;
+    height:95px;
+    margin:auto;
+    border:1px solid #c5b27b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:25px;
+    transition:.3s;
+}
+
+.icon i{
+    font-size:42px;
+    color:#b89a57;
+}
+
+.difference-item:hover .icon{
+    background:#b89a57;
+}
+
+.difference-item:hover .icon i{
+    color:#fff;
+}
+
+.difference-item h4{
+    font-size:28px;
+    margin-bottom:18px;
+    color:#222;
+    font-family:"Playfair Display",serif;
+    font-weight:500;
+}
+
+.difference-item p{
+    font-size:16px;
+    line-height:30px;
+    color:#555;
+}
+
+.visit-image-section{
+
+    width:100%;
+
+    background:#fff;
+
+	margin-top: 80px;
+
+}
+
+.visit-image-section img{
+    width:100%;
+    display:block;
+    object-fit:cover;
+}
+.book-visit{
+    background:#3f6814;
+    padding:70px 0;
+	margin-top: 80px;
+}
+
+.book-box{
+
+    width:100%;
+
+}
+
+.book-box h2{
+
+    color:#fff;
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    font-size:34px;
+
+}
+
+.book-box input,
+.book-box select{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    margin-bottom:18px;
+
+    padding:15px;
+
+}
+
+.book-box button{
+
+    width:220px;
+
+    height:55px;
+
+    display:block;
+
+    margin:25px auto 0;
+
+    border:none;
+
+    background:#fff;
+
+    color:#3f6814;
+
+    font-weight:600;
+
+}
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
@@ -4714,6 +4879,28 @@ DESCRIPTION
     .collection-video-section{
         padding:40px 15px;
     }
+
+	.difference-section{
+		padding:70px 0;
+	}
+
+	.section-heading h2{
+		font-size:34px;
+	}
+
+	.section-heading span{
+		font-size:20px;
+	}
+
+	.section-heading p{
+		font-size:16px;
+		line-height:30px;
+	}
+
+	.difference-grid{
+		grid-template-columns:repeat(2,1fr);
+		gap:40px 25px;
+	}
 }
 
 /* Wide Mobile = 480px */
@@ -5331,6 +5518,28 @@ DESCRIPTION
 		margin-top:35px;
 		font-size:16px;
 		line-height:30px;
+	}
+
+	.difference-section{
+		padding:70px 0;
+	}
+
+	.section-heading h2{
+		font-size:34px;
+	}
+
+	.section-heading span{
+		font-size:20px;
+	}
+
+	.section-heading p{
+		font-size:16px;
+		line-height:30px;
+	}
+
+	.difference-grid{
+		grid-template-columns:repeat(2,1fr);
+		gap:40px 25px;
 	}
 }
 

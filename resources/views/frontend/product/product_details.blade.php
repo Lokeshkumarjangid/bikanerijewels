@@ -442,6 +442,7 @@
         </div>
     </div>
 </section>
+@include('frontend.common.landingpage')
 
 <script>
 function changeImage(element) {

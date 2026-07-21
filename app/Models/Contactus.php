@@ -16,6 +16,10 @@ class Contactus extends Model
         'message',
         'contact_date',
         'contact_time',
-        'type'
+        'type',
+        'city',
+        'state',
+        'address',
+        'store'
     ];
 }

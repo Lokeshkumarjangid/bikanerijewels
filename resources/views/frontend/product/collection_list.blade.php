@@ -92,4 +92,15 @@
     </div>
 
 </section>
+<section class="visit-image-section">
+    <picture>
+        <source media="(max-width:767px)"
+                srcset="{{ asset('storage/'.$collection->five_section_mobile) }}">
+
+        <img src="{{ asset('storage/'.$collection->five_section_web) }}"
+             alt="">
+    </picture>
+</section>
+@include('frontend.common.booking_form')
+@include('frontend.common.landingpage')
 @endsection
