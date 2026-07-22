@@ -284,7 +284,7 @@
 </div>
 
                     <!-- WhatsApp Order Button -->
-                    <a href="https://wa.me/91XXXXXXXXXX?text=I want this product: {{$product_details->product_name}}"
+                    <a href="https://wa.me/917400187216?text=I want this product: {{$product_details->product_name}}-Sku Id-{{$product_details->sku}}"
                        target="_blank"
                        class="whatsapp-btn">
                         Order on WhatsApp
