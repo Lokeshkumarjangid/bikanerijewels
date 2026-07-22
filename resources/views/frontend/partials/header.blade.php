@@ -27,7 +27,7 @@
                                 </li>
                             @endforeach
 
-                            <li><a href="{{route('customize.index')}}">Book an Appointment</a></li>
+                            <li><a href="{{route('customize.index')}}">Bespoke Jewellery</a></li>
                             <li><a href="{{route('contactus')}}">Contact Us</a></li>
                             <li><a href="{{route('storeindex')}}">Store</a></li>
                             @if(Auth::check())
