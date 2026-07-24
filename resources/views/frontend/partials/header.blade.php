@@ -13,7 +13,7 @@
                         <ul>
                             @foreach($menuItems as $nav)
                                 <li>
-                                    @if($nav->type == 'Category' || 'WebHome')
+                                    @if($nav->type == 'Category' || $nav->type == 'WebHome')
                                         <a href="#">{{ $nav->name }}</a>
 
                                         @if($nav->categories->count())
