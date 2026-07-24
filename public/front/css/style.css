@@ -4698,6 +4698,205 @@ DESCRIPTION
     font-weight:600;
 
 }
+
+.collection-story-section {
+    width: 100%;
+    padding: 0;
+	margin-top: 80px;
+}
+
+.collection-story-wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 750px;
+}
+
+/* LEFT SIDE */
+.collection-story-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 10%;
+}
+
+.collection-story-content h2 {
+    margin: 0 0 35px;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.1;
+    font-weight: 300;
+    color: #4b4b4b;
+}
+
+.collection-story-description {
+    max-width: 600px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #555;
+}
+
+
+/* RIGHT SIDE IMAGE */
+.collection-story-image {
+    width: 100%;
+    height: 100%;
+}
+
+.collection-story-image picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.collection-story-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.appointment-section {
+    padding: 100px 0;
+    background: #f8f7f5;
+	margin-top: 80px;
+}
+
+.appointment-container {
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.appointment-title {
+    margin: 0 0 55px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #252525;
+}
+
+
+/* Main Layout */
+
+.appointment-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: stretch;
+}
+
+
+/* Image */
+
+.appointment-image {
+    width: 100%;
+    height: 590px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+
+.appointment-image picture,
+.appointment-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.appointment-image img {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.appointment-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Form */
+
+.appointment-form-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.appointment-form-wrapper form {
+    width: 100%;
+}
+
+
+/* Inputs */
+
+.appointment-input,
+.appointment-textarea {
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    background: transparent;
+    padding: 18px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.appointment-input {
+    height: 58px;
+    margin-bottom: 20px;
+}
+
+.appointment-input::placeholder,
+.appointment-textarea::placeholder {
+    color: #666;
+}
+
+.appointment-input:focus,
+.appointment-textarea:focus {
+    border-color: #777;
+}
+
+
+/* Date + Time */
+
+.appointment-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
+/* Textarea */
+
+.appointment-textarea {
+    height: 130px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+
+/* Button */
+
+.appointment-button {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 8px;
+    background: #dedede;
+    color: #111;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.appointment-button:hover {
+    background: #222;
+    color: #fff;
+}
+
+
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 
 @media only screen and (min-width: 1200px) {
@@ -4938,6 +5137,37 @@ DESCRIPTION
     /* Desktop menu hide */
     .header__menu{
         display: none;
+    }
+
+	 .collection-story-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .collection-story-content {
+        padding: 60px 20px 45px;
+    }
+
+    .collection-story-content h2 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .collection-story-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .collection-story-image {
+        width: 100%;
+        height: 500px;
+    }
+
+    .collection-story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -5616,6 +5846,37 @@ DESCRIPTION
     /* Desktop menu hide */
     .header__menu{
         display: none;
+    }
+
+	 .collection-story-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .collection-story-content {
+        padding: 60px 20px 45px;
+    }
+
+    .collection-story-content h2 {
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .collection-story-description {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .collection-story-image {
+        width: 100%;
+        height: 500px;
+    }
+
+    .collection-story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 }
 

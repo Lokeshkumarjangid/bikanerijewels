@@ -225,7 +225,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>
-                                            Second Section Image (Web- 863 x 360)
+                                            Second Section Image (Web- 1000 x 1000)
                                         </label>
                                         <input type="file" name="second_section_web" id="second_section_web" class="d-none image-input" accept="image/*">
 

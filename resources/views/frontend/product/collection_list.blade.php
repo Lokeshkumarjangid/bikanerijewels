@@ -14,22 +14,33 @@
         </div>
     @endif
 </section>
-<section class="nature-section">
-    <div class="container">
-        <div class="nature-content">
+<section class="collection-story-section">
+    <div class="collection-story-wrapper">
+
+        {{-- Left Content --}}
+        <div class="collection-story-content">
             <h2>{{ $collection->second_title }}</h2>
-            <p>
+
+            <div class="collection-story-description">
                 {!! nl2br(e($collection->second_description)) !!}
-            </p>
-            <div class="nature-image">
-                <picture>
-                    <source media="(max-width:767px)"
-                        srcset="{{ asset('storage/'.$collection->second_section_mobile) }}">
-                    <img src="{{ asset('storage/'.$collection->second_section_web) }}"
-                        alt="Collection">
-                </picture>
             </div>
         </div>
+
+        {{-- Right Full Image --}}
+        <div class="collection-story-image">
+            <picture>
+                <source
+                    media="(max-width: 767px)"
+                    srcset="{{ asset('storage/'.$collection->second_section_mobile) }}"
+                >
+
+                <img
+                    src="{{ asset('storage/'.$collection->second_section_web) }}"
+                    alt="{{ $collection->second_title }}"
+                >
+            </picture>
+        </div>
+
     </div>
 </section>
 <section class="collection-video-section">

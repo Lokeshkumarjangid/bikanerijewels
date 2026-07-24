@@ -1,62 +1,122 @@
-<section class="book-visit">
-    <div class="container">
-        <div class="book-box">
-            <h2>BOOK APPOINTMENT</h2>
-            <form id="quickForm" method="POST" action="{{route('storecontactus')}}">
+<section class="appointment-section">
+
+    <div class="appointment-container">
+
+        <h2 class="appointment-title">
+            BOOK AN APPOINTMENT
+        </h2>
+        <div class="appointment-layout">
+            {{-- Left Image --}}
+            <div class="appointment-image">
+                <picture>
+                    <img
+                        src="{{ asset('image/bookingappoint.jpg') }}"
+                        alt="Book Appointment"
+                    >
+                </picture>
+            </div>
+            {{-- Right Form --}}
+            <div class="appointment-form-wrapper">
+
+                <form id="quickForm" method="POST" action="{{route('storecontactus')}}">
                 @csrf
-                <div class="row">
-                    <input type="hidden" name="type" value="4">
-                    <div class="col-md-6 form-group">
-                        <input type="text" placeholder="Full Name" name="name">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            placeholder="Name*"
+                            name = 'name'
+                            class="appointment-input"
+                        >
                         @error('name')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-
-                    <div class="col-md-6 form-group">
-                        <input type="email" placeholder="Email" name="email">
+                    
+                    <div class="form-group">
+                        <input
+                            type="email"
+                            placeholder="Email address*"
+                            name='email'
+                            class="appointment-input"
+                        >
                         @error('email')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    <div class="col-md-6 form-group">
-                        <input type="number" placeholder="Mobile" name='mobile'>
+                    <div class="form-group">
+                        <input
+                            type="Number"
+                            placeholder="Mobile number*"
+                            name='mobile'
+                            class="appointment-input"
+                        >
                         @error('mobile')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    <div class="col-md-6 form-group">
-                        <textarea type="text" placeholder="Address" name="address"></textarea>
-                        @error('address')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <div class="col-md-6 form-group">
-                        <input type="text" placeholder="Store" name="store">
-                    </div>
-
-                    <div class="col-md-6 form-group">
-                        <input type="text" placeholder="City" name="city">
+                    <div class="form-group">
+                        <input
+                            type="City"
+                            placeholder="City*"
+                            name='city'
+                            class="appointment-input"
+                        >
                         @error('city')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
 
-                    <div class="col-md-6 form-group">
-                        <input type="text" placeholder="State" name="state">
-                        @error('state')
+                    <div class="appointment-row">
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="appointment-input"
+                                name='state'
+                                placeholder="State*"
+                            >
+                            @error('city')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="appointment-input"
+                                name='store'
+                                placeholder="Store"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea
+                            class="appointment-textarea"
+                            placeholder="Address*"
+                            name='address'
+                        ></textarea>
+                        @error('address')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
-                </div>
-                <button type="submit" id="submitBtn">SUBMIT</button>
 
-            </form>
+                    <button
+                        type="submit"
+                        class="appointment-button"
+                        id="submitBtn"
+                    >
+                        Send
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
 @section('scripts')
 <script>

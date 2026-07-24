@@ -61,7 +61,7 @@ class CollectionController extends Controller
             'second_title' => 'required|string|max:255',
             'second_description' => 'required|string',
 
-            'second_section_web' => ['required','image','max:200','dimensions:width=863,height=360'],
+            'second_section_web' => ['required','image','max:200','dimensions:width=1000,height=1000'],
             'second_section_mobile' => ['required','image','max:100','dimensions:width=450,height=600'],
 
             // Third Section Videos
