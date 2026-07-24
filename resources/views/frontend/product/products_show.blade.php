@@ -9,9 +9,9 @@
                 </a>
                 <div class="product__item__text">
                     <h6>{{ $product->product_name }}</h6>
-                    <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a>
-                    <h5>{{$product->price}}</h5>
-                    <h5><button class="price-request-btn">PRICE ON REQUEST</button></h5>
+                    <!-- <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:30px;"></i></a> -->
+                    <!-- <h5>{{$product->price}}</h5> -->
+                    <h5><button class="price-request-btn" onclick="openWhatsApp('{{ addslashes($product->product_name) }}', '{{ $product->sku }}')">PRICE ON REQUEST</button></h5>
                 </div>
             </div>
         </div>
@@ -22,3 +22,15 @@
         </div>
     @endif
 </div>
+@section('scripts')
+<script>
+    
+    function openWhatsApp(productName, sku) {
+        let message = `I want this product: ${productName} - Sku Id: ${sku}`;
+
+        let whatsappUrl = `https://wa.me/917400187216?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+@endsection
