@@ -21,7 +21,6 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        dd(app(NavigationService::class)->getMenuWithCategories());
         View::composer('frontend.partials.header', function ($view) {
             $menu = app(NavigationService::class)->getMenuWithCategories();
             $view->with('menuItems', $menu);
