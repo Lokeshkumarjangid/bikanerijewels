@@ -9,6 +9,8 @@ Route::post('/login', [UserController::class, 'login']);
 Route::post('/forgot-password', [UserController::class, 'forgot_password']);
 Route::post('/otp-verify', [UserController::class, 'otp_verify']);
 Route::post('/password-change', [UserController::class, 'password_change']);
+Route::get('/menu-list', [UserController::class, 'menu_list']);
+Route::get('/landing-page/{id}', [UserController::class, 'landing_page']);
 
 Route::get('/category', [ApiController::class, 'category']);
 Route::post('/product-search', [ApiController::class, 'product_search']);

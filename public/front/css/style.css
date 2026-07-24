@@ -4901,6 +4901,44 @@ DESCRIPTION
 		grid-template-columns:repeat(2,1fr);
 		gap:40px 25px;
 	}
+
+	.header-mobile{
+        position: relative;
+        height: 70px;
+    }
+
+    /* Logo center */
+    .header__logo{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+    }
+
+    .header__logo img{
+        height: 45px;
+        width: auto;
+    }
+
+    /* Existing hamburger left */
+    .canvas__open{
+        position: absolute;
+        left: 15px !important;
+        right: auto !important;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+    }
+
+    .canvas__open i{
+        font-size: 24px;
+    }
+
+    /* Desktop menu hide */
+    .header__menu{
+        display: none;
+    }
 }
 
 /* Wide Mobile = 480px */
@@ -5541,6 +5579,44 @@ DESCRIPTION
 		grid-template-columns:repeat(2,1fr);
 		gap:40px 25px;
 	}
+
+	.header-mobile{
+        position: relative;
+        height: 70px;
+    }
+
+    /* Logo center */
+    .header__logo{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 99;
+    }
+
+    .header__logo img{
+        height: 100px;
+        width: auto;
+    }
+
+    /* Existing hamburger left */
+    .canvas__open{
+        position: absolute;
+        left: 15px !important;
+        right: auto !important;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999;
+    }
+
+    .canvas__open i{
+        font-size: 24px;
+    }
+
+    /* Desktop menu hide */
+    .header__menu{
+        display: none;
+    }
 }
 
 /* Small Device = 320px */

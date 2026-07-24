@@ -1,35 +1,56 @@
 <header class="header">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-2 col-md-2">
+            <div class="row align-items-center header-mobile">
+                <div class="col-lg-2 col-md-2 logo-col">
                     <div class="header__logo">
                         <a href="/">
-                            <img src="{{ asset('image/logo.jpg') }}" alt="logo">
+                            <img src="{{ asset('image/logo.svg') }}" alt="logo">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10">
+                <div class="col-lg-10 col-md-10 menu-col">
                     <nav class="header__menu mobile-menu">
                         <ul>
                             @foreach($menuItems as $nav)
-                                <li><a href="">{{ $nav->name }}</a>
-                                @if($nav->categories->count() > 0)
-                                    <ul class="dropdown">
-                                        @foreach($nav->categories as $subNav)
-                                            @if($subNav->type == 'collection')
-                                                <li><a href="{{ route('collection', ['id' => encrypt($subNav->id)]) }}">{{ $subNav->name }}</a></li>
-                                            @else
-                                                <li><a href="{{ route('productlist', ['id' => encrypt($subNav->id)]) }}">{{ $subNav->name }}</a></li>
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                @endif
+                                <li>
+                                    @if($nav->type == 'Category')
+                                        <a href="#">{{ $nav->name }}</a>
+
+                                        @if($nav->categories->count())
+                                            <ul class="dropdown">
+                                                @foreach($nav->categories as $subNav)
+                                                    @if($subNav->type == 'collection')
+                                                        <li>
+                                                            <a href="{{ route('collection', encrypt($subNav->id)) }}">
+                                                                {{ $subNav->name }}
+                                                            </a>
+                                                        </li>
+                                                    @else
+                                                        <li>
+                                                            <a href="{{ route('productlist', encrypt($subNav->id)) }}">
+                                                                {{ $subNav->name }}
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        @endif
+
+                                    @elseif($nav->type == 'Custom')
+
+                                        <a href="{{ route('customize.index') }}">{{ $nav->name }}</a>
+
+                                    @elseif($nav->type == 'ContactUs')
+
+                                        <a href="{{ route('contactus') }}">{{ $nav->name }}</a>
+
+                                    @elseif($nav->type == 'Store')
+
+                                        <a href="{{ route('storeindex') }}">{{ $nav->name }}</a>
+
+                                    @endif
                                 </li>
                             @endforeach
-
-                            <li><a href="{{route('customize.index')}}">Bespoke Jewellery</a></li>
-                            <li><a href="{{route('contactus')}}">Contact Us</a></li>
-                            <li><a href="{{route('storeindex')}}">Store</a></li>
                             @if(Auth::check())
                             <li class="profile-menu"><a href="#"><div class="profile-circle"><i class="fa fa-user"></i></div></a>
 
@@ -54,6 +75,8 @@
                     </div>
                 </div> -->
             </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
         </div>
     </header>

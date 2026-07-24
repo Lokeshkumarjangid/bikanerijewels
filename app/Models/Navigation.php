@@ -10,6 +10,7 @@ class Navigation extends Model
 
     protected $fillable = [
         'name',
+        'type'
     ];
 
     public function categories()

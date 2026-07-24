@@ -9,6 +9,8 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\ForgotPasswordRequest;
 use App\Http\Requests\OtpVerifyRequest;
 use App\Http\Requests\PasswordChangeRequest;
+use App\Models\Navigation;
+use App\Models\Collections;
 use App\Services\OtpService;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
@@ -155,6 +157,48 @@ class UserController extends Controller
             return response()->json([
                 'status' => true,
                 'message' => 'Password changed successfully'
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    public function menu_list(Request $request){
+        try {
+            $nav =Navigation::select('id', 'name', 'type')
+                ->with([
+                    'categories' => function ($query) {
+                        $query->where('status', 1);
+                    }
+                ])
+                ->get();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'nav bar menu',
+                'data'    => $nav
+            ], 200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Something went wrong',
+            ], 500);
+        }
+    }
+
+    public function landing_page($id ,Request $request){
+        try {
+            $collection =Collections::where('category_id',$id)->first();
+
+            return response()->json([
+                'status' => true,
+                'message' => 'collection data',
+                'data'    => $collection
             ], 200);
 
         } catch (\Exception $e) {

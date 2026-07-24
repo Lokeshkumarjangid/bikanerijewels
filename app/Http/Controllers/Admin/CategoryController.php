@@ -46,7 +46,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $navigation = Navigation::get();
+        $navigation = Navigation::whereNotIn('name',['Store','ContactUs','Custom'])->get();
         return view('admin.category.create', compact('navigation'));
     }
 
@@ -81,7 +81,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $navigation = Navigation::get();
+        $navigation = Navigation::whereNotIn('type',['Store','ContactUs','Custom'])->get();
         $category = Category::findOrFail($id);
         return view('admin.category.update', compact('category','navigation'));
     }
