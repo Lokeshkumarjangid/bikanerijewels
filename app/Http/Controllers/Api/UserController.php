@@ -169,7 +169,7 @@ class UserController extends Controller
 
     public function menu_list(Request $request){
         try {
-            $nav =Navigation::select('id', 'name', 'type')
+            $nav =Navigation::select('id', 'name', 'type')->where('type', '!=', 'WebHome')
                 ->with([
                     'categories' => function ($query) {
                         $query->where('status', 1);
