@@ -193,10 +193,9 @@
     <!-- Categories Section Begin -->
     <section class="categories spad">
         <div class="hero-oneimage">
-            <!-- <div class="hero__items">
-                <img src="{{asset('image/forbestbanner1.jpg')}}" alt="">
-            </div> -->
-            {!! $sixsection->value !!}
+            <div class="hero__items">
+                {!! $sixsection->value !!}
+            </div>
         </div>
     </section>
 
