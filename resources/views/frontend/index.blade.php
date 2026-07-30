@@ -57,16 +57,19 @@
 
     <!-- Banner Section Begin -->
     <section class="hero">
-        <div class="hero__slider owl-carousel">
+        <div class="banner__slider owl-carousel">
             @if(!empty($banner))
                 @foreach($banner as $value)
-                <div class="hero__itemss set-bg desktop-banner"
-                    data-setbg="{{ asset('storage/'.$value->banner_img_web) }}">
-                </div>
+                    <div class="hero__item">
+                        <picture>
+                            <source media="(max-width: 767px)"
+                                srcset="{{ asset('storage/'.$value->banner_img_mob) }}">
 
-                <div class="hero__itemss set-bg mobile-banner"
-                    data-setbg="{{ asset('storage/'.$value->banner_img_mob) }}">
-                </div>
+                            <img src="{{ asset('storage/'.$value->banner_img_web) }}"
+                                alt="Banner"
+                                class="banner-img">
+                        </picture>
+                    </div>
                 @endforeach
             @endif
             <!-- <div class="hero__items set-bg" data-setbg="image/banner2.jpg">
