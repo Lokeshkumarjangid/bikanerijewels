@@ -74,14 +74,11 @@ class BannerController extends Controller
     public function store(Request $request, FileUploadService $fileService)
     {
         $validated = $request->validate([
-            'banner_img_web' => ['required','image','max:100','dimensions:width=863,height=360'],
+            'banner_img_web' => ['required','image'],
             'banner_mob_web' => ['required','image','max:100','dimensions:width=450,height=600'
             ],
             'sort_order' => 'required|integer'
         ], [
-            'banner_img_web.dimensions' => 'Desktop banner must be exactly 863x360 px',
-            'banner_img_web.max' => 'Desktop image must be less than 100KB',
-
             'banner_mob_web.dimensions' => 'Mobile banner must be 450x600 px',
             'banner_mob_web.max' => 'Mobile image must be less than 100KB',
         ]);
@@ -120,14 +117,11 @@ class BannerController extends Controller
     public function update(Request $request, string $id, FileUploadService $fileService)
     {
         $validated = $request->validate([
-            'banner_img_web' => ['nullable','image','max:100','dimensions:width=863,height=360'],
+            'banner_img_web' => ['nullable','image'],
             'banner_mob_web' => ['nullable','image','max:100','dimensions:width=450,height=600'
             ],
             'sort_order' => 'nullable|integer'
         ], [
-            'banner_img_web.dimensions' => 'Desktop banner must be exactly 863x360 px',
-            'banner_img_web.max' => 'Desktop image must be less than 100KB',
-
             'banner_mob_web.dimensions' => 'Mobile banner must be 450x600 px',
             'banner_mob_web.max' => 'Mobile image must be less than 100KB',
         ]);

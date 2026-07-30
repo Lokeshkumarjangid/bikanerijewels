@@ -32,8 +32,11 @@
 
                         {{-- Desktop Banner --}}
                         <div class="form-group">
-                            <label>Desktop Banner (863*360)</label>
+                            <label>Desktop Banner</label>
                             <input type="file" name="banner_img_web" class="form-control" accept="image/*">
+                            @error('banner_img_web')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                     
                             <label class="mt-2">Existing Desktop Images</label>
                             <div class="d-flex flex-wrap">
@@ -51,6 +54,9 @@
                         <div class="form-group">
                             <label>Mobile Banner (450 × 600)</label>
                             <input type="file" name="banner_mob_web" class="form-control" accept="image/*">
+                            @error('banner_mob_web')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             
                             <label class="mt-2">Existing Mobile Images</label>
                             <div class="d-flex flex-wrap">

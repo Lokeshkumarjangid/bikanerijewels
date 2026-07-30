@@ -35,7 +35,7 @@
 
                         {{-- Desktop Banner --}}
                         <div class="form-group">
-                            <label>Desktop Banner (863*360)</label>
+                            <label>Desktop Banner</label>
                             <input type="file" name="banner_img_web" class="form-control" accept="image/*">
                             @error('banner_img_web')
                                 <span class="text-danger">{{ $message }}</span>
