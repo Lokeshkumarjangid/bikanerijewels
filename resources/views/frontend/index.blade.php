@@ -199,13 +199,13 @@
         </div>
     </section>
 
-    <section class="categories spad">
+    <!-- <section class="categories spad">
         <div class="hero-oneimage">
             <div class="hero__items">
                 {!! $sevensection->value !!}
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="testimonial-section">
         <div class="container">
