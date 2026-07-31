@@ -84,6 +84,14 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label>Home Seven section</label>
+                        <textarea name="home_seven_section" class="form-control" rows="6" id="summernoteseven">{{$setting[5]['value']}}</textarea>
+                        @error('home_seven_section')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
                 </div>
 
                 <div class="card-footer">
@@ -105,6 +113,7 @@
     $('#summernote').summernote();
     $('#summernotefourth').summernote();
     $('#summernotesix').summernote();
+    $('#summernoteseven').summernote();
 })
 </script>
 @endsection

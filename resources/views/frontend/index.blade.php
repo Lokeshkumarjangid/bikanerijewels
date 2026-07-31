@@ -199,6 +199,14 @@
         </div>
     </section>
 
+    <section class="categories spad">
+        <div class="hero-oneimage">
+            <div class="hero__items">
+                {!! $sevensection->value !!}
+            </div>
+        </div>
+    </section>
+
     <section class="testimonial-section">
         <div class="container">
             <h2 class="testimonial-title">

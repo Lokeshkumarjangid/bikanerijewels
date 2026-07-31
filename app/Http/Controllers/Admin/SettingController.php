@@ -23,6 +23,7 @@ class SettingController extends Controller
             "home_third_section" => 'nullable',
             "home_fourth_section" => 'nullable',
             "home_six_section" => 'nullable',
+            "home_seven_section" => 'nullable',
         ]);
 
         if ($request->hasFile('web_home_video')) {
@@ -61,6 +62,13 @@ class SettingController extends Controller
             Settings::updateOrCreate(
                 ['key' => 'home_six_section'],
                 ['value' => $request->home_six_section]
+            );
+        }
+
+        if($request->home_seven_section){
+            Settings::updateOrCreate(
+                ['key' => 'home_seven_section'],
+                ['value' => $request->home_seven_section]
             );
         }
 
