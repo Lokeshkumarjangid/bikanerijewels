@@ -231,7 +231,7 @@
             <h2 class="connect-title">LET’S CONNECT</h2>
                 <div class="connect-grid">
                     <div class="connect-image">
-                        <img src="{{asset('image/letconnect.jpg')}}" alt="">
+                        <img src="{{asset('image/904x904.jpg')}}" alt="">
                     </div>
                     <div class="connect-form">
                         <form id="quickForm" method='post' action="{{route('storecontactus')}}">
