@@ -50,6 +50,9 @@ Route::post('/store-contactus', [ContactusController::class, 'store'])->name('st
 /**************************Landing Page *************************************/
 Route::get('/landing-page', [ContactusController::class, 'landingpage'])->name('landingpage');
 
+/**************************house bikaneri Page *************************************/
+Route::get('/bikaneri-page/{id}', [ContactusController::class, 'bikaneripage'])->name('bikaneripage');
+
 /**************************Store Page *************************************/
 Route::get('/store', [StoreController::class, 'index'])->name('storeindex');
 

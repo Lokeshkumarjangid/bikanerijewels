@@ -25,6 +25,12 @@
                                                                 {{ $subNav->name }}
                                                             </a>
                                                         </li>
+                                                    @elseif($subNav->type == 'house_bikaneri')
+                                                        <li>
+                                                            <a href="{{ route('bikaneripage', encrypt($subNav->id)) }}">
+                                                                {{ $subNav->name }}
+                                                            </a>
+                                                        </li>
                                                     @else
                                                         <li>
                                                             <a href="{{ route('productlist', encrypt($subNav->id)) }}">

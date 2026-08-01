@@ -62,4 +62,8 @@ class ContactusController extends Controller
         $data['bestProducts']=Product::with('firstImage')->latest()->take(4)->get();
         return view('frontend.landingpage.index',$data);
     }
+
+    function bikaneripage(Request $request){
+        return view('frontend.housebikaneri.index');
+    }
 }
