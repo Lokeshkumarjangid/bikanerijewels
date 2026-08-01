@@ -136,6 +136,29 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
+                House Bikaneri
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('house-bikanari.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('house-bikanari.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
                 Home Rating
                 <i class="fas fa-angle-left right"></i>
               </p>
