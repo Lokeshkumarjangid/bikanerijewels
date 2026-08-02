@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Contactus;
+use App\Models\HouseBikaneri;
 
 class ContactusController extends Controller
 {
@@ -63,7 +64,9 @@ class ContactusController extends Controller
         return view('frontend.landingpage.index',$data);
     }
 
-    function bikaneripage(Request $request){
-        return view('frontend.housebikaneri.index');
+    function bikaneripage(Request $request,$id){
+        $categoryId = decrypt($id);
+        $data['jelwary']=HouseBikaneri::where('category_id',$categoryId)->first();
+        return view('frontend.housebikaneri.index',$data);
     }
 }

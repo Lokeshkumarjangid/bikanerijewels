@@ -4,7 +4,7 @@
 @section('content')
 
 <section class="legacy-section">
-    <div class="container">
+    <!-- <div class="container">
 
         <div class="section-heading">
             <h2>LEGACY OF 1881</h2>
@@ -38,61 +38,64 @@
 
         </div>
 
-    </div>
+    </div> -->
+    {!! $jelwary->section_1 !!}
 </section>
 <section class="legacy-gallery-one py-5">
-    <div class="container">
+    <!-- <div class="container">
         <div class="row g-4">
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="legacy-card">
-                    <img src="{{asset('image/test2.png')}}" alt="">
+                    <img src="images/legacy.jpg" alt="test.jpg">
                     <h5>SMT MAHADEVI JI WIFE OF SETH CHAMPALAL JI</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="legacy-card">
-                    <img src="{{asset('image/test2.png')}}" alt="">
+                    <img src="images/legacy.jpg" alt="test.jpg">
                     <h5>SMT RADHA RANI JI WITH SMT CHANDRAKANTA JI</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="legacy-card">
-                    <img src="{{asset('image/test2.png')}}" alt="">
+                    <img src="images/legacy.jpg" alt="test.jpg">
                     <h5>SHRI G.L. RANIWALA WITH SMT RADHA RANI</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-6">
                 <div class="legacy-card">
-                    <img src="{{asset('image/test2.png')}}" alt="">
+                    <img src="images/legacy.jpg" alt="test.jpg">
                     <h5>RANIWALA HAVELI ROOM</h5>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    {!! $jelwary->section_2 !!}
 </section>
 <section class="legacy-gallery-two py-5">
-    <div class="container">
+    <!-- <div class="container">
         <div class="row g-4">
             <div class="col-lg-6">
                 <div class="legacy-large-card">
-                    <img src="{{asset('image/test.png')}}" alt="">
+                    <img src="{{asset('image/test.png')}}" alt="test.png">
                     <h5>RANIWALA HAVELI</h5>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="legacy-large-card">
-                    <img src="{{asset('image/test.png')}}" alt="">
+                    <img src="{{asset('image/test.png')}}" alt="test.png">
                     <h5>HISTORIC CLOCK TOWER</h5>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    {!! $jelwary->section_3 !!}
 </section>
 <section class="echo-history">
-    <div class="container">
+    <!-- <div class="container">
         <div class="echo-history-content">
 
-            <img src="{{asset('image/icon_biknari.jpg')}}" class="history-icon" alt="">
+            <img src="{{asset('image/icon_biknari.jpg')}}" class="history-icon" alt="test.png">
 
             <h2>Echoes of History in Every Arch</h2>
 
@@ -103,23 +106,23 @@
             </p>
 
             <div class="history-image">
-                <img src="images/image1.jpg" alt="">
+                <img src="images/image1.jpg" alt="test.png">
                 <span>"CR MARK" AT BEAWAR HAVELI WALL.</span>
             </div>
 
             <div class="history-image">
-                <img src="images/image2.jpg" alt="">
+                <img src="images/image2.jpg" alt="test.png">
                 <span>CORRIDORS OF RANIWALA TEMPLE</span>
             </div>
 
         </div>
 
-    </div>
-
+    </div> -->
+    {!! $jelwary->section_4 !!}
 </section>
 <section class="heritage-card-section">
-     <div class="heritage-top-content">
-        <img src="{{ asset('image/icon_biknari.jpg') }}" class="history-icon" alt="Icon">
+     <!-- <div class="heritage-top-content">
+        <img src="{{ asset('image/icon_biknari.jpg') }}" class="history-icon" alt="Icon.jpg">
 
         <h2 class="section-title">
             TREASURES THAT ARE TIMELESS
@@ -135,7 +138,7 @@
     </div>
     <div class="heritage-card">
         <div class="heritage-image">
-            <img src="{{asset('image/forbanner1.jpg')}}" alt="">
+            <img src="{{asset('image/forbanner1.jpg')}}" alt="Icon.jpg">
         </div>
         <h3 class="heritage-title">
             RANIWALA NASIAJI TEMPLE
@@ -145,7 +148,8 @@
             spiritual and architectural marvel. Dedicated to Lord Neminathji,
             the temple embodies devotion and timeless artistry.
         </p>
-    </div>
+    </div> -->
+    {!! $jelwary->section_5 !!}
 </section>
 
 @endsection

@@ -24,7 +24,7 @@ class HouseBikaneriController extends Controller
                     return $row->created_at->format('d-m-Y h:i A');
                 })
                 ->editColumn('category_id', function ($row) {
-                    return $row->navigation ? $row->category->name : 'N/A';
+                    return $row->category ? $row->category->name : 'N/A';
                 })
                 ->addColumn('action', function($row){
                     return '<a href="'.route('house-bikanari.edit', $row->id).'" class="btn btn-sm btn-primary" title="Edit"><i class="fas fa-edit"></i></a>';
@@ -41,8 +41,7 @@ class HouseBikaneriController extends Controller
      */
     public function create()
     {
-        $categroy = Category::where('status','1')->where('type','house_bikaneri')->get();
-        return view('admin.housebikaneri.create', compact('categroy'));
+        
     }
 
     /**
@@ -66,7 +65,9 @@ class HouseBikaneriController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $categroy = Category::where('status','1')->where('type','house_bikaneri')->get();
+        $data=HouseBikaneri::find($id);
+        return view('admin.housebikaneri.update', compact('categroy','data'));
     }
 
     /**
@@ -74,7 +75,21 @@ class HouseBikaneriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'category_id' => ['required',Rule::unique('house_bikaneri')->ignore($id)]
+        ]);
+
+        $data = HouseBikaneri::findOrFail($id);
+
+        $data->update([
+            'section_1' => $request->section_1,
+            'section_2' => $request->section_2,
+            'section_3' => $request->section_3,
+            'section_4' => $request->section_4,
+            'section_5' => $request->section_5,
+        ]);
+
+        return redirect()->route('house-bikanari.index')->with('success',' Updated Successfully');
     }
 
     /**
