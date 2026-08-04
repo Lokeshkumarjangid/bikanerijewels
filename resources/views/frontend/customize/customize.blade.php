@@ -88,7 +88,7 @@
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Item Name</label>
-                            <select name="item_name">
+                            <select name="item_name" class="js-example-basic-single">
                                 <option value="">Select Item name</option>
                                 <option value="Ring">Ring</option>
                                 <option value="Earrings">Earrings</option>
@@ -404,8 +404,9 @@
 @endsection
 @section('scripts')
 <script>
+
     $('.select2').select2({
-        placeholder: "Select",
+        placeholder: 'Select',
         width: '100%'
     });
 </script>
