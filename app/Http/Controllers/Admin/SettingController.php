@@ -58,17 +58,39 @@ class SettingController extends Controller
             );
         }
 
-        if($request->home_six_section){
+        if($request->hasFile($request->home_six_section)){
+            $images =$fileService->uploadSingle($request->file('web_home_image'), 'settings');
+
             Settings::updateOrCreate(
                 ['key' => 'home_six_section'],
-                ['value' => $request->home_six_section]
+                ['value' => $images]
             );
         }
 
-        if($request->home_seven_section){
+        if($request->hasFile($request->home_six_section_mob)){
+            $images =$fileService->uploadSingle($request->file('mobile_home_image'), 'settings');
+
+            Settings::updateOrCreate(
+                ['key' => 'home_six_section_mob'],
+                ['value' => $images]
+            );
+        }
+
+        if($request->hasFile($request->home_seven_section)){
+            $images =$fileService->uploadSingle($request->file('web_home_image'), 'settings');
+
             Settings::updateOrCreate(
                 ['key' => 'home_seven_section'],
-                ['value' => $request->home_seven_section]
+                ['value' => $images]
+            );
+        }
+
+        if($request->hasFile($request->home_seven_section_mob)){
+            $images =$fileService->uploadSingle($request->file('mobile_home_image'), 'settings');
+
+            Settings::updateOrCreate(
+                ['key' => 'home_seven_section_mob'],
+                ['value' => $images]
             );
         }
 

@@ -4,7 +4,7 @@
                 <div class="col-lg-2 col-md-2 logo-col">
                     <div class="header__logo">
                         <a href="/">
-                            <img src="{{ asset('image/logo.svg') }}" alt="logo">
+                            <img src="{{ asset('image/logo.png') }}" alt="logo">
                         </a>
                     </div>
                 </div>

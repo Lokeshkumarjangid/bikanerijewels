@@ -430,8 +430,8 @@ ol {
 }
 
 .header__logo img{
-    height: 59px;
-    width: 197px;
+    height: 93px;
+    width: 226px;
 }
 
 .product__item__pic{
@@ -6152,8 +6152,9 @@ DESCRIPTION
     }
 
     .header__logo img{
-        height: 100px;
+        height: 139px;
         width: auto;
+		padding-top: 34px;
     }
 
     /* Existing hamburger left */
