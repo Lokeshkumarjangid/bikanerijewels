@@ -21,7 +21,7 @@
                             <li><a href="{{route('contactus')}}">Contact Us</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'faq']) }}">FAQS</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'care-advices']) }}">Care Advices</a></li>
-                            <li><a href="#">Book an appointment</a></li>
+                            <!-- <li><a href="#">Book an appointment</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="footer__widget">
                         <h6>About Us</h6>
                         <ul>
-                            <li><a href="{{ route('cms', ['slug' => 'a-guide-to-jaipur']) }}">A Guide to jaipur</a></li>
+                            <!-- <li><a href="{{ route('cms', ['slug' => 'a-guide-to-jaipur']) }}">A Guide to jaipur</a></li> -->
                             <li><a href="{{ route('cms', ['slug' => 'timeline-of-the-brand']) }}">Timeline of the brand</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'about-us']) }}">About Us</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'brand-responsibilities']) }}">Brand Responsibilities</a></li>
@@ -47,7 +47,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
+                <!-- <div class="col-lg-2 col-md-3 col-sm-6">
                     <div class="footer__widget">
                         <h6>Media</h6>
                         <ul>
@@ -55,7 +55,7 @@
                             <li><a href="{{ route('cms', ['slug' => 'press-and-awards']) }}">Press & Awards</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="col-lg-12 text-center">
