@@ -1018,3 +1018,270 @@
 
   </section> -->
 <!-- Privacy Policy end -->
+
+<!-- <section class="shipping-section">
+
+    <div class="shipping-header">
+
+    <span class="shipping-tag">
+    Delivery Information
+    </span>
+
+    <h1>
+    Shipping Policy
+    </h1>
+
+    <h3 class="shipping-subtitle">
+    Secure &amp; Insured Delivery
+    </h3>
+
+    <div class="shipping-divider"></div>
+
+    <p>
+    At <strong>Bikaneri Jewels</strong>, every piece of jewellery is thoughtfully handcrafted, carefully inspected, securely packaged, and delivered with the utmost attention to detail. We are committed to ensuring that every order reaches you safely, securely, and in perfect condition.
+    </p>
+
+    <p>
+    Whether you are purchasing a timeless heirloom, a bespoke bridal masterpiece, or a meaningful gift, our trusted logistics partners handle every shipment with the highest level of care, professionalism, and security.
+    </p>
+
+    <div class="shipping-highlight">
+
+    <h3>Our Shipping Commitment</h3>
+
+    <p>
+    Every shipment from Bikaneri Jewels is securely packed, fully protected, and carefully monitored throughout its journey. We are dedicated to providing a reliable, transparent, and worry-free delivery experience so you can shop with complete confidence.
+    </p>
+
+    </div>
+
+    </div>
+
+</section>
+<section class="shipping-options">
+
+    <div class="shipping-grid">
+
+    <div class="shipping-card">
+
+    <div class="shipping-icon">
+    🚚
+    </div>
+
+    <h2>Pan India Shipping</h2>
+
+    <p>
+    We offer secure and fully insured delivery across India through our trusted logistics partners, ensuring your jewellery reaches you safely and in perfect condition.
+    </p>
+
+    <ul class="shipping-list">
+    <li><strong>Estimated Delivery:</strong> 5–10 Business Days*</li>
+    <li><strong>Order Processing:</strong> 1–3 Business Days</li>
+    <li><strong>Shipping Charges:</strong> Calculated at checkout based on your order value and delivery location.</li>
+    </ul>
+
+    <div class="shipping-note">
+    *Delivery timelines may vary depending on product availability, remote delivery locations, or unforeseen logistics delays.
+    </div>
+
+    </div>
+
+    <div class="shipping-card">
+
+    <div class="shipping-icon">
+    🌍
+    </div>
+
+    <h2>International Shipping</h2>
+
+    <p>
+    Bikaneri Jewels proudly offers worldwide shipping to selected countries through reliable international logistics partners.
+    </p>
+
+    <ul class="shipping-list">
+    <li><strong>Estimated Delivery:</strong> 10–20 Business Days*</li>
+    <li><strong>Shipping Charges:</strong> Calculated according to destination country.</li>
+    <li><strong>Customs & Duties:</strong> Applicable duties and local taxes are payable as per destination country regulations.</li>
+    </ul>
+
+    <div class="shipping-note">
+    For international orders, we recommend contacting our team before placing your order so we can assist you with shipping timelines, customs information, and delivery guidance.
+    </div>
+
+    </div>
+
+    </div>
+
+</section>
+<section class="shipping-process">
+
+    <div class="process-heading">
+
+    <h2>Order Processing & Delivery</h2>
+
+    <p>
+    Every Bikaneri Jewels order is handled with exceptional care to ensure a secure, seamless, and premium delivery experience from our workshop to your doorstep.
+    </p>
+
+    </div>
+
+    <div class="process-grid">
+
+    <div class="process-card">
+
+    <div class="process-icon">📦</div>
+
+    <h3>Order Processing</h3>
+
+    <p>
+    Most orders are dispatched within <strong>1–3 business days</strong> after successful payment confirmation.
+    </p>
+
+    <p>
+    For bespoke, made-to-order, or customized jewellery, additional production time may be required. Our team will communicate the expected delivery schedule during the ordering process.
+    </p>
+
+    </div>
+
+    <div class="process-card">
+
+    <div class="process-icon">🚛</div>
+
+    <h3>Delivery Information</h3>
+
+    <ul class="process-list">
+
+    <li>All shipments are fully insured until delivery.</li>
+
+    <li>Every order is securely packaged for maximum protection.</li>
+
+    <li>A signature may be required upon delivery.</li>
+
+    <li>Tracking details are shared via Email or SMS once dispatched.</li>
+
+    <li>Reliable logistics partners ensure safe transportation.</li>
+
+    </ul>
+
+    </div>
+
+    <div class="process-card">
+
+    <div class="process-icon">📍</div>
+
+    <h3>Tracking Your Order</h3>
+
+    <p>
+    Once your order has been dispatched, you will receive complete tracking information so you can monitor your shipment throughout its journey until it reaches you safely.
+    </p>
+
+    </div>
+
+    </div>
+
+    <div class="delay-box">
+
+    <h3>Delivery Delays</h3>
+
+    <p>
+    While we strive to deliver your order within the estimated timeframe, delays may occur due to unforeseen circumstances such as weather conditions, public holidays, logistics disruptions, or events beyond our control. We appreciate your patience and understanding.
+    </p>
+
+    </div>
+
+</section>
+<section class="shipping-support">
+
+    <div class="support-grid">
+
+        <div class="support-card">
+
+            <div class="support-icon">
+            📦
+            </div>
+
+            <h2>Damaged or Tampered Packages</h2>
+
+            <p>
+            If your package appears damaged or tampered with upon delivery, please do not accept the parcel. Contact our customer support immediately with photographs of the package, and we will assist you with the next steps.
+            </p>
+
+        </div>
+
+        <div class="support-card">
+
+            <div class="support-icon">
+            📍
+            </div>
+
+            <h2>Shipping Address</h2>
+
+            <p>
+            Please ensure that your shipping address and contact details are accurate at the time of placing your order. Once an order has been dispatched, we may not be able to modify the delivery address.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="shipping-contact">
+
+    <div class="shipping-contact-box">
+
+    <div class="shipping-contact-content">
+
+    <span class="shipping-contact-tag">
+    We're Here To Help
+    </span>
+
+    <h2 class="shipping-contact-title">
+    Need Assistance?
+    </h2>
+
+    <p class="shipping-contact-desc">
+    For any shipping-related enquiries, please contact us:
+    </p>
+
+    <div class="shipping-contact-grid">
+
+    <div class="shipping-contact-card">
+
+    <h3>📍 Address</h3>
+
+    <p>
+    <strong>Bikaneri Jewels</strong><br>
+    Office No. 11, Sputnik Building,<br>
+    Breach Candy,<br>
+    Mumbai, Maharashtra – 400026, India
+    </p>
+
+    </div>
+
+    <div class="shipping-contact-card">
+
+    <h3>📞 Call Us</h3>
+
+    <p>
+    +91 99673 52183
+    </p>
+
+    </div>
+
+    <div class="shipping-contact-card">
+
+    <h3>✉ Email Us</h3>
+
+    <p>
+    sales@bikanerijewels.com
+    </p>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+</section> -->
