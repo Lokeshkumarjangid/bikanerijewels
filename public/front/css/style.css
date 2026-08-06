@@ -5198,7 +5198,7 @@ DESCRIPTION
     margin-bottom:12px;
 }
 
-.contact-title{
+.contact-titles{
     font-size:48px;
     font-weight:700;
     line-height:1.2;
@@ -5206,11 +5206,11 @@ DESCRIPTION
     color:#111;
 }
 
-.contact-title span{
+.contact-titles span{
     color:#b68a35;
 }
 
-.contact-description{
+.contact-descriptions{
     font-size:18px;
     line-height:1.9;
     color:#666;
@@ -6343,6 +6343,13 @@ DESCRIPTION
     line-height:1.9;
     margin:0;
     font-size:16px;
+}
+
+.contact-cards p {
+    /* color: #f2f2f2; */
+    line-height: 1.9;
+    margin: 0;
+    font-size: 16px;
 }
 
 .contact-footer{

@@ -18,19 +18,6 @@
     color: #555;
 }
 
-/* Cards */
-.contact-card {
-    border-radius: 12px;
-    padding: 25px;
-    text-align: center;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
-}
-.contact-card:hover {
-    transform: translateY(-5px);
-}
-
 /* Form */
 .contact-form {
     background: #fff;
@@ -79,12 +66,12 @@
 <div class="heading-contactus text-center mb-5">
     <span class="contact-subtitle"></span>
 
-    <h2 class="contact-title">
+    <h2 class="contact-titles">
         Experience the Legacy of
         <span>Bikaneri Jewels</span>
     </h2>
 
-    <p class="contact-description">
+    <p class="contact-descriptions">
         For over eight decades, Bikaneri Jewels has crafted timeless masterpieces that
         blend India's rich heritage with contemporary elegance. Every creation reflects
         exceptional craftsmanship, unmatched quality, and a passion for perfection.
@@ -99,7 +86,7 @@
 
             <!-- Address -->
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="contact-card w-100">
+                <div class="contact-cards w-100">
                     <h5>Address</h5>
                     <p>
                         Office no. 11, Sputnik Building,<br>
@@ -111,7 +98,7 @@
 
             <!-- Phone -->
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="contact-card w-100">
+                <div class="contact-cards w-100">
                     <h5>Phone</h5>
                     <p>+91 99673 52183</p>
                 </div>
@@ -119,7 +106,7 @@
 
             <!-- Email -->
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="contact-card w-100">
+                <div class="contact-cards w-100">
                     <h5>Email</h5>
                     <p>sales@bikanerijewels.com</p>
                 </div>
@@ -127,7 +114,7 @@
 
             <!-- Working Hours -->
             <div class="col-lg-3 col-md-6 d-flex">
-                <div class="contact-card w-100">
+                <div class="contact-cards w-100">
                     <h5>Working Hours</h5>
                     <p>
                         Monday - Saturday<br>
