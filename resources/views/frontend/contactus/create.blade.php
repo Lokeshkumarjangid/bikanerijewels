@@ -18,6 +18,19 @@
     color: #555;
 }
 
+/* Cards */
+.contact-cards {
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+.contact-cards:hover {
+    transform: translateY(-5px);
+}
+
 /* Form */
 .contact-form {
     background: #fff;
