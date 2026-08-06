@@ -1,14 +1,14 @@
 <header class="header">
         <div class="container">
             <div class="row align-items-center header-mobile">
-                <div class="col-lg-2 col-md-2 logo-col">
+                <div class="col-lg-3 col-md-3 logo-col">
                     <div class="header__logo">
                         <a href="/">
-                            <img src="{{ asset('image/logo.png') }}" alt="logo">
+                            <img src="{{ asset('image/logo.jpg') }}" alt="logo">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-10 menu-col">
+                <div class="col-lg-9 col-md-9 menu-col">
                     <nav class="header__menu mobile-menu">
                         <ul>
                             @foreach($menuItems as $nav)

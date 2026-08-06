@@ -105,7 +105,10 @@
         animateIn: 'fadeIn',
         smartSpeed: 1200,
         autoHeight: false,
-        autoplay: true
+        autoplay: true,
+        dots: false,
+        nav: false,
+
     });
 
     $('.testimonial-slider').owlCarousel({

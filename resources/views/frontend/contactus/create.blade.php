@@ -75,42 +75,69 @@
         </div>
     </div>
 </section>
-
 <!-- Info Cards -->
+<div class="heading-contactus text-center mb-5">
+    <span class="contact-subtitle"></span>
+
+    <h2 class="contact-title">
+        Experience the Legacy of
+        <span>Bikaneri Jewels</span>
+    </h2>
+
+    <p class="contact-description">
+        For over eight decades, Bikaneri Jewels has crafted timeless masterpieces that
+        blend India's rich heritage with contemporary elegance. Every creation reflects
+        exceptional craftsmanship, unmatched quality, and a passion for perfection.
+        Whether you're searching for bridal jewellery, bespoke designs, or heirloom
+        treasures, our experts are here to help you find a piece that tells your unique story.
+        Visit us and experience luxury, trust, and artistry like never before.
+    </p>
+</div>
 <section class="py-5">
-  <div class="container">
-    <div class="row text-center">
+    <div class="container">
+        <div class="row g-4 text-center">
 
-      <div class="col-md-3 mb-3">
-        <div class="contact-card">
-          <h5>Address</h5>
-          <p>Jaipur, Rajasthan</p>
+            <!-- Address -->
+            <div class="col-lg-3 col-md-6 d-flex">
+                <div class="contact-card w-100">
+                    <h5>Address</h5>
+                    <p>
+                        Office no. 11, Sputnik Building,<br>
+                        Breach Candy, Mumbai,<br>
+                        400026
+                    </p>
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="col-lg-3 col-md-6 d-flex">
+                <div class="contact-card w-100">
+                    <h5>Phone</h5>
+                    <p>+91 99673 52183</p>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="col-lg-3 col-md-6 d-flex">
+                <div class="contact-card w-100">
+                    <h5>Email</h5>
+                    <p>sales@bikanerijewels.com</p>
+                </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="col-lg-3 col-md-6 d-flex">
+                <div class="contact-card w-100">
+                    <h5>Working Hours</h5>
+                    <p>
+                        Monday - Saturday<br>
+                        10:00 AM - 7:00 PM
+                    </p>
+                </div>
+            </div>
+
         </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="contact-card">
-          <h5>Phone</h5>
-          <p>+91 98765 43210</p>
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="contact-card">
-          <h5>Email</h5>
-          <p>info@example.com</p>
-        </div>
-      </div>
-
-      <div class="col-md-3 mb-3">
-        <div class="contact-card">
-          <h5>Working Hours</h5>
-          <p>Mon - Sat: 10AM - 7PM</p>
-        </div>
-      </div>
-
     </div>
-  </div>
 </section>
 
 <!-- Form + Map -->
@@ -164,10 +191,7 @@
 
       <!-- Map -->
       <div class="col-md-6">
-        <iframe 
-          src="https://maps.google.com/maps?q=jaipur&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          width="100%" height="100%" style="min-height:350px;border-radius:12px;">
-        </iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.177486344463!2d72.8039084!3d18.9677674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cd43f618676d%3A0xa64ce3707f9e4668!2sBikaneri%20Jewels!5e0!3m2!1sen!2sin!4v1785930700568!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
 
     </div>

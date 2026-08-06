@@ -193,19 +193,33 @@
     <!-- Categories Section Begin -->
     <section class="categories spad">
         <div class="hero-oneimage">
-            <div class="hero__items">
-                {!! $sixsection->value !!}
+            <div class="hero__item">
+                <picture>
+                    <source media="(max-width: 767px)"
+                        srcset="{{ asset('storage/'.$sixsectionMob->value) }}">
+
+                   <img src="{{ asset('storage/'.$sixsection->value) }}"
+                     alt="Banner"
+                    class="banner-img">
+                </picture>
             </div>
         </div>
     </section>
 
-    <!-- <section class="categories spad">
+    <section class="categories spad">
         <div class="hero-oneimage">
             <div class="hero__items">
-                {!! $sevensection->value !!}
+                <picture>
+                    <source media="(max-width: 767px)"
+                        srcset="{{ asset('storage/'.$sevensectionMob->value) }}">
+
+                   <img src="{{ asset('storage/'.$sevensection->value) }}"
+                     alt="Banner"
+                    class="banner-img">
+                </picture>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <section class="testimonial-section">
         <div class="container">

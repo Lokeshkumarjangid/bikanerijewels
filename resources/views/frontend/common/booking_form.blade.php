@@ -3,8 +3,19 @@
     <div class="appointment-container">
 
         <h2 class="appointment-title">
-            BOOK AN APPOINTMENT
+            Book an Appointment
         </h2>
+        <p class="appointment-subtitle">
+            Experience Timeless Luxury, Personally Curated for You
+        </p>
+
+        <p class="appointment-description">
+            Whether you're searching for your dream bridal jewellery, a bespoke masterpiece, or the perfect piece to celebrate life's special moments, our jewellery specialists are here to offer you a personalized and unforgettable experience.
+        </p>
+
+        <p class="appointment-description">
+            Book a private appointment at <strong>Bikaneri Jewels</strong> and discover handcrafted collections in an elegant, relaxed setting designed to make every visit memorable.
+        </p>
         <div class="appointment-layout">
             {{-- Left Image --}}
             <div class="appointment-image">

@@ -23,7 +23,9 @@ class SettingController extends Controller
             "home_third_section" => 'nullable',
             "home_fourth_section" => 'nullable',
             "home_six_section" => 'nullable',
+            "home_six_section_mob" => 'nullable',
             "home_seven_section" => 'nullable',
+            "home_seven_section_mob" => 'nullable',
         ]);
 
         if ($request->hasFile('web_home_video')) {
@@ -58,8 +60,8 @@ class SettingController extends Controller
             );
         }
 
-        if($request->hasFile($request->home_six_section)){
-            $images =$fileService->uploadSingle($request->file('web_home_image'), 'settings');
+        if($request->hasFile('home_six_section')){
+            $images =$fileService->uploadSingle($request->file('home_six_section'), 'settings');
 
             Settings::updateOrCreate(
                 ['key' => 'home_six_section'],
@@ -67,8 +69,8 @@ class SettingController extends Controller
             );
         }
 
-        if($request->hasFile($request->home_six_section_mob)){
-            $images =$fileService->uploadSingle($request->file('mobile_home_image'), 'settings');
+        if($request->hasFile('home_six_section_mob')){
+            $images =$fileService->uploadSingle($request->file('home_six_section_mob'), 'settings');
 
             Settings::updateOrCreate(
                 ['key' => 'home_six_section_mob'],
@@ -76,8 +78,8 @@ class SettingController extends Controller
             );
         }
 
-        if($request->hasFile($request->home_seven_section)){
-            $images =$fileService->uploadSingle($request->file('web_home_image'), 'settings');
+        if($request->hasFile('home_seven_section')){
+            $images =$fileService->uploadSingle($request->file('home_seven_section'), 'settings');
 
             Settings::updateOrCreate(
                 ['key' => 'home_seven_section'],
@@ -85,8 +87,8 @@ class SettingController extends Controller
             );
         }
 
-        if($request->hasFile($request->home_seven_section_mob)){
-            $images =$fileService->uploadSingle($request->file('mobile_home_image'), 'settings');
+        if($request->hasFile('home_seven_section_mob')){
+            $images =$fileService->uploadSingle($request->file('home_seven_section_mob'), 'settings');
 
             Settings::updateOrCreate(
                 ['key' => 'home_seven_section_mob'],

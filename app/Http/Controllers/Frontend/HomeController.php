@@ -22,13 +22,15 @@ class HomeController extends Controller
     public function index()
     {
         $bestProducts = $this->productService->getBestSaleProducts();
-        $thirdsection=Settings::find('3');
-        $fourthsection=Settings::find('4');
-        $sixsection=Settings::find('5');
-        $sevensection=Settings::find('6');
+        $thirdsection = Settings::where('key', 'home_third_section')->first();
+        $fourthsection = Settings::where('key', 'home_fourth_section')->first();
+        $sixsection = Settings::where('key', 'home_six_section')->first();
+        $sixsectionMob = Settings::where('key', 'home_six_section_mob')->first();
+        $sevensection = Settings::where('key', 'home_seven_section')->first();
+        $sevensectionMob = Settings::where('key', 'home_seven_section_mob')->first();
         $Homerating=HomeRating::select('id','user_name','description')->orderBy('id','desc')->get('10');
         $banner=Banners::select('id','sort_order','banner_img_web','banner_img_mob','status')->where('status','1')->orderBy('sort_order','ASC')->get();
 
-        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating','banner','sevensection'));
+        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating','banner','sevensection','sixsectionMob','sevensectionMob'));
     }
 }
