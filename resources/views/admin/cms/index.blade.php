@@ -694,7 +694,7 @@
 <!-- BRAND RESPONSIBILITIES end -->
 
 <!-- Privacy Policy start -->
-  <section class="privacy-section">
+  <!-- <section class="privacy-section">
 
       <div class="privacy-header">
 
@@ -1016,4 +1016,5 @@
 
     </div>
 
-  </section>
+  </section> -->
+<!-- Privacy Policy end -->
