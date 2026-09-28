@@ -6,11 +6,11 @@
                     <div class="footer__widget">
                         <h6>Connect With us</h6>
                         <ul class="social-icons">
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/bikanerijewelsmumbaillp/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61588455300026"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                            <li><a href="https://in.pinterest.com/bikanerijewelsmumbaillp/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.youtube.com/@BikaneriJewelsmumbaillp"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/bikaneri-jewels-5747323a8/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <ul>
                             <!-- <li><a href="{{ route('cms', ['slug' => 'a-guide-to-jaipur']) }}">A Guide to jaipur</a></li> -->
                             <li><a href="{{ route('cms', ['slug' => 'timeline-of-the-brand']) }}">Timeline of the brand</a></li>
-                            <li><a href="{{ route('cms', ['slug' => 'about-us']) }}">About Us</a></li>
+                            <!-- <li><a href="{{ route('cms', ['slug' => 'about-us']) }}">About Us</a></li> -->
                             <li><a href="{{ route('cms', ['slug' => 'brand-responsibilities']) }}">Brand Responsibilities</a></li>
                         </ul>
                     </div>
