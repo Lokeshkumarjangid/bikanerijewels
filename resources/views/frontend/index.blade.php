@@ -167,8 +167,7 @@
                 <div class="col-lg-12">
                     <ul class="filter__controls">
                         <li class="active" data-filter="*">Best Sale</li>
-                        <!-- <li data-filter=".new-arrivals">New Arrivals</li>
-                        <li data-filter=".hot-sales">Hot Sales</li> -->
+                       
                     </ul>
                 </div>
             </div>
@@ -183,20 +182,10 @@
                                 </a>
                                 <div class="product__item__text">
                                     <h6>{{$value->product_name}}</h6>
-                                    <!-- <a href="#" class="add-cart"><i class="fa fa-whatsapp" aria-hidden="true" style="color:#25D366; font-size:40px;"></i></a> -->
-                                    {{--<h5>{{$value->price ?? ''}}</h5> --}}
+                              
+                                    <h5>{{$value->price ?? ''}}</h5>
                                     <h5><button class="price-request-btn" onclick="openWhatsApp('{{ addslashes($value->product_name) }}', '{{ $value->sku }}')">PRICE ON REQUEST</button></h5>
-                                    <!-- <div class="product__color__select">
-                                        <label for="pc-1">
-                                            <input type="radio" id="pc-1">
-                                        </label>
-                                        <label class="active black" for="pc-2">
-                                            <input type="radio" id="pc-2">
-                                        </label>
-                                        <label class="grey" for="pc-3">
-                                            <input type="radio" id="pc-3">
-                                        </label>
-                                    </div> -->
+                                    
                                 </div>
                             </div>
                         </div>
