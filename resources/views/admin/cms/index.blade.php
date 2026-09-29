@@ -1285,3 +1285,606 @@
     </div>
 
 </section> -->
+
+<!-- terms and condtion start -->
+ {{--<section class="terms-section">
+
+    <div class="terms-wrapper">
+
+        <!-- PAGE HEADER -->
+        <div class="terms-header">
+
+            <span class="small-title">Bikaneri Jewels</span>
+
+            <h1>Terms &amp; Conditions</h1>
+
+            <p>
+                Please read these Terms &amp; Conditions carefully before using
+                the Bikaneri Jewels website, products, and services.
+            </p>
+
+        </div>
+
+
+        <!-- INTRODUCTION -->
+        <div class="terms-block">
+
+            <h2>Introduction</h2>
+
+            <p>
+                Welcome to Bikaneri Jewels. These Terms &amp; Conditions govern
+                your access to and use of our website, products, and services.
+                By accessing or using this website, you agree to be bound by
+                these Terms and all applicable laws and regulations.
+            </p>
+
+            <p>
+                The content, products, and services available on this website
+                are provided for your personal, non-commercial use. Bikaneri
+                Jewels reserves the right to update, modify, or discontinue
+                any part of the website, products, services, or these Terms
+                &amp; Conditions at any time without prior notice.
+            </p>
+
+            <p>
+                We encourage you to review this page periodically to stay
+                informed of any updates.
+            </p>
+
+            <p>
+                While we strive to ensure uninterrupted access to our website,
+                we do not guarantee that it will always be available or free
+                from errors. Bikaneri Jewels shall not be held liable for
+                temporary interruptions, technical issues, or website
+                unavailability beyond our reasonable control.
+            </p>
+
+        </div>
+
+
+        <!-- ELIGIBILITY -->
+        <div class="terms-block">
+
+            <h2>Eligibility</h2>
+
+            <p>
+                By using the Bikaneri Jewels website, you confirm that you are
+                at least 18 years of age or are accessing the website under
+                the supervision of a parent or legal guardian.
+            </p>
+
+            <p>
+                By placing an order, you agree that the information provided
+                by you is accurate and complete.
+            </p>
+
+        </div>
+
+
+        <!-- WEBSITE USAGE -->
+        <div class="terms-block">
+
+            <h2>Website Usage</h2>
+
+            <p>
+                Bikaneri Jewels grants you a limited, non-exclusive, and
+                revocable license to access and use this website for personal,
+                non-commercial purposes only.
+            </p>
+
+            <p>
+                You may not copy, reproduce, modify, distribute, or exploit
+                any content from this website without our prior written
+                permission.
+            </p>
+
+        </div>
+
+
+        <!-- USER CONDUCT -->
+        <div class="terms-block">
+
+            <h2>User Conduct</h2>
+
+            <p>
+                When using our website, you agree to:
+            </p>
+
+            <ul class="terms-list">
+
+                <li>Comply with all applicable laws and regulations.</li>
+
+                <li>Provide accurate and truthful information.</li>
+
+                <li>Use the website only for lawful purposes.</li>
+
+                <li>
+                    Respect the intellectual property rights of
+                    Bikaneri Jewels.
+                </li>
+
+            </ul>
+
+            <p style="margin-top: 18px;">
+                You must not:
+            </p>
+
+            <ul class="terms-list">
+
+                <li>
+                    Upload or distribute harmful software, viruses,
+                    or malicious code.
+                </li>
+
+                <li>
+                    Attempt to gain unauthorized access to our website
+                    or systems.
+                </li>
+
+                <li>
+                    Copy, scrape, or misuse website content without
+                    permission.
+                </li>
+
+                <li>
+                    Submit false, misleading, or fraudulent information.
+                </li>
+
+                <li>
+                    Use the website in any manner that may disrupt its
+                    functionality or compromise its security.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- SUSPENSION -->
+        <div class="terms-block">
+
+            <h2>Suspension of Access</h2>
+
+            <p>
+                Bikaneri Jewels reserves the right to suspend or terminate
+                access to the website without prior notice if these Terms
+                &amp; Conditions are violated or if any activity is found to
+                be unlawful, fraudulent, or harmful to our business or other
+                users.
+            </p>
+
+        </div>
+
+
+        <!-- WEBSITE AVAILABILITY -->
+        <div class="terms-block">
+
+            <h2>Website Availability</h2>
+
+            <p>
+                While we strive to keep our website secure and accessible
+                at all times, Bikaneri Jewels does not guarantee uninterrupted
+                or error-free access.
+            </p>
+
+            <p>
+                We are not liable for temporary service interruptions,
+                technical issues, or damages arising from circumstances
+                beyond our reasonable control.
+            </p>
+
+        </div>
+
+
+        <!-- USER ACCOUNT -->
+        <div class="terms-block">
+
+            <h2>User Account &amp; Conduct</h2>
+
+            <p>
+                To access certain features of our website, you may be required
+                to create an account and provide accurate, complete, and
+                up-to-date information.
+            </p>
+
+            <p>
+                You are responsible for maintaining the confidentiality of
+                your account credentials and for all activities conducted
+                through your account.
+            </p>
+
+            <p>
+                If you suspect any unauthorized use of your account, please
+                contact us immediately.
+            </p>
+
+            <p>
+                By using our website, you agree to use it responsibly and
+                lawfully. You must not misuse the website, attempt
+                unauthorized access, upload harmful software, or engage in
+                any activity that may interfere with its functionality
+                or security.
+            </p>
+
+        </div>
+
+
+        <!-- ACCURACY -->
+        <div class="terms-block">
+
+            <h2>Accuracy of Information</h2>
+
+            <p>
+                We strive to ensure that all information, product descriptions,
+                pricing, and images on our website are accurate and up to date.
+                However, occasional errors or changes may occur.
+            </p>
+
+            <p>
+                Bikaneri Jewels reserves the right to update, modify, or
+                correct any information without prior notice.
+            </p>
+
+            <p>
+                Product availability and pricing are subject to change
+                at any time.
+            </p>
+
+        </div>
+
+
+        <!-- INTELLECTUAL PROPERTY -->
+        <div class="terms-block">
+
+            <h2>Intellectual Property</h2>
+
+            <p>
+                All content on this website, including text, images, logos,
+                graphics, designs, videos, trademarks, and other materials,
+                is the exclusive property of Bikaneri Jewels and is protected
+                under applicable intellectual property laws.
+            </p>
+
+            <p>
+                You may not copy, reproduce, distribute, modify, or use any
+                content from this website without our prior written consent.
+            </p>
+
+        </div>
+
+
+        <!-- MATERIALS -->
+        <div class="terms-block">
+
+            <h2>Materials You Submit</h2>
+
+            <p>
+                Any feedback, reviews, images, suggestions, or other content
+                you voluntarily share with Bikaneri Jewels may be used by us
+                to improve our products, services, and customer experience.
+            </p>
+
+            <p>
+                By submitting such content, you grant us permission to use,
+                reproduce, and display it for business, promotional, or
+                marketing purposes, unless otherwise agreed.
+            </p>
+
+            <p>
+                We reserve the right to edit or remove any content that is
+                inappropriate or violates applicable laws.
+            </p>
+
+        </div>
+
+
+        <!-- TERMS OF SALE -->
+        <div class="terms-block">
+
+            <h2>Terms of Sale</h2>
+
+            <p>
+                All purchases made through the Bikaneri Jewels website are
+                subject to product availability, order acceptance, and
+                successful payment authorization.
+            </p>
+
+            <p>
+                By placing an order, you confirm that the information
+                provided is accurate and that you are authorized to use
+                the selected payment method.
+            </p>
+
+            <p>
+                We reserve the right to refuse or cancel any order at
+                our sole discretion.
+            </p>
+
+        </div>
+
+
+        <!-- ORDER PROCESS -->
+        <div class="terms-block">
+
+            <h2>Order Process</h2>
+
+            <p>
+                Once your order is placed, you will receive an order
+                confirmation via email or SMS.
+            </p>
+
+            <p>
+                Orders are processed after payment verification and are
+                subject to product availability.
+            </p>
+
+            <p>
+                In the event of pricing errors, stock unavailability,
+                or unforeseen circumstances, Bikaneri Jewels reserves
+                the right to modify or cancel an order.
+            </p>
+
+            <p>
+                Any applicable refund will be processed promptly.
+            </p>
+
+        </div>
+
+
+        <!-- PROHIBITED USE -->
+        <div class="terms-block">
+
+            <h2>Prohibited Use</h2>
+
+            <p>
+                While using our website, you agree not to:
+            </p>
+
+            <ul class="terms-list">
+
+                <li>
+                    Violate any applicable laws or regulations.
+                </li>
+
+                <li>
+                    Upload viruses, malware, or harmful software.
+                </li>
+
+                <li>
+                    Attempt unauthorized access to our systems or website.
+                </li>
+
+                <li>
+                    Copy, scrape, or misuse our content without permission.
+                </li>
+
+                <li>
+                    Submit false, misleading, or fraudulent information.
+                </li>
+
+                <li>
+                    Interfere with the website's functionality or security.
+                </li>
+
+                <li>
+                    Use the website for unlawful or commercial purposes
+                    without our written consent.
+                </li>
+
+            </ul>
+
+            <div class="terms-note">
+
+                <p>
+                    Failure to comply with these Terms &amp; Conditions may
+                    result in the suspension or termination of your access
+                    to the website.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>--}}
+
+<!-- return policy -->
+
+{{--<section class="return-policy-section">
+    <div class="return-policy-container">
+
+        <!-- Header -->
+        <div class="return-policy-header">
+            <div class="policy-subtitle">Bikaneri Jewels</div>
+
+            <h1>Returns & Refund Policy</h1>
+
+            <p>
+                At Bikaneri Jewels, every jewellery piece is handcrafted with
+                exceptional care and undergoes strict quality checks before dispatch.
+                We strive to ensure that every order meets the highest standards
+                of craftsmanship and customer satisfaction.
+            </p>
+        </div>
+
+
+        <div class="policy-content">
+
+            <!-- Returns & Exchanges -->
+            <div class="policy-box">
+                <h2>Returns & Exchanges</h2>
+
+                <p>
+                    We accept return or exchange requests only under the following
+                    circumstances:
+                </p>
+
+                <ul>
+                    <li>You receive a damaged or defective product.</li>
+                    <li>You receive an incorrect item.</li>
+                    <li>The product has a verified manufacturing defect.</li>
+                </ul>
+            </div>
+
+
+            <!-- Eligibility -->
+            <div class="policy-box">
+                <h2>Return Eligibility</h2>
+
+                <p>To be eligible for a return or exchange:</p>
+
+                <ul>
+                    <li>
+                        The request must be made within 48 hours of receiving the order.
+                    </li>
+
+                    <li>
+                        The jewellery must be unused, unworn, and returned in its
+                        original packaging with all certificates, invoices, and accessories.
+                    </li>
+
+                    <li>
+                        Customized, engraved, made-to-order, or personalized jewellery
+                        cannot be returned or exchanged.
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Return Process -->
+            <div class="policy-box">
+                <h2>Return Process</h2>
+
+                <ul>
+                    <li>
+                        Contact our Customer Support within 48 hours of delivery by
+                        emailing
+                        <a href="mailto:sales@bikanerijewels.com">
+                            sales@bikanerijewels.com
+                        </a>
+                        or calling
+                        <a href="tel:+919967352183">
+                            +91 99673 52183
+                        </a>.
+                    </li>
+
+                    <li>
+                        Share your order number along with clear photographs or
+                        videos of the product and packaging.
+                    </li>
+
+                    <li>
+                        Once our Quality Assurance team verifies the request,
+                        we will guide you through the return process.
+                    </li>
+
+                    <li>
+                        After receiving and inspecting the product, we will process
+                        the approved exchange or refund.
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Refund Policy -->
+            <div class="policy-box">
+                <h2>Refund Policy</h2>
+
+                <p>
+                    Refunds will be processed only in the following cases:
+                </p>
+
+                <ul>
+                    <li>Wrong product delivered.</li>
+                    <li>Damaged product received during transit.</li>
+                    <li>
+                        Manufacturing defect confirmed by our Quality Assurance team.
+                    </li>
+                    <li>
+                        Order cancelled by Bikaneri Jewels due to product unavailability.
+                    </li>
+                </ul>
+
+                <p style="margin-top: 18px;">
+                    Approved refunds will be credited to the original payment method
+                    within 7–10 business days, depending on your bank or payment provider.
+                </p>
+            </div>
+
+
+            <!-- Repair & After Sales -->
+            <div class="policy-box">
+                <h2>Jewellery Repair & After-Sales Service</h2>
+
+                <p>
+                    We offer professional repair and maintenance services for eligible
+                    Bikaneri Jewels products. Repair charges may apply depending on
+                    the nature of the service required. Our team will provide an
+                    estimate after inspecting the jewellery.
+                </p>
+            </div>
+
+
+            <!-- Non Returnable -->
+            <div class="policy-box">
+                <h2>Non-Returnable Items</h2>
+
+                <p>
+                    The following items are not eligible for return or refund:
+                </p>
+
+                <ul>
+                    <li>Customized or bespoke jewellery.</li>
+                    <li>Engraved or personalized products.</li>
+                    <li>
+                        Jewellery damaged due to improper handling or normal wear and tear.
+                    </li>
+                    <li>
+                        Products returned without original packaging, certificates,
+                        or invoice.
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Contact -->
+            <div class="policy-box">
+                <h2>Need Assistance?</h2>
+
+                <p>
+                    If you have any questions regarding returns, refunds, or repairs,
+                    please contact us:
+                </p>
+
+                <div class="policy-contact">
+
+                    <div class="contact-name">
+                        Bikaneri Jewels
+                    </div>
+
+                    <p>
+                        Office No. 11, Sputnik Building<br>
+                        Breach Candy, Mumbai, Maharashtra 400026, India
+                    </p>
+
+                    <p>
+                        📞
+                        <a href="tel:+919967352183">
+                            +91 99673 52183
+                        </a>
+                    </p>
+
+                    <p>
+                        ✉
+                        <a href="mailto:sales@bikanerijewels.com">
+                            sales@bikanerijewels.com
+                        </a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>--}}

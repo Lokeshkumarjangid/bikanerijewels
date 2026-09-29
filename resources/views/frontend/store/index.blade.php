@@ -91,28 +91,28 @@
     <div class="container">
 
         <h2 class="section-title">
-            Luxury Jewellery Stores in Jaipur & New Delhi
+            Luxury Jewellery Stores In Mumbai
         </h2>
 
         <!-- ROW 1 -->
         <div class="boutique-row">
             <div class="boutique-img">
-                <img src="image1.jpg" alt="">
+                <img src="{{asset('image/store1.jpeg')}}" alt="">
             </div>
             <div class="boutique-content">
-                <h5>OUR JAIPUR BOUTIQUE</h5>
-                <h3>Jaipur</h3>
+                <h5>OUR MUMBAI BOUTIQUE</h5>
+                <h3>MUMBAI</h3>
                 <p>
-                    Shikhar House E-14, Sardar Patel Marg, C-Scheme<br>
-                    Jaipur - 302001
+                   Office no. 11, Sputnik Building,Breach Candy, Mumbai,<br>
+                    MUMBAI - 400026
                 </p>
-                <p>+91 12345 67890</p>
-                <a href="#">GET DIRECTIONS</a>
+                <p>+91 99673 52183</p>
+                <a href="https://www.google.com/maps?cid=7828162344544517900&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed">GET DIRECTIONS</a>
             </div>
         </div>
 
         <!-- ROW 2 -->
-        <div class="boutique-row reverse">
+        <!-- <div class="boutique-row reverse">
             <div class="boutique-img">
                 <img src="image2.jpg" alt="">
             </div>
@@ -126,10 +126,10 @@
                 <p>+91 98765 43210</p>
                 <a href="#">GET DIRECTIONS</a>
             </div>
-        </div>
+        </div> -->
 
         <!-- ROW 3 -->
-        <div class="boutique-row">
+        <!-- <div class="boutique-row">
             <div class="boutique-img">
                 <img src="image3.jpg" alt="">
             </div>
@@ -143,7 +143,7 @@
                 <p>+91 99999 88888</p>
                 <a href="#">GET DIRECTIONS</a>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </section>

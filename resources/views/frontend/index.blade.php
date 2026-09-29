@@ -141,6 +141,23 @@
         </div>
     </section>
   <br><br>
+
+    <!-- Categories Section Begin -->
+    <section class="categories spad">
+        <div class="hero-oneimage">
+            <div class="hero__item">
+                <picture>
+                    <source media="(max-width: 767px)"
+                        srcset="{{ asset('storage/'.$sixsectionMob->value) }}">
+
+                   <img src="{{ asset('storage/'.$sixsection->value) }}"
+                     alt="Banner"
+                    class="banner-img">
+                </picture>
+            </div>
+        </div>
+    </section>
+    
     <!-- Categroy Section End -->
 
     <!-- Product Section Begin -->
@@ -189,22 +206,6 @@
         </div>
     </section>
     <!-- Product Section End -->
-
-    <!-- Categories Section Begin -->
-    <section class="categories spad">
-        <div class="hero-oneimage">
-            <div class="hero__item">
-                <picture>
-                    <source media="(max-width: 767px)"
-                        srcset="{{ asset('storage/'.$sixsectionMob->value) }}">
-
-                   <img src="{{ asset('storage/'.$sixsection->value) }}"
-                     alt="Banner"
-                    class="banner-img">
-                </picture>
-            </div>
-        </div>
-    </section>
 
     <section class="categories spad">
         <div class="hero-oneimage">

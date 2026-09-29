@@ -25,5 +25,5 @@
         </div>
     </div>
 </section>
-
+@include('frontend.common.landingpage')
 @endsection
