@@ -161,7 +161,7 @@
     <!-- Categroy Section End -->
 
     <!-- Product Section Begin -->
-    <section class="product spad">
+    {{--<section class="product spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -204,7 +204,7 @@
                 @endif
             </div>
         </div>
-    </section>
+    </section>--}}
     <!-- Product Section End -->
 
     <section class="categories spad">
