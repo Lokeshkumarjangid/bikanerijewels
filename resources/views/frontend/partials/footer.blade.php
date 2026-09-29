@@ -21,7 +21,7 @@
                             <li><a href="{{route('contactus')}}">Contact Us</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'faq']) }}">FAQS</a></li>
                             <li><a href="{{ route('cms', ['slug' => 'care-advices']) }}">Care Advices</a></li>
-                            <!-- <li><a href="#">Book an appointment</a></li> -->
+                            <li><a href="{{route('booking_appointment')}}">Book an appointment</a></li>
                         </ul>
                     </div>
                 </div>

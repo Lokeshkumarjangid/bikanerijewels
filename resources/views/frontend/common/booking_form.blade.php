@@ -1,3 +1,10 @@
+@if(!empty($routeused) && $routeused == true)
+    @extends('frontend.layouts.app')
+
+    @section('title', 'Booking Appointment')
+
+    @section('content')
+@endif
 <section class="appointment-section">
 
     <div class="appointment-container">

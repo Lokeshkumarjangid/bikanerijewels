@@ -90,4 +90,9 @@ class ProductController extends Controller
        $data['collection']=Collections::where('category_id',$categoryId)->first();
        return view('frontend.product.collection_list', $data);
     }
+
+    function booking_appointment(){
+        $data['routeused']=true;
+        return view('frontend.common.booking_form', $data);
+    }
 }
