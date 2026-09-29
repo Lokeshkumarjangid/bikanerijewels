@@ -430,7 +430,7 @@ ol {
 }
 
 .header__logo img{
-    height: 78px;
+    height: 51px;
     width: 275px;
 }
 
@@ -8483,7 +8483,7 @@ DESCRIPTION
     }
 
     .header__logo img{
-        height: 105px;
+        height: 88px;
         width: auto;
 		padding-top: 34px;
     }
