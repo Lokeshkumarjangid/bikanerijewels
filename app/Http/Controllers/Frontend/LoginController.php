@@ -26,7 +26,8 @@ class LoginController extends Controller
         $request->validate([
             'mobile_no' => 'required|digits:10'
         ]);
-
+        session()->forget(['login_value', 'login_type']);
+        
         $user = User::where('mobile', $request->mobile_no)->first();
 
         if ($user) {
@@ -144,7 +145,8 @@ class LoginController extends Controller
     }
 
     function otp(){
-        return view('frontend.auth.otp');
+        $mobile = session('login_value');
+        return view('frontend.auth.otp', compact('mobile'));
     }
 
     public function logout(Request $request)

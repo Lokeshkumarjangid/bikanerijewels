@@ -7,7 +7,7 @@
         <h2>Login With Code</h2>
 
         <p class="otp-desc">
-        Last step! To secure your account, enter the code we just sent to 9898989898
+        Last step! To secure your account, enter the code we just sent to {{ $mobile ?? '' }}
         </p>
 
         <div class="otp-inputs">
