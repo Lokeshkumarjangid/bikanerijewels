@@ -113,7 +113,7 @@
             <div class="col-lg-3 col-md-6 d-flex">
                 <div class="contact-cards w-100">
                     <h5>Phone</h5>
-                    <p>+91 99673 52183</p>
+                    <p>+ 22-23672040  | +91 99673 52183</p>
                 </div>
             </div>
 
