@@ -28,7 +28,7 @@
             <div class="appointment-image">
                 <picture>
                     <img
-                        src="{{ asset('image/bookingappoint.jpg') }}"
+                        src="{{asset('image/store1.jpeg')}}"
                         alt="Book Appointment"
                     >
                 </picture>
