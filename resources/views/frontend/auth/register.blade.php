@@ -40,6 +40,11 @@
             </div>
 
             <div class="form-group">
+                <label>GST No.</label>
+                <input type="text" placeholder="Pan card" name='pancard' value="{{old('pancard')}}">
+            </div>
+
+            <div class="form-group">
                 <label>Mobile No</label>
                 <input type="text" name="mobile"
                 value="{{ session('login_type') == 'mobile' ? session('login_value') : old('mobile') }}"

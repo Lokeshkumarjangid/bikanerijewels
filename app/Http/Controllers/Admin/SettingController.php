@@ -26,6 +26,7 @@ class SettingController extends Controller
             "home_six_section_mob" => 'nullable',
             "home_seven_section" => 'nullable',
             "home_seven_section_mob" => 'nullable',
+            "home_eight_section" => 'nullable',
         ]);
 
         if ($request->hasFile('web_home_video')) {
@@ -93,6 +94,13 @@ class SettingController extends Controller
             Settings::updateOrCreate(
                 ['key' => 'home_seven_section_mob'],
                 ['value' => $images]
+            );
+        }
+
+        if($request->home_eight_section){
+            Settings::updateOrCreate(
+                ['key' => 'home_eight_section'],
+                ['value' => $request->home_eight_section]
             );
         }
 

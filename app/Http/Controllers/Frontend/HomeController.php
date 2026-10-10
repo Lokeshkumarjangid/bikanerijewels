@@ -28,9 +28,10 @@ class HomeController extends Controller
         $sixsectionMob = Settings::where('key', 'home_six_section_mob')->first();
         $sevensection = Settings::where('key', 'home_seven_section')->first();
         $sevensectionMob = Settings::where('key', 'home_seven_section_mob')->first();
+        $eightsection = Settings::where('key', 'home_eight_section')->first();
         $Homerating=HomeRating::select('id','user_name','description')->orderBy('id','desc')->get('10');
         $banner=Banners::select('id','sort_order','banner_img_web','banner_img_mob','status')->where('status','1')->orderBy('sort_order','ASC')->get();
 
-        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating','banner','sevensection','sixsectionMob','sevensectionMob'));
+        return view('frontend.index', compact('bestProducts','thirdsection','fourthsection','sixsection','Homerating','banner','sevensection','sixsectionMob','sevensectionMob','eightsection'));
     }
 }

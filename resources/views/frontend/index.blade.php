@@ -1,6 +1,125 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'home')
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        .cocktail-section {
+            width: 100%;
+            background: #000;
+            padding: 5px 14px 20px;
+        }
+
+        /* Heading */
+        .cocktail-title {
+            text-align: center;
+            color: #d6a85f;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 38px;
+        }
+
+        /* Image Grid */
+        .cocktail-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .cocktail-item {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .cocktail-item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 991px) {
+
+            .cocktail-section {
+                padding: 10px 12px 20px;
+            }
+
+            .cocktail-title {
+                font-size: 28px;
+                margin-bottom: 28px;
+            }
+
+            .cocktail-grid {
+                gap: 15px;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 767px) {
+
+            .cocktail-section {
+                padding: 8px 12px 25px;
+            }
+
+            .cocktail-title {
+                font-size: 25px;
+                margin-bottom: 22px;
+            }
+
+            .cocktail-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cocktail-item img {
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+
+        /* =========================================
+           SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 480px) {
+
+            .cocktail-section {
+                padding: 5px 10px 20px;
+            }
+
+            .cocktail-title {
+                font-size: 23px;
+                margin-bottom: 18px;
+            }
+
+            .cocktail-grid {
+                gap: 12px;
+            }
+        }
+    </style>
 @section('content') 
     <!-- Hero Section Begin -->
     <section class="hero">
@@ -211,6 +330,33 @@
         </div>
     </section>
 
+    <section class="cocktail-section">
+
+        {!! $eightsection->value !!}
+        <!-- <h2 class="cocktail-title">
+            Cocktail Glamour
+        </h2>
+
+        <div class="cocktail-grid">
+
+          
+            <div class="cocktail-item">
+                <img src="images/cocktail-1.jpg" alt="Cocktail Glamour Jewellery">
+            </div>
+
+           
+            <div class="cocktail-item">
+                <img src="images/cocktail-2.jpg" alt="Cocktail Glamour Jewellery">
+            </div>
+
+            <div class="cocktail-item">
+                <img src="images/cocktail-3.jpg" alt="Cocktail Glamour Jewellery">
+            </div>
+
+        </div> -->
+
+    </section>
+
     <section class="testimonial-section">
         <div class="container">
             <h2 class="testimonial-title">
@@ -387,3 +533,31 @@
     }
 </script>
 @endsection
+
+
+<!-- <section class="cocktail-section">
+
+    <h2 class="cocktail-title">
+        Cocktail Glamour
+    </h2>
+
+    <div class="cocktail-grid">
+
+        <div class="cocktail-item">
+            <img src="{{ asset('storage/cocktail/cocktail-1.jpg') }}"
+                 alt="Cocktail Glamour Jewellery">
+        </div>
+
+        <div class="cocktail-item">
+            <img src="{{ asset('storage/cocktail/cocktail-2.jpg') }}"
+                 alt="Cocktail Glamour Jewellery">
+        </div>
+
+        <div class="cocktail-item">
+            <img src="{{ asset('storage/cocktail/cocktail-3.jpg') }}"
+                 alt="Cocktail Glamour Jewellery">
+        </div>
+
+    </div>
+
+</section> -->

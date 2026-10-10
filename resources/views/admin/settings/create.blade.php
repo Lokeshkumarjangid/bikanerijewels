@@ -4,13 +4,59 @@
 
 @section('content')
 <style>
-    .image-upload-card {
+.image-upload-card {
+    position: relative;
+    width: 100%;
+    height: 250px;
     border: 2px dashed #ced4da;
     border-radius: 10px;
     background: #f8f9fa;
     cursor: pointer;
     transition: .3s;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-upload-card:hover {
+    border-color: #007bff;
+    background: #f1f8ff;
+}
+
+.image-upload-card .image-preview {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-upload-card.active .image-preview {
+    display: block;
+}
+
+.image-upload-card.active .image-upload-body {
+    display: none;
+}
+
+.image-upload-body {
+    text-align: center;
+    color: #6c757d;
+}
+
+.image-upload-body i {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.image-upload-body h6 {
+    margin-bottom: 5px;
+}
+
+.image-upload-body p {
+    margin: 0;
+    font-size: 13px;
 }
 </style>
 
@@ -97,112 +143,204 @@
                     <div class="card card-outline card-success mb-4">
                         <div class="card-header">
                             <h5 class="mb-0">
-                                <i class="fas fa-image mr-2"></i>Home Six section
+                                <i class="fas fa-image mr-2"></i>
+                                Home Six section
                             </h5>
                         </div>
 
                         <div class="card-body">
                             <div class="row">
+
+                                {{-- WEB IMAGE --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
-                                            Web Image (863 x 360)
-                                        </label>
-                                        <input type="file" name="home_six_section" id="home_six_section" class="d-none image-input" accept="image/*">
 
-                                        <div class="image-upload-card" data-input="home_six_section">
-                                            <img class="image-preview" id="preview_home_six_section">
+                                        <label>Web Image (863 x 360)</label>
+
+                                        <input
+                                            type="file"
+                                            name="home_six_section"
+                                            id="home_six_section"
+                                            class="d-none image-input"
+                                            accept="image/*"
+                                        >
+
+                                        <div
+                                            class="image-upload-card {{ !empty($setting[4]['value']) ? 'active' : '' }}"
+                                            data-input="home_six_section"
+                                        >
+
+                                            <img
+                                                class="image-preview"
+                                                id="preview_home_six_section"
+                                                src="{{ !empty($setting[4]['value']) ? asset('storage/'.$setting[4]['value']) : '' }}"
+                                                alt="Home Six Web Image"
+                                            >
+
                                             <div class="image-upload-body">
                                                 <i class="fas fa-cloud-upload-alt"></i>
                                                 <h6>Click to Upload</h6>
                                                 <p>PNG JPG</p>
                                             </div>
+
                                         </div>
+
                                         @error('home_six_section')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
 
                                     </div>
                                 </div>
+
+
+                                {{-- MOBILE IMAGE --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
-                                            Mobile Image (450 × 600)
-                                        </label>
-                                        <input type="file" name="home_six_section_mob" id="home_six_section_mob" class="d-none image-input" accept="image/*">
 
-                                        <div class="image-upload-card" data-input="home_six_section_mob">
-                                            <img class="image-preview" id="home_six_section_mob">
+                                        <label>Mobile Image (450 x 600)</label>
+
+                                        <input
+                                            type="file"
+                                            name="home_six_section_mob"
+                                            id="home_six_section_mob"
+                                            class="d-none image-input"
+                                            accept="image/*"
+                                        >
+
+                                        <div
+                                            class="image-upload-card {{ !empty($setting[6]['value']) ? 'active' : '' }}"
+                                            data-input="home_six_section_mob"
+                                        >
+
+                                            <img
+                                                class="image-preview"
+                                                id="preview_home_six_section_mob"
+                                                src="{{ !empty($setting[6]['value']) ? asset('storage/'.$setting[6]['value']) : '' }}"
+                                                alt="Home Six Mobile Image"
+                                            >
+
                                             <div class="image-upload-body">
                                                 <i class="fas fa-cloud-upload-alt"></i>
                                                 <h6>Click to Upload</h6>
                                                 <p>PNG JPG</p>
                                             </div>
+
                                         </div>
+
                                         @error('home_six_section_mob')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
 
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                     <div class="card card-outline card-warning mb-4">
                         <div class="card-header">
                             <h5 class="mb-0">
-                                <i class="fas fa-align-left mr-2"></i>
+                                <i class="fas fa-image mr-2"></i>
                                 Home Seven section
                             </h5>
                         </div>
+
                         <div class="card-body">
                             <div class="row">
+
+                                {{-- WEB IMAGE --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
-                                            Web (863 x 360)
-                                        </label>
-                                        <input type="file" name="home_seven_section" id="home_seven_section" class="d-none image-input" accept="image/*">
 
-                                        <div class="image-upload-card" data-input="home_seven_section">
-                                            <img class="image-preview" id="preview_home_seven_section">
+                                        <label>Web Image (863 x 360)</label>
+
+                                        <input
+                                            type="file"
+                                            name="home_seven_section"
+                                            id="home_seven_section"
+                                            class="d-none image-input"
+                                            accept="image/*"
+                                        >
+
+                                        <div
+                                            class="image-upload-card {{ !empty($setting[5]['value']) ? 'active' : '' }}"
+                                            data-input="home_seven_section"
+                                        >
+
+                                            <img
+                                                class="image-preview"
+                                                id="preview_home_seven_section"
+                                                src="{{ !empty($setting[5]['value']) ? asset('storage/'.$setting[5]['value']) : '' }}"
+                                                alt="Home Seven Web Image"
+                                            >
+
                                             <div class="image-upload-body">
                                                 <i class="fas fa-cloud-upload-alt"></i>
                                                 <h6>Click to Upload</h6>
                                                 <p>PNG JPG</p>
                                             </div>
+
                                         </div>
+
                                         @error('home_seven_section')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
 
                                     </div>
                                 </div>
+
+
+                                {{-- MOBILE IMAGE --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>
-                                            Mobile Image (450 x 600)
-                                        </label>
-                                        <input type="file" name="home_seven_section_mob" id="home_seven_section_mob" class="d-none image-input" accept="image/*">
 
-                                        <div class="image-upload-card" data-input="home_seven_section_mob">
-                                            <img class="image-preview" id="preview_home_seven_section_mob">
+                                        <label>Mobile Image (450 x 600)</label>
+
+                                        <input
+                                            type="file"
+                                            name="home_seven_section_mob"
+                                            id="home_seven_section_mob"
+                                            class="d-none image-input"
+                                            accept="image/*"
+                                        >
+
+                                        <div
+                                            class="image-upload-card {{ !empty($setting[7]['value']) ? 'active' : '' }}"
+                                            data-input="home_seven_section_mob"
+                                        >
+
+                                            <img
+                                                class="image-preview"
+                                                id="preview_home_seven_section_mob"
+                                                src="{{ !empty($setting[7]['value']) ? asset('storage/'.$setting[7]['value']) : '' }}"
+                                                alt="Home Seven Mobile Image"
+                                            >
+
                                             <div class="image-upload-body">
                                                 <i class="fas fa-cloud-upload-alt"></i>
                                                 <h6>Click to Upload</h6>
                                                 <p>PNG JPG</p>
                                             </div>
+
                                         </div>
+
                                         @error('home_seven_section_mob')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
 
                                     </div>
                                 </div>
+
                             </div>
-
                         </div>
+                    </div>
 
+                    <div class="form-group">
+                        <label>Home eight section</label>
+                        <textarea name="home_eight_section" class="form-control" rows="6" id="summernoteeight">{{$setting[8]['value']}}</textarea>
+                        @error('home_eight_section')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
 
                     <!-- <div class="form-group">
@@ -233,24 +371,28 @@ $(function () {
     // Summernote
     $('#summernote').summernote();
     $('#summernotefourth').summernote();
+    $('#summernoteeight').summernote();
 })
-$(document).ready(function(){
-        $('.image-upload-card').click(function(){
-            let input=$(this).data('input');
-            $('#'+input).click();
-        });
-   });
+// $(document).ready(function(){
+//         $('.image-upload-card').click(function(){
+//             let input=$(this).data('input');
+//             $('#'+input).click();
+//         });
+//    });
 
 $(document).ready(function () {
-    $('.image-upload-card').click(function () {
 
-        let input = $(this).data('input');
-        $('#' + input).trigger('click');
+    // Open file selector
+    $('.image-upload-card').on('click', function () {
 
+        let inputId = $(this).data('input');
+
+        $('#' + inputId).trigger('click');
     });
 
-    // Preview Image
-    $('.image-input').change(function () {
+
+    // Image preview
+    $('.image-input').on('change', function () {
 
         let input = this;
 
@@ -262,17 +404,19 @@ $(document).ready(function () {
 
                 let previewId = '#preview_' + input.id;
 
-                $(previewId).attr('src', e.target.result);
+                $(previewId)
+                    .attr('src', e.target.result)
+                    .show();
 
-                $(previewId).closest('.image-upload-card').addClass('active');
-
-            }
+                $(previewId)
+                    .closest('.image-upload-card')
+                    .addClass('active');
+            };
 
             reader.readAsDataURL(input.files[0]);
-
         }
-
     });
+
 });
 
 </script>
