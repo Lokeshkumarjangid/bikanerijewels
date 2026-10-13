@@ -161,7 +161,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Bredth</label>
+                            <label>Breadth</label>
                             <select name="breadth">
                                 <option value="">Select</option>
 
@@ -242,7 +242,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Buggate</label>
+                            <label>Baguette</label>
                             <select name="buggate">
                                 <option value="">Select</option>
 
