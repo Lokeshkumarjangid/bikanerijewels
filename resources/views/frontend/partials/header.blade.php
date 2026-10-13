@@ -46,6 +46,9 @@
 
                                         <a href="{{ route('customize.index') }}">{{ $nav->name }}</a>
 
+                                    @elseif($nav->type == 'BookAppointment')
+                                        <a href="{{ route('booking_appointment') }}">{{ $nav->name }}</a>
+                                        
                                     @elseif($nav->type == 'ContactUs')
 
                                         <a href="{{ route('contactus') }}">{{ $nav->name }}</a>
