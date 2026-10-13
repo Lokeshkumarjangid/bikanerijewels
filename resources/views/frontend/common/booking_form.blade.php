@@ -5,7 +5,7 @@
 
     @section('content')
 @endif
-<section class="appointment-section">
+<section class="appointment-section {{ !empty($routeused) && $routeused == true ? 'with-header' : 'without-header' }}">
 
     <div class="appointment-container">
 
@@ -136,6 +136,9 @@
     </div>
 
 </section>
+@if(!empty($routeused) && $routeused == true)
+    @endsection
+@endif
 @section('scripts')
 <script>
     let isSubmitting = false;

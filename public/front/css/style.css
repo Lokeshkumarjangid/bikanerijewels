@@ -4757,7 +4757,11 @@ DESCRIPTION
 .appointment-section {
     padding: 100px 0;
     background: #f8f7f5;
-	margin-top: 80px;
+	/* margin-top: 80px; */
+}
+
+.appointment-section.without-header {
+    margin-top: 80px;
 }
 
 .appointment-container {
