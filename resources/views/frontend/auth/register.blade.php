@@ -41,7 +41,7 @@
 
             <div class="form-group">
                 <label>GST No.</label>
-                <input type="text" placeholder="Pan card" name='pancard' value="{{old('pancard')}}">
+                <input type="text" placeholder="GST No." name='gst_no' value="{{old('gst_no')}}">
             </div>
 
             <div class="form-group">

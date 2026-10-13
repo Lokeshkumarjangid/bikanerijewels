@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('business_name')->nullable();
             $table->string('email')->nullable();
             $table->string('pancard')->nullable();
+            $table->string('gst_no')->nullable();
             $table->string('mobile')->nullable();
             $table->timestamp('mobile_verified_at')->nullable();
             $table->string('password')->nullable();
