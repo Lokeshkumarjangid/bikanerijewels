@@ -81,20 +81,19 @@
                         <input type="file">
                     </div>
 
-                     <div id="imagePreviewBox" style="display:none; margin-top:20px;">
-                        <img id="imagePreview"
+                    <div id="previewBox" style="display:none; margin-top:20px;">
+                        <img id="previewImage"
                             src=""
-                            alt="Selected Design"
-                            style="width:100%; max-width:300px; height:auto; border-radius:8px; border:1px solid #ddd;">
-
-                        <br>
+                            alt="Image Preview"
+                            style="display:block; max-width:100%; width:300px; height:auto; margin-top:10px;">
 
                         <button type="button"
                                 id="removeImage"
-                                style="margin-top:10px; padding:8px 15px; cursor:pointer;">
+                                style="margin-top:10px;">
                             Remove Image
                         </button>
                     </div>
+
             </div>
 
             <div class="card spec-card">
@@ -782,46 +781,46 @@
 @section('scripts')
 <script>
 
-    $('.select2').select2({
-        placeholder: 'Select',
-        width: '100%'
-    });
-    
-    document.getElementById('designImage').addEventListener('change', function () {
+    document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('designImage');
+    const previewBox = document.getElementById('previewBox');
+    const previewImage = document.getElementById('previewImage');
+    const removeButton = document.getElementById('removeImage');
+
+    if (!input) return;
+
+    input.addEventListener('change', function () {
         const file = this.files[0];
-        const preview = document.getElementById('imagePreview');
-        const previewBox = document.getElementById('imagePreviewBox');
 
-        if (!file) {
-            previewBox.style.display = 'none';
-            preview.src = '';
-            return;
-        }
+        if (!file) return;
 
-        // Only allow images
         if (!file.type.startsWith('image/')) {
-            alert('Please select a valid image.');
+            alert('Please select an image file.');
             this.value = '';
-            previewBox.style.display = 'none';
             return;
         }
 
-        // Maximum size: 5MB
         if (file.size > 5 * 1024 * 1024) {
             alert('Image size must be less than 5MB.');
             this.value = '';
-            previewBox.style.display = 'none';
             return;
         }
 
-        preview.src = URL.createObjectURL(file);
-        previewBox.style.display = 'block';
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            previewImage.src = e.target.result;
+            previewBox.style.display = 'block';
+        };
+
+        reader.readAsDataURL(file);
     });
 
-    document.getElementById('removeImage').addEventListener('click', function () {
-        document.getElementById('designImage').value = '';
-        document.getElementById('imagePreview').src = '';
-        document.getElementById('imagePreviewBox').style.display = 'none';
+    removeButton.addEventListener('click', function () {
+        input.value = '';
+        previewImage.src = '';
+        previewBox.style.display = 'none';
     });
+});
 </script>
 @endsection
