@@ -89,7 +89,7 @@
                         <div class="form-group">
                             <label>Item Name</label>
                             <select name="item_name" class="js-example-basic-single">
-                                <option value="">Select Item name</option>
+                                <option value="">Select</option>
                                 <option value="Ring">Ring</option>
                                 <option value="Earrings">Earrings</option>
                                 <option value="Necklaces">Necklaces</option>
@@ -338,8 +338,8 @@
 
                         <div class="form-group">
                             <label>Dank</label>
-                            <select name="dank" class="form-control">
-                                <option value="">Select Dank</option>
+                            <select name="dank">
+                                <option value="">Select</option>
                                 <option value="Smosa Dank">Smosa Dank</option>
                                 <option value="Round Dank">Round Dank</option>
                                 <option value="No">No</option>
@@ -348,7 +348,7 @@
 
                         <div class="form-group">
                             <label>Colour Stone</label>
-                            <select class="select2" name="colour_stone">
+                            <select name="colour_stone">
                                 <option value=""></option>
                                 <option value="Ruby Cut">Ruby Cut</option>
                                 <option value="Ruby Pota">Ruby Pota</option>
@@ -403,8 +403,8 @@
 
                         <div class="form-group">
                             <label>Rhodium</label>
-                            <select name="white_black" class="form-control">
-                                <option value="">Select Rhodium</option>
+                            <select name="whi>
+                                <option value="">Select</option>
                                 <option value="All White">All White</option>
                                 <option value="Only Prong White">Only Prong White</option>
                                 <option value="Only Prong Black">Only Prong Black</option>
@@ -414,8 +414,8 @@
 
                         <div class="form-group">
                             <label>Look</label>
-                            <select name="finish" class="form-control">
-                                <option value="">Select Look</option>
+                            <select name>
+                                <option value="">Select</option>
                                 <option value="New">New</option>
                                 <option value="Light Antique">Light Antique</option>
                                 <option value="Antique">Antique</option>
@@ -425,8 +425,8 @@
 
                         <div class="form-group">
                             <label>Mani</label>
-                            <select name="mani" class="form-control">
-                                <option value="">Select Mani</option>
+                            <select na>
+                                <option value="">Select</option>
 
                                 <option value="Ruby Cut Mani">Ruby Cut Mani</option>
                                 <option value="Ruby Plane Mani">Ruby Plane Mani</option>
@@ -510,8 +510,8 @@
 
                         <div class="form-group">
                             <label>Cheed</label>
-                            <select name="cheed" class="form-control">
-                                <option value="">Select Cheed</option>
+                            <select nam>
+                                <option value="">Select</option>
                                 <option value="Red Cheed">Red Cheed</option>
                                 <option value="Green Cheed">Green Cheed</option>
                                 <option value="Blue Cheed">Blue Cheed</option>
@@ -741,7 +741,6 @@
                             <label>Delivery Date</label>
                             <input type="date"
                                 name="delivery_date"
-                                class="form-control"
                                 min="{{ date('Y-m-d', strtotime('+12 days')) }}"
                                 required>
                         </div>
