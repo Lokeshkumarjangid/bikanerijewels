@@ -168,7 +168,7 @@ class LoginController extends Controller
         return view('frontend.auth.profile', $data);
     }
 
-    public function profileUpdate(){
+    public function profileUpdate(Request $request){
         $user = Auth::user();
            $validated = $request->validate([
         'first_name' => ['required','string','max:100',],
