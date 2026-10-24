@@ -131,11 +131,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Diamond Size</label>
-                            <input type="text">
-                        </div>
-
-                        <div class="form-group">
                             <label>Estimate</label>
                             <select name="estimate">
                                 <option value="">Select</option>
@@ -179,7 +174,6 @@
                             <label>Meena Front Side</label>
                             <select name="meena_front_side">
                                 <option value="">Select</option>
-
                                 <option value="Partach">Partach</option>
                                 <option value="Red Meena">Red Meena</option>
                                 <option value="Green Meena">Green Meena</option>
@@ -193,7 +187,7 @@
 
                         <div class="form-group">
                             <label>Back Side</label>
-                             <select name="back_design">
+                             <select name="back_side">
                                 <option value="">Select</option>
 
                                 <option value="open">Open</option>
@@ -206,9 +200,28 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
+                            <label>Diamound</label>
+                            <select name="diamound">
+                                <option value="">Select</option>
+
+                                <option value="Double Cut Round">Double Cut Round</option>
+                                <option value="Single Cut Round">Single Cut Round</option>
+                                <option value="Old Cut Round">Old Cut Round</option>
+                                <option value="Old Cut Mix">Old Cut Mix</option>
+                                <option value="Paan">Paan</option>
+                                <option value="Marquise">Marquise</option>
+                                <option value="Emerald Cut">Emerald Cut</option>
+                                <option value="Fancy">Fancy</option>
+
+                                <option value="Other">Other</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
                         <!-- Ring -->
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Utrai</label>
                             <select name="uttrai">
                                 <option value="">Select</option>
@@ -239,9 +252,9 @@
 
                                 <option value="Other">Other</option>
                             </select>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Baguette</label>
                             <select name="buggate">
                                 <option value="">Select</option>
@@ -260,26 +273,7 @@
                                 <option value="Other">Other</option>
                                 <option value="No">No</option>
                             </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Diamound</label>
-                            <select name="diamound">
-                                <option value="">Select</option>
-
-                                <option value="Double Cut Round">Double Cut Round</option>
-                                <option value="Single Cut Round">Single Cut Round</option>
-                                <option value="Old Cut Round">Old Cut Round</option>
-                                <option value="Old Cut Mix">Old Cut Mix</option>
-                                <option value="Paan">Paan</option>
-                                <option value="Marquise">Marquise</option>
-                                <option value="Emerald Cut">Emerald Cut</option>
-                                <option value="Fancy">Fancy</option>
-
-                                <option value="Other">Other</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label>Rosecut</label>
@@ -316,6 +310,187 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Pearl</label>
+                            <select name="pearl">
+                                <option value="">Select</option>
+                                <option value="China Round Pearl">China Round Pearl</option>
+                                <option value="China Unshape Pearl">China Unshape Pearl</option>
+                                <option value="China Kalki Pearl">China Kalki Pearl</option>
+                                <option value="KC Kalaki Pearl">KC Kalaki Pearl</option>
+                                <option value="KC Unshape Pearl">KC Unshape Pearl</option>
+                                <option value="South Sea Round Pearl">South Sea Round Pearl</option>
+                                <option value="South Sea Kalki Pearl">South Sea Kalki Pearl</option>
+                                <option value="Baruk Unshape Pearl">Baruk Unshape Pearl</option>
+                                <option value="Culture Pearl">Culture Pearl</option>
+                                <option value="Basra Round Pearl">Basra Round Pearl</option>
+                                <option value="Basra Unshape Pearl">Basra Unshape Pearl</option>
+                                <option value="Shell Pearl">Shell Pearl</option>
+                                <option value="Other">Other</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Pearl Colour</label>
+                            <select name="pearl_colour">
+                                <option value="">Select</option>
+                                <option value="White CLR">White CLR</option>
+                                <option value="Yellow Shade CLR">Yellow Shade CLR</option>
+                                <option value="Basra Look CLR">Basra Look CLR</option>
+                                <option value="Coffee Shade CLR">Coffee Shade CLR</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Beads</label>
+                            <select name="beads">
+                                <option value="">Select</option>
+                                <option value="EM Plane Beads">EM Plane Beads</option>
+                                <option value="EM Cutting Beads">EM Cutting Beads</option>
+                                <option value="Ruby Plane Beads">Ruby Plane Beads</option>
+                                <option value="Ruby Cutting Beads">Ruby Cutting Beads</option>
+                                <option value="Pink Plane Beads">Pink Plane Beads</option>
+                                <option value="Pink Cutting Beads">Pink Cutting Beads</option>
+                                <option value="Blue Plane Beads">Blue Plane Beads</option>
+                                <option value="Blue Cutting Beads">Blue Cutting Beads</option>
+                                <option value="Coral Plane Beads">Coral Plane Beads</option>
+                                <option value="Turquise Plane Beads">Turquise Plane Beads</option>
+                                <option value="Yellow Sapphire Plane Beads">Yellow Sapphire Plane Beads</option>
+                                <option value="Yellow Sapphire Cutting Beads">Yellow Sapphire Cutting Beads</option>
+                                <option value="Tourmuline Plane Beads">Tourmuline Plane Beads</option>
+                                <option value="Tourmukine Cutting Beads">Tourmukine Cutting Beads</option>
+                                <option value="Ruby Light Plane Beads">Ruby Light Plane Beads</option>
+                                <option value="Ruby Light Cutting Beads">Ruby Light Cutting Beads</option>
+                                <option value="Spinal Plane Beads">Spinal Plane Beads</option>
+                                <option value="Spinal Cutting Beads">Spinal Cutting Beads</option>
+                                <option value="Other">Other</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Melon</label>
+                            <select name="melon">
+                                <option value="">Select</option>
+                                <option value="Ruby Melon">Ruby Melon</option>
+                                <option value="Emerald Melon">Emerald Melon</option>
+                                <option value="Blue Sapphire Melon">Blue Sapphire Melon</option>
+                                <option value="Yellow Sapphire Melon">Yellow Sapphire Melon</option>
+                                <option value="Corel Melon">Corel Melon</option>
+                                <option value="Pearl Melon">Pearl Melon</option>
+                                <option value="Catseye Melon">Catseye Melon</option>
+                                <option value="Hessonite Melon">Hessonite Melon</option>
+                                <option value="Turquise Melon">Turquise Melon</option>
+                                <option value="Spinal Melon">Spinal Melon</option>
+                                <option value="Ruby Light Melon">Ruby Light Melon</option>
+                                <option value="Tourmuline Melon">Tourmuline Melon</option>
+                                <option value="Other">Other</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Badam</label>
+                            <select name="badam">
+                                <option value="">Select</option>
+
+                                <option value="Ruby Cut Badam">Ruby Cut Badam</option>
+                                <option value="Ruby Plane Badam">Ruby Plane Badam</option>
+                                <option value="Ruby Carving Badam">Ruby Carving Badam</option>
+
+                                <option value="Emerald Cut Badam">Emerald Cut Badam</option>
+                                <option value="Emerald Plane Badam">Emerald Plane Badam</option>
+                                <option value="Emerald Carving Badam">Emerald Carving Badam</option>
+
+                                <option value="Blue Sapphire Cut Badam">Blue Sapphire Cut Badam</option>
+                                <option value="Blue Sapphire Plane Badam">Blue Sapphire Plane Badam</option>
+                                <option value="Blue Sapphire Carving Badam">Blue Sapphire Carving Badam</option>
+
+                                <option value="Yellow Sapphire Cut Badam">Yellow Sapphire Cut Badam</option>
+                                <option value="Yellow Sapphire Plane Badam">Yellow Sapphire Plane Badam</option>
+                                <option value="Yellow Sapphire Carving Badam">Yellow Sapphire Carving Badam</option>
+
+                                <option value="Corel Plane Badam">Corel Plane Badam</option>
+                                <option value="Corel Carving Badam">Corel Carving Badam</option>
+
+                                <option value="Catseye Cut Badam">Catseye Cut Badam</option>
+                                <option value="Catseye Plane Badam">Catseye Plane Badam</option>
+                                <option value="Catseye Carving Badam">Catseye Carving Badam</option>
+
+                                <option value="Hessonite Cut Badam">Hessonite Cut Badam</option>
+                                <option value="Hessonite Plane Badam">Hessonite Plane Badam</option>
+                                <option value="Hessonite Carving Badam">Hessonite Carving Badam</option>
+
+                                <option value="Tourmukine Cutting Badam">Tourmukine Cutting Badam</option>
+                                <option value="Tourmuline Plane Badam">Tourmuline Plane Badam</option>
+                                <option value="Tourmuline Carving Badam">Tourmuline Carving Badam</option>
+                                <option value="Tourmukine Carving Badam">Tourmukine Carving Badam</option>
+
+                                <option value="Ruby Light Cutting Badam">Ruby Light Cutting Badam</option>
+                                <option value="Ruby Light Plane Badam">Ruby Light Plane Badam</option>
+                                <option value="Ruby Light Carving Badam">Ruby Light Carving Badam</option>
+
+                                <option value="Spinal Cutting Badam">Spinal Cutting Badam</option>
+                                <option value="Spinal Plane Badam">Spinal Plane Badam</option>
+                                <option value="Spinal Carving Badam">Spinal Carving Badam</option>
+
+                                <option value="Other">Other</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Goshware</label>
+                            <select name="goshware">
+                                <option value="">Select</option>
+
+                                <option value="Ruby Cut Goshware">Ruby Cut Goshware</option>
+                                <option value="Ruby Plane Goshware">Ruby Plane Goshware</option>
+                                <option value="Ruby Carving Goshware">Ruby Carving Goshware</option>
+
+                                <option value="Emerald Cut Goshware">Emerald Cut Goshware</option>
+                                <option value="Emerald Plane Goshware">Emerald Plane Goshware</option>
+                                <option value="Emerald Carving Goshware">Emerald Carving Goshware</option>
+
+                                <option value="Blue Sapphire Cut Goshware">Blue Sapphire Cut Goshware</option>
+                                <option value="Blue Sapphire Plane Goshware">Blue Sapphire Plane Goshware</option>
+                                <option value="Blue Sapphire Carving Goshware">Blue Sapphire Carving Goshware</option>
+
+                                <option value="Yellow Sapphire Cut Goshware">Yellow Sapphire Cut Goshware</option>
+                                <option value="Yellow Sapphire Plane Goshware">Yellow Sapphire Plane Goshware</option>
+                                <option value="Yellow Sapphire Carving Goshware">Yellow Sapphire Carving Goshware</option>
+
+                                <option value="Corel Plane Goshware">Corel Plane Goshware</option>
+                                <option value="Corel Carving Goshware">Corel Carving Goshware</option>
+
+                                <option value="Catseye Cut Goshware">Catseye Cut Goshware</option>
+                                <option value="Catseye Plane Goshware">Catseye Plane Goshware</option>
+                                <option value="Catseye Carving Goshware">Catseye Carving Goshware</option>
+
+                                <option value="Hessonite Cut Goshware">Hessonite Cut Goshware</option>
+                                <option value="Hessonite Plane Goshware">Hessonite Plane Goshware</option>
+                                <option value="Hessonite Carving Goshware">Hessonite Carving Goshware</option>
+
+                                <option value="Tourmukine Cutting Goshware">Tourmukine Cutting Goshware</option>
+                                <option value="Tourmuline Plane Goshware">Tourmuline Plane Goshware</option>
+                                <option value="Tourmuline Carving Goshware">Tourmuline Carving Goshware</option>
+
+                                <option value="Ruby Light Cutting Goshware">Ruby Light Cutting Goshware</option>
+                                <option value="Ruby Light Plane Goshware">Ruby Light Plane Goshware</option>
+                                <option value="Ruby Light Carving Goshware">Ruby Light Carving Goshware</option>
+
+                                <option value="Spinal Cutting Goshware">Spinal Cutting Goshware</option>
+                                <option value="Spinal Plane Goshware">Spinal Plane Goshware</option>
+                                <option value="Spinal Carving Goshware">Spinal Carving Goshware</option>
+
+                                <option value="Other">Other</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+
+                        <!-- <div class="form-group">
                             <label>Dank</label>
                             <select name="dank_type">
                                 <option value="">Select</option>
@@ -378,9 +553,18 @@
                                 <option value="Other">Other</option>
                                 <option value="No">No</option>
                             </select>
-                        </div>
+                        </div> -->
 
                         <!-- Description -->
+
+                        <div class="form-group">
+                            <label>Delivery Date</label>
+                            <input type="date"
+                                name="delivery_date"
+                                class="form-control"
+                                min="{{ date('Y-m-d') }}"
+                                required>
+                        </div>
 
                         <div class="form-group full">
                             <label>Describe your design</label>
