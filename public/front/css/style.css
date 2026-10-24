@@ -3807,6 +3807,33 @@ grid-template-columns:1fr 1fr;
 gap:15px;
 }
 
+.double-input input[type="date"],
+.double-input input[type="time"] {
+    width: 100%;
+    min-width: 0;
+    height: 75px;
+    padding: 0 20px;
+    border: 1px solid #dedede;
+    border-radius: 14px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+/* Date aur time picker icons */
+.double-input input[type="date"]::-webkit-calendar-picker-indicator,
+.double-input input[type="time"]::-webkit-calendar-picker-indicator {
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
 /* TEXTAREA */
 
 .connect-form textarea{
@@ -8198,6 +8225,13 @@ DESCRIPTION
 	.double-input{
 	grid-template-columns:1fr;
 	}
+
+	 .double-input input[type="date"],
+    .double-input input[type="time"] {
+        height: 65px;
+        padding: 0 10px;
+        font-size: 14px;
+    }
 
 	.connect-section{
 	padding:50px 20px;
