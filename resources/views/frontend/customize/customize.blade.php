@@ -742,8 +742,7 @@
                             <input type="date"
                                 name="delivery_date"
                                 class="form-control"
-                                min="{{ date('Y-m-d', strtotime('+1 day')) }}"
-                                max="{{ date('Y-m-d', strtotime('+15 days')) }}"
+                                min="{{ date('Y-m-d', strtotime('+12 days')) }}"
                                 required>
                         </div>
 
