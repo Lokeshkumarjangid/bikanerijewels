@@ -74,7 +74,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $data['categroy']=Category::all();
+        $data['categroy']=Category::where('status','1')->where('type','non_collection')->get();
         return view('admin.product.create',$data);
     }
 
@@ -172,7 +172,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $data['product'] = Product::with(['images','video'])->findOrFail($id);
-        $data['categroy'] = Category::all();
+        $data['categroy'] = Category::where('status','1')->where('type','non_collection')->get();
 
         return view('admin.product.update',$data);
     }

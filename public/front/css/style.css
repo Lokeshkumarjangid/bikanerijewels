@@ -8504,6 +8504,7 @@ DESCRIPTION
 
     .canvas__open i{
         font-size: 24px;
+	    padding: 4px
     }
 
     /* Desktop menu hide */

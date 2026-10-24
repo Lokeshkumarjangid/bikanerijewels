@@ -65,7 +65,7 @@ class ProductController extends Controller
         }
 
         // Sidebar data
-        $data['category'] = Category::select('id','name')->withCount('products')->get();
+        $data['category'] = Category::select('id','name')->where('type','non_collection')->withCount('products')->get();
 
         // Price ranges
         $min = Product::min('price');
