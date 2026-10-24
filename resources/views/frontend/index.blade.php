@@ -16,7 +16,7 @@
         .cocktail-section {
             width: 100%;
             background: #000;
-            padding: 5px 14px 20px;
+            padding: 13px 14px 20px;
         }
 
         /* Heading */
@@ -107,7 +107,7 @@
         @media (max-width: 480px) {
 
             .cocktail-section {
-                padding: 5px 10px 20px;
+                padding: 12px 10px 20px;
             }
 
             .cocktail-title {
