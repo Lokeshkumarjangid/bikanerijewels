@@ -59,4 +59,5 @@ Route::get('/store', [StoreController::class, 'index'])->name('storeindex');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/profile', [LoginController::class, 'profile'])->name('profile');
 });

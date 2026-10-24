@@ -159,4 +159,11 @@ class LoginController extends Controller
 
         return redirect('/'); // homepage pe wapas
     }
+
+    public function profile(Request $request)
+    {
+        $data['profile'] = User::where('id', auth()->id())->first();
+
+        return view('frontend.auth.profile', $data);
+    }
 }
