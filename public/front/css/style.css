@@ -8229,7 +8229,7 @@ DESCRIPTION
 
 	.hero-oneimage .hero__items img{
 		width:100%;
-		height:778px;
+		/* height:778px; */
 		flex-shrink:0;
 	}
 
