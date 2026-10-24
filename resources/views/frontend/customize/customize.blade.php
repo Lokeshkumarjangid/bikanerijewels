@@ -780,40 +780,38 @@
 @endsection
 @section('scripts')
 <script>
-
-    document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+    alert('adfadfasdfasd');
     const input = document.getElementById('designImage');
     const previewBox = document.getElementById('previewBox');
     const previewImage = document.getElementById('previewImage');
     const removeButton = document.getElementById('removeImage');
 
-    if (!input) return;
+    if (!input || !previewBox || !previewImage || !removeButton) {
+        console.error('Image preview elements not found.');
+        return;
+    }
 
     input.addEventListener('change', function () {
-        const file = this.files[0];
+        const file = input.files[0];
 
         if (!file) return;
 
         if (!file.type.startsWith('image/')) {
-            alert('Please select an image file.');
-            this.value = '';
+            alert('Please select a valid image.');
+            input.value = '';
             return;
         }
 
         if (file.size > 5 * 1024 * 1024) {
             alert('Image size must be less than 5MB.');
-            this.value = '';
+            input.value = '';
             return;
         }
 
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            previewImage.src = e.target.result;
-            previewBox.style.display = 'block';
-        };
-
-        reader.readAsDataURL(file);
+        const imageURL = URL.createObjectURL(file);
+        previewImage.src = imageURL;
+        previewBox.style.display = 'block';
     });
 
     removeButton.addEventListener('click', function () {
