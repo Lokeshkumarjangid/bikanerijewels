@@ -349,7 +349,7 @@
                         <div class="form-group">
                             <label>Colour Stone</label>
                             <select name="colour_stone">
-                                <option value=""></option>
+                                <option value="">Select</option>
                                 <option value="Ruby Cut">Ruby Cut</option>
                                 <option value="Ruby Pota">Ruby Pota</option>
                                 <option value="Ruby Carving">Ruby Carving</option>
