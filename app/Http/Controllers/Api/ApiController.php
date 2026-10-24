@@ -594,6 +594,18 @@ class ApiController extends Controller
                 ], 404);
             }
 
+            $page->first_image = $page->first_image
+            ? asset('storage/' . $page->first_image)
+            : null;
+
+            $page->second_image = $page->second_image
+                ? asset('storage/' . $page->second_image)
+                : null;
+
+            $page->third_image = $page->third_image
+                ? asset('storage/' . $page->third_image)
+                : null;
+
             return response()->json([
                 'status' => true,
                 'message' => 'Content details',
