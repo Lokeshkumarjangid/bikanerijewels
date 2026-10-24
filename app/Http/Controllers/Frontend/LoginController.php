@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Validation\Rule;
 
 class LoginController extends Controller
 {
@@ -165,5 +166,95 @@ class LoginController extends Controller
         $data['profile'] = User::where('id', auth()->id())->first();
 
         return view('frontend.auth.profile', $data);
+    }
+
+    public function profileUpdate(){
+        $user = Auth::user();
+           $validated = $request->validate([
+        'first_name' => ['required','string','max:100',],
+
+            'last_name' => ['required','string','max:100',],
+
+            'business_name' => [
+                'nullable',
+                'string',
+                'max:255',
+            ],
+
+            'gst_no' => [
+                'nullable',
+                'string',
+                'size:15',
+                'regex:/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z][A-Z0-9]Z[A-Z0-9]$/',
+            ],
+
+            'mobile' => [
+                'required',
+                'digits:10',
+                Rule::unique('users', 'mobile')->ignore($user->id),
+            ],
+
+            'email' => [
+                'required',
+                'email',
+                'max:255',
+                Rule::unique('users', 'email')->ignore($user->id),
+            ],
+
+            'password' => [
+                'nullable',
+                'string',
+                'min:8',
+                'same:confirm_password',
+            ],
+
+            'confirm_password' => [
+                'required_with:password',
+                'nullable',
+                'string',
+            ],
+        ], [
+            'first_name.required' => 'First name is required.',
+            'first_name.max' => 'First name cannot exceed 100 characters.',
+
+            'last_name.required' => 'Last name is required.',
+            'last_name.max' => 'Last name cannot exceed 100 characters.',
+
+            'business_name.max' => 'Business name cannot exceed 255 characters.',
+
+            'gst_no.size' => 'GST number must contain exactly 15 characters.',
+            'gst_no.regex' => 'Please enter a valid GST number.',
+
+            'mobile.required' => 'Mobile number is required.',
+            'mobile.digits' => 'Mobile number must contain exactly 10 digits.',
+            'mobile.unique' => 'This mobile number is already registered.',
+
+            'email.required' => 'Email address is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'email.unique' => 'This email address is already registered.',
+
+            'password.min' => 'Password must be at least 8 characters.',
+            'password.same' => 'Password and confirm password do not match.',
+
+            'confirm_password.required_with' => 'Please confirm your new password.',
+        ]);
+
+        $user->first_name = $validated['first_name'];
+        $user->last_name = $validated['last_name'];
+        $user->business_name = $validated['business_name'] ?? null;
+        $user->gst_no = !empty($validated['gst_no'])
+            ? strtoupper($validated['gst_no'])
+            : null;
+        $user->mobile = $validated['mobile'];
+        $user->email = $validated['email'];
+
+        // Update password only if a new password is entered.
+        if (!empty($validated['password'])) {
+            $user->password = Hash::make($validated['password']);
+        }
+
+        $user->save();
+
+        return redirect()->back()->with('success', 'Profile updated successfully.');
     }
 }

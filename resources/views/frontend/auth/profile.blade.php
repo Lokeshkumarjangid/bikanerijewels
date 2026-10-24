@@ -224,8 +224,9 @@
 
                 <h3 class="section-title">Personal & Business Details</h3>
 
-                <form action="#" method="POST" id="profileForm">
+                <form action="{{route('profileUpdate')}}" method="POST" id="profileForm">
 
+                    @csrf
                     <div class="profile-form">
 
                         <div class="form-group">
@@ -233,6 +234,9 @@
                                 First Name <span>*</span>
                             </label>
                             <input type="text" id="first_name" name="first_name" placeholder="Enter first name" autocomplete="given-name" value='{{$profile->first_name}}' required>
+                            @error('first_name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -243,6 +247,9 @@
                                    name="last_name"
                                    placeholder="Enter last name"
                                    autocomplete="family-name" value='{{$profile->last_name}}' required>
+                                @error('last_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                         </div>
 
                         <div class="form-group">
@@ -251,6 +258,9 @@
                                    name="business_name"
                                    placeholder="Enter business name"
                                    autocomplete="organization" value='{{$profile->business_name}}'>
+                                @error('business_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                         </div>
 
                         <div class="form-group">
@@ -260,6 +270,9 @@
                                    placeholder="Enter GST number"
                                    maxlength="15"
                                    style="text-transform: uppercase;" value='{{$profile->gst_no}}'>
+                            @error('gst_no')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -273,6 +286,9 @@
                                    maxlength="10"
                                    inputmode="numeric"
                                    pattern="[0-9]{10}" value='{{$profile->mobile}}' required>
+                            @error('mobile')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -283,6 +299,9 @@
                                    name="email"
                                    placeholder="Enter email address"
                                    autocomplete="email" value='{{$profile->email}}' required>
+                          @error('email')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -293,13 +312,13 @@
                                        placeholder="Enter new password"
                                        autocomplete="new-password"
                                        minlength="8">
-                                <button type="button"
-                                        class="toggle-password"
-                                        data-target="password">Show</button>
                             </div>
                             <p class="form-note">
                                 Leave blank if you do not want to change your password.
                             </p>
+                            @error('password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div class="form-group">
@@ -309,9 +328,9 @@
                                        name="confirm_password"
                                        placeholder="Confirm new password"
                                        autocomplete="new-password">
-                                <button type="button"
-                                        class="toggle-password"
-                                        data-target="confirm_password">Show</button>
+                            @error('confirm_password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                             </div>
                         </div>
 
@@ -330,31 +349,5 @@
     </section>
 @endsection
 @section('scripts')
-    <script>
-        document.querySelectorAll('.toggle-password').forEach(button => {
-            button.addEventListener('click', function () {
-                const input = document.getElementById(this.dataset.target);
-                const isPassword = input.type === 'password';
-
-                input.type = isPassword ? 'text' : 'password';
-                this.textContent = isPassword ? 'Hide' : 'Show';
-            });
-        });
-
-        document.getElementById('profileForm').addEventListener('submit', function (e) {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm_password').value;
-
-            if (password !== confirmPassword) {
-                e.preventDefault();
-                alert('Password and Confirm Password do not match.');
-                return;
-            }
-
-            if (!password && confirmPassword) {
-                e.preventDefault();
-                alert('Please enter a new password first.');
-            }
-        });
-    </script>
+ 
 @endsection
