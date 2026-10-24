@@ -403,7 +403,7 @@
 
                         <div class="form-group">
                             <label>Rhodium</label>
-                            <select name="whi>
+                            <select name="">
                                 <option value="">Select</option>
                                 <option value="All White">All White</option>
                                 <option value="Only Prong White">Only Prong White</option>
