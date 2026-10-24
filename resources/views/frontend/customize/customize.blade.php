@@ -81,6 +81,20 @@
                         <input type="file">
                     </div>
 
+                     <div id="imagePreviewBox" style="display:none; margin-top:20px;">
+                        <img id="imagePreview"
+                            src=""
+                            alt="Selected Design"
+                            style="width:100%; max-width:300px; height:auto; border-radius:8px; border:1px solid #ddd;">
+
+                        <br>
+
+                        <button type="button"
+                                id="removeImage"
+                                style="margin-top:10px; padding:8px 15px; cursor:pointer;">
+                            Remove Image
+                        </button>
+                    </div>
             </div>
 
             <div class="card spec-card">
@@ -771,6 +785,43 @@
     $('.select2').select2({
         placeholder: 'Select',
         width: '100%'
+    });
+    
+    document.getElementById('designImage').addEventListener('change', function () {
+        const file = this.files[0];
+        const preview = document.getElementById('imagePreview');
+        const previewBox = document.getElementById('imagePreviewBox');
+
+        if (!file) {
+            previewBox.style.display = 'none';
+            preview.src = '';
+            return;
+        }
+
+        // Only allow images
+        if (!file.type.startsWith('image/')) {
+            alert('Please select a valid image.');
+            this.value = '';
+            previewBox.style.display = 'none';
+            return;
+        }
+
+        // Maximum size: 5MB
+        if (file.size > 5 * 1024 * 1024) {
+            alert('Image size must be less than 5MB.');
+            this.value = '';
+            previewBox.style.display = 'none';
+            return;
+        }
+
+        preview.src = URL.createObjectURL(file);
+        previewBox.style.display = 'block';
+    });
+
+    document.getElementById('removeImage').addEventListener('click', function () {
+        document.getElementById('designImage').value = '';
+        document.getElementById('imagePreview').src = '';
+        document.getElementById('imagePreviewBox').style.display = 'none';
     });
 </script>
 @endsection
