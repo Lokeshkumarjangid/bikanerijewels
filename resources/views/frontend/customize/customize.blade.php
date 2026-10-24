@@ -78,7 +78,7 @@
                         <div class="upload-area">
                         <i class="fa fa-camera"></i>
                         <p>Upload Image (Max 5MB)</p>
-                        <input type="file">
+                        <input type="file" id="designImage">
                     </div>
 
                     <div id="previewBox" style="display:none; margin-top:20px;">
@@ -781,7 +781,6 @@
 @section('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    alert('adfadfasdfasd');
     const input = document.getElementById('designImage');
     const previewBox = document.getElementById('previewBox');
     const previewImage = document.getElementById('previewImage');
